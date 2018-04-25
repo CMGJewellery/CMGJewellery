@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @metal.name %>
+</p>
+
+<p>
+  <strong>Metal type:</strong>
+  <%= @metal.metal_type %>
+</p>
+
+<p>
+  <strong>Metal accents:</strong>
+  <%= @metal.metal_accents %>
+</p>
+
+<%= link_to 'Edit', edit_metal_path(@metal) %> |
+<%= link_to 'Back', metals_path %>

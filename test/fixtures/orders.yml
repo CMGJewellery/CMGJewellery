@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_price: MyString
+  amount: 1
+  status: MyString
+
+two:
+  total_price: MyString
+  amount: 1
+  status: MyString

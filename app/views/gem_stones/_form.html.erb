@@ -1,0 +1,32 @@
+<%= form_with(model: gem_stone, local: true) do |form| %>
+  <% if gem_stone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gem_stone.errors.count, "error") %> prohibited this gem_stone from being saved:</h2>
+
+      <ul>
+      <% gem_stone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :gem_stone_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_field :details, id: :gem_stone_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diamond_specification %>
+    <%= form.text_field :diamond_specification, id: :gem_stone_diamond_specification %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

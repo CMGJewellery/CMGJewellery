@@ -1,0 +1,2 @@
+class GemStone < ApplicationRecord
+end

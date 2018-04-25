@@ -1,0 +1,2 @@
+class StyleOfProduct < ApplicationRecord
+end

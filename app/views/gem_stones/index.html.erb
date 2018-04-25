@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gem Stones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Details</th>
+      <th>Diamond specification</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gem_stones.each do |gem_stone| %>
+      <tr>
+        <td><%= gem_stone.name %></td>
+        <td><%= gem_stone.details %></td>
+        <td><%= gem_stone.diamond_specification %></td>
+        <td><%= link_to 'Show', gem_stone %></td>
+        <td><%= link_to 'Edit', edit_gem_stone_path(gem_stone) %></td>
+        <td><%= link_to 'Destroy', gem_stone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gem Stone', new_gem_stone_path %>

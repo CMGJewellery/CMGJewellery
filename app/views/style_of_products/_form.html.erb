@@ -1,0 +1,67 @@
+<%= form_with(model: style_of_product, local: true) do |form| %>
+  <% if style_of_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(style_of_product.errors.count, "error") %> prohibited this style_of_product from being saved:</h2>
+
+      <ul>
+      <% style_of_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :style_of_product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :style_of_product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :advantage %>
+    <%= form.text_field :advantage, id: :style_of_product_advantage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collection %>
+    <%= form.text_field :collection, id: :style_of_product_collection %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :style_of_product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dimensions %>
+    <%= form.text_field :dimensions, id: :style_of_product_dimensions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :necklace_length %>
+    <%= form.text_field :necklace_length, id: :style_of_product_necklace_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photograph_size %>
+    <%= form.text_field :photograph_size, id: :style_of_product_photograph_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_name %>
+    <%= form.text_field :category_name, id: :style_of_product_category_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :style_of_product_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

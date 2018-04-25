@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Style Of Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Advantage</th>
+      <th>Collection</th>
+      <th>Price</th>
+      <th>Dimensions</th>
+      <th>Necklace length</th>
+      <th>Photograph size</th>
+      <th>Category name</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @style_of_products.each do |style_of_product| %>
+      <tr>
+        <td><%= style_of_product.name %></td>
+        <td><%= style_of_product.description %></td>
+        <td><%= style_of_product.advantage %></td>
+        <td><%= style_of_product.collection %></td>
+        <td><%= style_of_product.price %></td>
+        <td><%= style_of_product.dimensions %></td>
+        <td><%= style_of_product.necklace_length %></td>
+        <td><%= style_of_product.photograph_size %></td>
+        <td><%= style_of_product.category_name %></td>
+        <td><%= style_of_product.status %></td>
+        <td><%= link_to 'Show', style_of_product %></td>
+        <td><%= link_to 'Edit', edit_style_of_product_path(style_of_product) %></td>
+        <td><%= link_to 'Destroy', style_of_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Style Of Product', new_style_of_product_path %>
