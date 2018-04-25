@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425042715) do
+ActiveRecord::Schema.define(version: 20180425040838) do
 
   create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "style_of_product_id"
     t.string "content"
     t.integer "rating"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["style_of_product_id"], name: "index_comments_on_style_of_product_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "gem_stones", force: :cascade do |t|
@@ -28,16 +32,15 @@ ActiveRecord::Schema.define(version: 20180425042715) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "images", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
     t.string "url"
     t.string "url_out"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "metals", force: :cascade do |t|
@@ -49,26 +52,40 @@ ActiveRecord::Schema.define(version: 20180425042715) do
   end
 
   create_table "order_details", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
     t.string "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+    t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
     t.string "total_price"
     t.integer "amount"
     t.string "status"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "amount"
+    t.integer "gem_stone_id"
+    t.integer "metal_id"
+    t.integer "style_of_product_id"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["gem_stone_id"], name: "index_products_on_gem_stone_id"
+    t.index ["metal_id"], name: "index_products_on_metal_id"
+    t.index ["style_of_product_id"], name: "index_products_on_style_of_product_id"
   end
 
   create_table "style_of_products", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name"
     t.string "description"
     t.string "advantage"
@@ -81,6 +98,7 @@ ActiveRecord::Schema.define(version: 20180425042715) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_style_of_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,8 +112,22 @@ ActiveRecord::Schema.define(version: 20180425042715) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.date "birthday"
+    t.string "gender"
+    t.string "phone"
+    t.string "role"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

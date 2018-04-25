@@ -1,6 +1,8 @@
 class CreateStyleOfProducts < ActiveRecord::Migration[5.1]
   def change
     create_table :style_of_products do |t|
+      t.belongs_to :user
+
       t.string :name
       t.string :description
       t.string :advantage
