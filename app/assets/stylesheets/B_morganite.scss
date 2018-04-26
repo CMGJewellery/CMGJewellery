@@ -1,0 +1,11 @@
+.B-morganite{
+    grid-template-columns: 30% 70%;
+    margin: 5% 2.7% 5% 3.2%;
+    border: 1px solid #e7e7e7;
+}
+.B-morganite > div {
+    box-sizing: border-box;
+}
+.B-morganite-container{
+    flex-direction: column;
+}
