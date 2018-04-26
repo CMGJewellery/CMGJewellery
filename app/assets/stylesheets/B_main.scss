@@ -10,6 +10,7 @@ hr{
     border: 0;
     border-top: 1px solid #050004;
     min-width: 6vw;
+    margin: 1% auto;
 }
 .B-img{
     display: block;
@@ -34,37 +35,6 @@ a:link, a:visited {
     justify-content: center;
     align-items: center;
 }
-.B-btn{
-    transition: 0.3s;
-    background-color: transparent;
-    border: 0.1vw solid black;
-    color: black;
-    padding: 1vw 7vw;
-}
-.B-full-btn{
-    width: 90%;
-    margin: 1% auto;
-    padding: 1vw 1vw;
-}
-.B-white-button{
-    border: 0.1vw solid white;
-}
-.B-btn-hover-black:hover{
-    background-color: black;
-    border: 0.1vw solid white;
-    color: white;
-}
-.B-descendant-btn-hover-black:hover button{
-    background-color: black;
-    border: 0.1vw solid white;
-    color: white;
-}
-.B-descendant-btn-hover-white:hover button{
-    background-color: white;
-    border: 0.1vw solid black;
-    color: black;
-}
-.B-color-invert{
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+.B-appear-responsive{
+  display: none;
 }
