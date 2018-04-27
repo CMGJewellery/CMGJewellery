@@ -30,8 +30,13 @@
           </a> -->
         </div>
 
-        <div class="col-md-3 mb-3">
-          <div class="input-group w-100 text-center" id="P-home-search">
+        <div class="col-md-3 text-center">
+          <%= link_to root_path, class:"P-cart-wrap" do %>
+            <i class="fa fa-shopping-cart mt-3" style="font-size: 20px;"></i>
+            <span class="P-cart" >Shopping Cart</span>
+            <span class="P-number-cart" >0</span>
+          <% end %>
+          <!-- <div class="input-group w-100 text-center" id="P-home-search">
             <input class="form-control form-control-dark P-input-home-search" type="text" placeholder="I'm looking for ..." aria-label="Search">
               <div class="input-group-append mr-2">
                 <button class="btn btn-outline-dark P-input-home-search" type="submit">
@@ -39,7 +44,7 @@
                 </button>
               </div>
               <i class="fa fa-shopping-cart" style="font-size: 30px;"></i>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -50,6 +55,17 @@
         <span class="navbar-toggler-icon "></span>
       </button>
 
+      <!-- Virtual search box to balance -->
+      <div class="collapse navbar-collapse justify-content-end text-center width-50 P-home-search-virtual">
+          <form class="P-home-search">
+            <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
+            <button type="submit">
+                <i class="fa fa-search" style="color: white;"></i>
+            </button>
+          </form>
+      </div>
+
+      <!-- Navigation option -->
       <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
         <ul class="navbar-nav text-center">
           <li class="nav-item mx-3">
@@ -61,32 +77,50 @@
 
           <li class="nav-item mx-3">
             <%= link_to root_path, class:"nav-link py-0" do %>
-              JEWELLRY
+              NECKLACES
             <% end %>
             <!-- <a href="# " class="nav-link py-0">JEWELLRY</a> -->
           </li>
 
           <li class="nav-item mx-3">
             <%= link_to root_path, class:"nav-link py-0" do %>
-              GIFTS
+              RINGS
             <% end %>
             <!-- <a href="# " class="nav-link py-0">GIFTS</a> -->
           </li>
 
           <li class="nav-item mx-3">
             <%= link_to root_path, class:"nav-link py-0" do %>
-              EXPLORE
+              BRACELETS
             <% end %>  
             <!-- <a href="# " class="nav-link py-0">EXPLORE</a> -->
           </li>
 
           <li class="nav-item mx-3">
             <%= link_to root_path, class:"nav-link py-0" do %>
-              PERSONALIS
+              EARRINGS
             <% end %> 
             <!-- <a href="# " class="nav-link py-0">PERSONALISE</a> -->
           </li>
+
+          <li class="nav-item mx-3 P-search-box-mobile mb-2">
+            <form class="P-home-search-mobile">
+              <input type="text" class="P-input-home-search-mobile" name="search" placeholder="I'm looking for ...">
+              <button class="P-submit-search" type="submit">
+                <i class="fa fa-search" style="color: white;"></i>
+              </button>
+            </form>
+          </li>
         </ul>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end text-center width-50">
+        <form class="P-home-search">
+          <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
+          <button class="P-submit-search" type="submit">
+              <i class="fa fa-search" style="color: white;"></i>
+          </button>
+        </form>
       </div>
     </nav>
 
