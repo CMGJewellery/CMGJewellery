@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>CMGJewellery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +11,138 @@
 
   <body>
     
+    <!-- brand -->
+    <div class="container-fluid pb-0 pt-1">
+      <div class="row">
+        <div class="col-md-3 text-center" id="P-login">
+        <i class="fa fa-user"></i>
+        <%= link_to 'Sign In', root_path, class:"mt-3 P-login"%> 
+        <span> / </span> 
+        <%= link_to 'Register', root_path, class:"mt-3 P-login" %>
+        </div>
+
+        <div class="col-md-6">
+          <%= link_to root_path, id:"P-brand" do %>
+            <p class="h1 text-center">CMG Jewellery</p>
+          <% end %>
+          <!-- <a href="index.html" id="P-brand">
+            <p class="h1 text-center">CMG Jewellery</p>
+          </a> -->
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="input-group w-100 text-center" id="P-home-search">
+            <input class="form-control form-control-dark P-input-home-search" type="text" placeholder="I'm looking for ..." aria-label="Search">
+              <div class="input-group-append mr-2">
+                <button class="btn btn-outline-dark P-input-home-search" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+              <i class="fa fa-shopping-cart" style="font-size: 30px;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top py-0">
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#collape-navbar-p">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              NEW IN
+            <% end %>
+            <!-- <a href="# " class="nav-link py-0">NEW IN</a> -->
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              JEWELLRY
+            <% end %>
+            <!-- <a href="# " class="nav-link py-0">JEWELLRY</a> -->
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              GIFTS
+            <% end %>
+            <!-- <a href="# " class="nav-link py-0">GIFTS</a> -->
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              EXPLORE
+            <% end %>  
+            <!-- <a href="# " class="nav-link py-0">EXPLORE</a> -->
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              PERSONALIS
+            <% end %> 
+            <!-- <a href="# " class="nav-link py-0">PERSONALISE</a> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-bottom mt-2 py-0 justify-content-center" id="P-footer">
+      <div id="P-footer-list">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item mx-3 P-footer-item">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              CONTACT US
+            <% end %>
+            <!-- <a href="# " class="nav-link py-0">CONTACT US</a> -->
+          </li>
+
+          <li class="nav-item mx-3 P-footer-item">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              FAQs
+            <% end %>
+            <!-- <a href="# " class="nav-link py-0">FAQs</a> -->
+          </li>
+
+          <li class="nav-item mx-3 P-footer-item">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              DELIVERY
+            <% end %>
+            <!-- <a href="# " class="nav-link py-0">DELIVERY</a> -->
+          </li>
+        </ul>
+      </div>
+
+      <div id="P-footer-social">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item mx-1">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <% end %>
+          </li>
+
+          <li class="nav-item mx-1">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            <% end %>
+          </li>
+
+          <li class="nav-item mx-1">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid P-content-footer">
+      
+    </div>
   </body>
 </html>
