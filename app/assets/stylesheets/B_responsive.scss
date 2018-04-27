@@ -1,0 +1,92 @@
+@media screen and (max-width: 500px) {
+  .B-grid-container{
+    display: inherit !important;
+  }
+  .B-flex-container {
+    flex-direction: column;
+  }
+  .B-disappear-responsive{
+    display: none;
+  }
+  .B-appear-responsive{
+    display: block;
+  }
+  p, h4, .B-btn{
+    font-size: 4vw;
+  }
+  h3{
+    font-size: 7vw;
+  }
+  .B-collections-seller-link{
+    border: 1px solid #e7e7e7;
+    padding: 0;
+    margin: 1%;
+  }
+  .B-collections-seller{
+    margin: 1%;
+  }
+  .B-zodiac-container{
+    width: 90%;
+  }
+  .B-flower-bg{
+    background-image: asset-url('video-background-t.jpg');
+    height: 155vw;
+  }
+  .B-bangles-seller{
+    margin: 0 auto;
+    height: 80%;
+  }
+  .B-bangles-container{
+    position: static;
+    margin: 0 auto;
+    padding: 6% 0;
+    width: 90%;
+  }
+  .B-halo-hoops > div, .B-morganite{
+    border: none;
+  }
+  .B-morganite{
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  .B-morganite-container{
+    padding: 5% 4%;
+  }
+  .B-symbol-lockets, .B-jewellery-symbols{
+    margin: 0;
+  }
+  .B-jewellery-symbols{
+    display: flex;
+    flex-direction: column;
+  }
+  .B-lockets{
+    background-color: rgb(249,243,243); 
+    position: static;
+    padding: 5%;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+  p, h4, .B-btn{
+    font-size: 1.6vw;
+  }
+  h3{
+    font-size: 3.6vw;
+  }
+  .B-zodiac-container{
+    width: 80%;
+  }
+  .B-bangles-seller{
+    width: 90%;
+  }
+  .B-bangles-container{
+    top: 22%;
+    right: 8%;
+    width: 35%;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1025px) {
+}
