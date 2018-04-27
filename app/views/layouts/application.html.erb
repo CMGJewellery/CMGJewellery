@@ -14,25 +14,25 @@
     <!-- brand -->
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
-        <div class="col-md-3 text-center" id="P-login">
+        <div class="col-md-3 text-center">
         <i class="fa fa-user"></i>
-        <%= link_to 'Sign In', root_path, class:"mt-3 P-login"%> 
+        <%= link_to 'Sign In', root_path, class:"P-login"%> 
         <span> / </span> 
-        <%= link_to 'Register', root_path, class:"mt-3 P-login" %>
+        <%= link_to 'Register', root_path, class:"P-login" %>
         </div>
 
-        <div class="col-md-6">
-          <%= link_to root_path, id:"P-brand" do %>
-            <p class="h1 text-center">CMG Jewellery</p>
+        <div class="col-md-6 mb-0">
+          <%= link_to root_path do %>
+            <p class="h1 text-center P-brand">CMG Jewellery</p>
           <% end %>
           <!-- <a href="index.html" id="P-brand">
             <p class="h1 text-center">CMG Jewellery</p>
           </a> -->
         </div>
 
-        <div class="col-md-3 text-center">
+        <div class="col-md-3 mb-2 mt-0 text-center">
           <%= link_to root_path, class:"P-cart-wrap" do %>
-            <i class="fa fa-shopping-cart mt-3" style="font-size: 20px;"></i>
+            <i class="fa fa-shopping-cart" style="font-size: 20px;"></i>
             <span class="P-cart" >Shopping Cart</span>
             <span class="P-number-cart" >0</span>
           <% end %>
@@ -50,7 +50,7 @@
     </div>
 
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top py-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-0">
       <button class="navbar-toggler" data-toggle="collapse" data-target="#collape-navbar-p">
         <span class="navbar-toggler-icon "></span>
       </button>
