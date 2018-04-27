@@ -29,7 +29,7 @@
           </a> -->
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 mb-3">
           <div class="input-group w-100 text-center" id="P-home-search">
             <input class="form-control form-control-dark P-input-home-search" type="text" placeholder="I'm looking for ..." aria-label="Search">
               <div class="input-group-append mr-2">
@@ -91,24 +91,24 @@
 
     <%= yield %>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-bottom mt-2 py-0" id="P-footer">
-      <div class="collapse navbar-collapse justify-content-start" id="collape-navbar-p">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-bottom mt-2 py-0 justify-content-center" id="P-footer">
+      <div id="P-footer-list">
         <ul class="navbar-nav text-center">
-          <li class="nav-item mx-3">
+          <li class="nav-item mx-3 P-footer-item">
             <%= link_to root_path, class:"nav-link py-0" do %>
               CONTACT US
             <% end %>
             <!-- <a href="# " class="nav-link py-0">CONTACT US</a> -->
           </li>
 
-          <li class="nav-item mx-3">
+          <li class="nav-item mx-3 P-footer-item">
             <%= link_to root_path, class:"nav-link py-0" do %>
               FAQs
             <% end %>
             <!-- <a href="# " class="nav-link py-0">FAQs</a> -->
           </li>
 
-          <li class="nav-item mx-3">
+          <li class="nav-item mx-3 P-footer-item">
             <%= link_to root_path, class:"nav-link py-0" do %>
               DELIVERY
             <% end %>
@@ -117,7 +117,7 @@
         </ul>
       </div>
 
-      <div class="collapse navbar-collapse justify-content-end">
+      <div id="P-footer-social">
         <ul class="navbar-nav text-center">
           <li class="nav-item mx-1">
             <%= link_to root_path, class:"nav-link py-0" do %>
