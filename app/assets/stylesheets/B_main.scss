@@ -35,6 +35,10 @@ a:link, a:visited {
     justify-content: center;
     align-items: center;
 }
+.B-color-invert{
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
 .B-appear-responsive{
   display: none;
 }
