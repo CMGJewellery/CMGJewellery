@@ -12,25 +12,12 @@
     text-decoration: underline;
 }
 
-#P-brand {
-    color: black;
+.P-brand {
+    padding: 0;
 }
-
-#P-brand:hover {
-    text-decoration: none;
-}
-
-#P-brand:hover {
-    text-decoration: none;
-    color: black;
-}
-
 .P-login {
     color: black;
     font-size: 20px;
-}
-#P-login {
-    margin-top: 0.75%;
 }
 
 .P-login:hover{
@@ -100,30 +87,44 @@
     width: 100%;
     z-index: 1;
     position: relative;
+    filter: hue-rotate(20deg);
 }
 
 #P-about-content {
     z-index: 2;
     position: absolute;
-    top: 14em;
-    left: 9em;
+    top: 10em;
+    left: 7em;
     display: flex;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-#P-about-content>a>h4, #P-about-content>a>h2, #P-about-content>a>p, #P-about-content>a>div {
+#P-about-content-child-h4, #P-about-content-child-h2, #P-about-content-child-p, #P-about-content-child-bnt {
     color: white;
     text-align: center;
     width: 45%;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Yantramanav', sans-serif;
     // display: inline-block;
 }
 
-#P-about-content>a>h4 {
-    font-size: 20px;
+#P-about-content-child-h4 {
+    font-size: 25px;
+}
+
+#P-about-content-child-h2 {
+    font-size: 35px;
+    margin-top: -0.75%;
+}
+
+#P-about-content-child-p {
+    font-size: 18px;
+}
+
+#P-about-content-child-bnt>span {
+    font-size: 25px;
 }
 
 #P-about-content>a {
@@ -133,7 +134,7 @@
     font-size: 15px;
 }
 
-#P-about-content>a>div {
+#P-about-content-child-bnt {
     margin-top: 2em;
 }
 
@@ -147,7 +148,7 @@
     transition: 0.5s;
 }
 
-#P-about-content>a>div>span {
+#P-about-content-child-bnt>span {
     border: 1px solid white; 
     padding: 2% 20%;
 }
@@ -180,26 +181,39 @@
     #P-about-content {
         top: 3em;
     }
-    #P-about-content>a>h4 {
+    #P-about-content-child-h4 {
         font-size: 17px;
     }
-    #P-about-content>a>h2 {
+    #P-about-content-child-h2 {
         font-size: 22px;
+        margin-top: -1%;
     }
-    #P-about-content>a>p {
+    #P-about-content-child-p {
         font-size: 13px;
     }
-    #P-about-content>a>div {
+    #P-about-content-child-bnt {
         margin-top: 1em;
+    }
+    .P-login {
+        font-size: 17px;
+    }
+    .P-cart-wrap>span {
+        font-size: 17px;
     }
 } 
 
-@media (max-width: 765px) {
+@media (max-width: 770px) {
     #P-footer {
         position: relative;
     }
     .P-search-box-mobile {
         display: inline;
+    }
+    .P-login {
+        font-size: 14px;
+    }
+    .P-cart-wrap>span {
+        font-size: 14px;
     }
 }
 
@@ -208,41 +222,47 @@
         top: 1em;
         left: 2em;
     }
-    #P-about-content>a>div {
+    #P-about-content-child-bnt {
         margin-top: 0.5em;
     }
-    #P-about-content>a>h4, #P-about-content>a>h2, #P-about-content>a>p, #P-about-content>a>div {
+    #P-about-content-child-h4, #P-about-content-child-h2, #P-about-content-child-p, #P-about-content-child-bnt {
         width: 80%;
     }
-    #P-about-content>a>div>span {
+    #P-about-content-child-bnt>span {
         padding: 1% 20%;
     }
 }
 
 @media (max-width: 480px) {
-    #P-about-content>a>h4 {
+    #P-about-content-child-h4 {
         font-size: 15px;
     }
-    #P-about-content>a>h2 {
+    #P-about-content-child-h2 {
         font-size: 18px;
     }
-    #P-about-content>a>p {
+    #P-about-content-child-p {
         font-size: 10px;
     }
-    #P-about-content>a>div>span {
+    #P-about-content-child-bnt>span {
         font-size: 12px;
     }
-    #P-about-content>a>div {
+    #P-about-content-child-bnt {
         margin-top: 0.25em;
+    }
+    .P-login {
+        font-size: 15px;
+    }
+    .P-cart-wrap>span {
+        font-size: 15px;
     }
 }
 
 @media (max-width: 392px) {
-    #P-about-content>a>h4, #P-about-content>a>h2, #P-about-content>a>p, #P-about-content>a>div {
+    #P-about-content-child-h4, #P-about-content-child-h2, #P-about-content-child-p, #P-about-content-child-bnt {
         width: 95%;
     }
     #P-about-content {
         left: 0.25em;
-        bottom: 0;
+        bottom: 0.25em;
     }
 }

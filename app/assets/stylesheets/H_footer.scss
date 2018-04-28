@@ -1,0 +1,62 @@
+.footer{
+	color: white;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+}
+
+.footer .background{
+	position: absolute;
+	overflow: hidden;
+	height: 600px;
+}
+
+.footer .column{
+	width: 40%;
+    float: left;
+}
+
+.footer .column:nth-of-type(3){
+	width: 60%;
+}
+
+.footer .tittle{
+    color: white;
+    font-size: 35px;
+    margin-left: 8vw;
+    margin-top: 30px;
+}
+
+.footer .developers, .footer .address{
+	list-style-type: none;
+	margin: 20px 0 0 0;
+	padding: 0;
+    margin-left: 10vw;
+}
+
+.footer .copyright{
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin: 30px 0 10px 0;
+}
+
+@media (max-width: 680px){
+    
+	.footer .column, .footer .column:nth-of-type(3){
+        width: 100%;
+    }
+    .footer .tittle{
+        margin: 10px 0 0 0;
+    }
+    .footer .developers{
+        margin: 0;
+    }
+    .footer .address{
+        margin: 0 20px;
+    }
+    .footer{
+        text-align: center;
+    }
+}
