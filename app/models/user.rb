@@ -5,8 +5,8 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable, :confirmable,
   :lockable, :timeoutable
   
-  has_many :comments, class_name: "comment", foreign_key: "comment_id"
-  has_many :orders, class_name: "order", foreign_key: "order_id"
-  has_one :image, foreign_key: "image_id"
-  has_many :style_of_products, class_name: "style_of_product", foreign_key: "style_of_product_id"
+  has_many :comments
+  has_many :orders
+  has_one :image
+  has_many :style_of_products
 end

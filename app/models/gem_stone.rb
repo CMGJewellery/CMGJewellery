@@ -1,3 +1,3 @@
 class GemStone < ApplicationRecord
-  belongs_to :style_of_product
+  # belongs_to :product
 end
