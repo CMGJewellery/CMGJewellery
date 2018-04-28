@@ -42,3 +42,298 @@ a:link, a:visited {
 .B-appear-responsive{
   display: none;
 }
+.B-social-media{
+  margin-bottom: 7%;
+}
+
+// Buttons
+.B-btn{
+  transition: 0.3s;
+  background-color: transparent;
+  border: 0.1vw solid black;
+  color: black;
+  padding: 1vw 7vw;
+  font-size: 1.2vw;
+}
+.B-full-btn{
+  width: 90%;
+  margin: 1% auto;
+  padding: 1vw 1vw;
+}
+.B-white-button{
+  border: 0.1vw solid white;
+}
+.B-btn-hover-black:hover{
+  background-color: black;
+  border: 0.1vw solid white;
+  color: white;
+}
+.B-descendant-btn-hover-black:hover button{
+  background-color: black;
+  border: 0.1vw solid white;
+  color: white !important;
+}
+.B-descendant-btn-hover-white:hover button{
+  background-color: white;
+  border: 0.1vw solid black;
+  color: black;
+}
+
+// Fonts
+p{
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 400;
+  font-size: 1.2vw;
+  padding: 2%;
+}
+h3{
+  // font-family: 'Dancing Script', cursive !important;
+  font-family: 'Alex Brush', cursive !important;
+  margin: 0 auto;
+  font-size: 3vw;
+  font-weight: bold;
+}
+h4{
+  font-family: 'Lato', sans-serif !important;
+  margin: 3% auto;
+  color: #999;
+  font-size: 1.2vw;
+}
+.B-white-font{
+  color: white;
+}
+
+// Collections
+.B-collections-seller{
+  margin: 6% 10%;
+}
+.B-collections-seller-link{
+  padding: 4%;
+  position: relative;
+}
+.B-collections-animation{
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  margin: 4%;
+  width: 92%;
+  height: 82%;
+}
+.B-pink-bg-hover{
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(241, 233, 230);
+  opacity: 1;
+  transition: 0.5s;
+}
+.B-collections-description{
+  position: absolute;
+  overflow: hidden;
+  color: #2F4858;
+  padding: 2%;
+  width: 70%;
+  top: 40%;
+  left: -100%;
+  transition: 0.5s;
+}
+.B-collections-description::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+.B-collections-description:hover::after, .B-collections-description:focus::after {
+  animation: sheen 0.5s forwards;
+}
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+.B-collections-seller-link:hover .B-pink-bg-hover{  
+  top:0;
+  opacity: 0.6;
+}
+.B-collections-seller-link:hover .B-collections-description{  
+  left: 15%;
+  opacity: 1;
+}
+
+/* Zodiac pendants */
+.B-zodiac-pendants{
+  background-color: rgb(241, 233, 230);
+  margin-bottom: 7%;
+}
+.B-zodiac-pendants > div{
+  padding: 0;
+}
+.B-zodiac-container{
+  width: 60%;
+  height: 90%;
+  margin: 5% auto;
+}
+
+// Mille Bangles
+.B-flower-bg{
+  background-image: asset-url('video-background-d.jpg');
+  background-size: cover;
+  height: 60vw;
+  position: relative;
+}
+.B-bangles-seller{
+  margin: 0 auto;
+  width: 75%;
+  height: 80%;
+  border: 1vw solid #d1d3d9;
+}
+.B-bangles-container{
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  width: 28%;
+}
+
+// Halo Hoops
+.B-halo-hoops{
+  grid-template-columns: 65% 35%;
+  margin: 5% 2%;
+}
+.B-halo-hoops > div {
+  box-sizing: border-box;
+  margin: 0 2%;
+  padding: 4%;
+  border: 1px solid #e7e7e7;
+}
+.B-halo-hoops-container{
+  flex-direction: column;
+}
+
+// Morganite
+.B-morganite{
+  grid-template-columns: 35% 65%;
+  margin: 5% 2.7% 5% 3.2%;
+  border: 1px solid #e7e7e7;
+}
+.B-morganite-container{
+  padding: 5%;
+  flex-direction: column;
+}
+
+// Symbol Lockets
+.B-symbol-lockets{
+  margin: 0 3%;
+}
+.B-jewellery-symbols{
+  position: relative;
+  margin: 0 2%
+}
+.B-symbol-description{
+  position: absolute;
+  bottom: 5%;
+  padding: 0 3%;
+}
+.B-lockets{
+
+}
+
+// Responsive
+@media screen and (max-width: 500px) {
+  .B-grid-container{
+    display: inherit !important;
+  }
+  .B-flex-container {
+    flex-direction: column;
+  }
+  .B-disappear-responsive{
+    display: none;
+  }
+  .B-appear-responsive{
+    display: block;
+  }
+  p, h4, .B-btn{
+    font-size: 4vw;
+  }
+  h3{
+    font-size: 7vw;
+  }
+  .B-collections-seller-link{
+    border: 1px solid #e7e7e7;
+    padding: 0;
+    margin: 1%;
+  }
+  .B-collections-seller{
+    margin: 1%;
+  }
+  .B-zodiac-container{
+    width: 90%;
+  }
+  .B-flower-bg{
+    background-image: asset-url('video-background-t.jpg');
+    height: 155vw;
+  }
+  .B-bangles-seller{
+    margin: 0 auto;
+    height: 80%;
+  }
+  .B-bangles-container{
+    position: static;
+    margin: 0 auto;
+    padding: 6% 0;
+    width: 90%;
+  }
+  .B-halo-hoops > div, .B-morganite{
+    border: none;
+  }
+  .B-morganite{
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  .B-morganite-container{
+    padding: 5% 4%;
+  }
+  .B-symbol-lockets, .B-jewellery-symbols{
+    margin: 0;
+  }
+  .B-jewellery-symbols{
+    display: flex;
+    flex-direction: column;
+  }
+  .B-lockets{
+    background-color: rgb(249,243,243); 
+    position: static;
+    padding: 5%;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+  p, h4, .B-btn{
+    font-size: 1.6vw;
+  }
+  h3{
+    font-size: 3.6vw;
+  }
+  .B-zodiac-container{
+    width: 80%;
+  }
+  .B-bangles-seller{
+    width: 90%;
+  }
+  .B-bangles-container{
+    top: 22%;
+    right: 8%;
+    width: 35%;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1025px) {
+}
