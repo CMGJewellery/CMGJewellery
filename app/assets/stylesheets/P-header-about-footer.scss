@@ -22,14 +22,13 @@
     padding: 0;
 }
 .P-login {
-    color: white !important;
-    font-size: 15px;
+    color: black;
+    font-size: 20px;
     font-family: 'Contrail One', sans-serif
 }
 
 .P-login:hover{
     text-decoration: underline;
-    color: white;
 }
 
 .P-home-search {
@@ -54,9 +53,8 @@
     font-family: 'Contrail One', sans-serif;
 }
 
-.P-home-search-virtual{
-    // to balance navbar
-    opacity: 0;
+#P-search-submit {
+    display: none;
 }
 
 #P-submit-search {
@@ -81,13 +79,15 @@
     // margin-left: 5px;
     padding-left: 4px;
     padding-right: 4px;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
     border: 1px solid black;
     background-color: black;
     color: white;
     transition: 0.25s;
     border-radius: 20px;
     box-sizing: border-box;
+    position: relative;
+    bottom: 3px;
 }
 
 #P-home-about {
