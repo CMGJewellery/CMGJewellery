@@ -15,95 +15,48 @@
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
         <div class="col-md-3 text-center">
-        <i class="fa fa-user"></i>
-        <%= link_to 'Sign In', root_path, class:"P-login"%> 
-        <span> / </span> 
-        <%= link_to 'Register', root_path, class:"P-login" %>
         </div>
 
         <div class="col-md-6 mb-0">
           <%= link_to root_path do %>
             <p class="h1 text-center P-brand">CMG Jewellery</p>
           <% end %>
-          <!-- <a href="index.html" id="P-brand">
-            <p class="h1 text-center">CMG Jewellery</p>
-          </a> -->
         </div>
 
         <div class="col-md-3 mb-2 mt-0 text-center">
-          <%= link_to root_path, class:"P-cart-wrap" do %>
-            <i class="fa fa-shopping-cart" style="font-size: 20px;"></i>
-            <span class="P-cart" >Shopping Cart</span>
-            <span class="P-number-cart" >0</span>
-          <% end %>
-          <!-- <div class="input-group w-100 text-center" id="P-home-search">
-            <input class="form-control form-control-dark P-input-home-search" type="text" placeholder="I'm looking for ..." aria-label="Search">
-              <div class="input-group-append mr-2">
-                <button class="btn btn-outline-dark P-input-home-search" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-              <i class="fa fa-shopping-cart" style="font-size: 30px;"></i>
-          </div> -->
         </div>
       </div>
     </div>
 
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-0">
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#collape-navbar-p">
-        <span class="navbar-toggler-icon "></span>
+      <button class="navbar-toggler w-100" style="border: 0;" data-toggle="collapse" data-target="#collape-navbar-p">
+        <span class="navbar-toggler-icon float-left"></span>
+
+        <%= link_to root_path, class:"P-cart-wrap float-right" do %>
+            <i class="fa fa-shopping-cart" style="font-size: 20px; color: white;"></i>
+            <span class="P-number-cart" >0</span>
+        <% end %>
       </button>
 
-      <!-- Virtual search box to balance -->
-      <div class="collapse navbar-collapse justify-content-end text-center width-50 P-home-search-virtual">
-          <form class="P-home-search">
-            <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
-            <button type="submit">
-                <i class="fa fa-search" style="color: white;"></i>
-            </button>
-          </form>
+      <!-- Sign in/ register -->
+      <div class="collapse navbar-collapse justify-content-start text-center width-100 ml-3 mr-5 pr-5">
+        <i class="fa fa-user" style="color: white; font-size: 15px;" ></i>
+        <%= link_to root_path, class:"P-login ml-1" do %>
+          Sign In
+        <% end %> 
+        <span class="mx-1" style="color: white; font-size: 15px;"> / </span> 
+        <%= link_to root_path, class:"P-login" do %>
+          Register
+        <% end %>
       </div>
 
       <!-- Navigation option -->
       <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
         <ul class="navbar-nav text-center">
-          <li class="nav-item mx-3">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              NEW IN
-            <% end %>
-            <!-- <a href="# " class="nav-link py-0">NEW IN</a> -->
-          </li>
 
-          <li class="nav-item mx-3">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              NECKLACES
-            <% end %>
-            <!-- <a href="# " class="nav-link py-0">JEWELLRY</a> -->
-          </li>
-
-          <li class="nav-item mx-3">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              RINGS
-            <% end %>
-            <!-- <a href="# " class="nav-link py-0">GIFTS</a> -->
-          </li>
-
-          <li class="nav-item mx-3">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              BRACELETS
-            <% end %>  
-            <!-- <a href="# " class="nav-link py-0">EXPLORE</a> -->
-          </li>
-
-          <li class="nav-item mx-3">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              EARRINGS
-            <% end %> 
-            <!-- <a href="# " class="nav-link py-0">PERSONALISE</a> -->
-          </li>
-
-          <li class="nav-item mx-3 P-search-box-mobile mb-2">
+          <!-- Search box - mobile only -->
+          <li class="nav-item mx-3 P-search-box-mobile mt-2 ml-5">
             <form class="P-home-search-mobile">
               <input type="text" class="P-input-home-search-mobile" name="search" placeholder="I'm looking for ...">
               <button class="P-submit-search" type="submit">
@@ -111,16 +64,68 @@
               </button>
             </form>
           </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              NEW IN
+            <% end %>
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              NECKLACES
+            <% end %>
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              RINGS
+            <% end %>
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              BRACELETS
+            <% end %>  
+          </li>
+
+          <li class="nav-item mx-3">
+            <%= link_to root_path, class:"nav-link py-0" do %>
+              EARRINGS
+            <% end %> 
+          </li>
+          
+          <!-- Sign in - mobile only -->
+          <li class="nav-item mx-3 P-login-mobile">
+              <%= link_to root_path, class:"nav-link py-0" do %>
+                SIGN IN
+              <% end %> 
+          </li>
+          
+          <!-- Register - mobile only -->
+          <li class="nav-item mx-3 P-login-mobile">
+              <%= link_to root_path, class:"nav-link py-0" do %>
+                REGISTER
+              <% end %> 
+          </li>
         </ul>
       </div>
 
-      <div class="collapse navbar-collapse justify-content-end text-center width-50">
+      <!-- Search box -->
+      <div class="collapse navbar-collapse justify-content-end width-50">
         <form class="P-home-search">
           <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
-          <button class="P-submit-search" type="submit">
+          <button class="P-submit-search px-2" type="submit">
               <i class="fa fa-search" style="color: white;"></i>
           </button>
         </form>
+
+        <!-- cart -->
+        <%= link_to root_path, class:"P-cart-wrap mr-3" do %>
+            <i class="fa fa-shopping-cart" style="font-size: 20px; color: white;"></i>
+            <!-- <span class="P-cart" >Shopping Cart</span> -->
+            <span class="P-number-cart" >0</span>
+        <% end %>
       </div>
     </nav>
 
@@ -185,8 +190,8 @@
       
       <!-- footer content -->
       <div class="column">
-      	<div class="tittle">Developers</div>
-      	<ul class="developers">
+      	<div class="tittle text-center">Developers</div>
+      	<ul class="developers text-center">
       		<li>Hoang Yen Minh</li>
       		<li>Pham Duc Binh</li>
       		<li>Tran Thien Phuc</li>
@@ -195,8 +200,8 @@
       </div>
 
       <div class="column">
-      	<div class="tittle">Address</div>
-        <div class="address">
+      	<div class="tittle text-center">Address</div>
+        <div class="address text-center">
           F-CODE Club<br>
       		FPT University<br>
       		Innovation Building, Block 24, Quang Trung Software City,<br>
@@ -204,7 +209,7 @@
       	</div>
       </div>
 
-      <div class="copyright">© Astley Clarke Limited 2018 - Most Rights Reserved</div>
+      <div class="copyright">© CMG Jewellery 2018 - Most Rights Reserved</div>
     </div>
     <!-- nhớ là chỉ đụng khúc này -->
   </body>

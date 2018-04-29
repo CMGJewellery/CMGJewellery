@@ -5,11 +5,11 @@ $(document).ready(function(){
     $(".P-input-home-search").css("width", "80%");
   },);
 
-  // Hide search box
-  $(".P-input-home-search").focusout(function(){
-    $(".P-input-home-search").css("opacity", "0");
-    $(".P-input-home-search").css("width", "0%");
-  });
+  // // Hide search box
+  // $(".P-input-home-search").focusout(function(){
+  //   $(".P-input-home-search").css("opacity", "0");
+  //   $(".P-input-home-search").css("width", "0%");
+  // });
 
   // Hide search box
   $(".P-input-home-search").mouseout(function(){

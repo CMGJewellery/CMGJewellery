@@ -43,7 +43,12 @@
 }
 
 @media (max-width: 680px){
-    
+    .footer .title {
+        font-size: 25px;
+    }
+    .developers, .address {
+        font-size: 12px;
+    }
 	.footer .column, .footer .column:nth-of-type(3){
         width: 100%;
     }
