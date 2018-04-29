@@ -43,7 +43,10 @@ a:link, a:visited {
   display: none;
 }
 .B-social-media{
-  margin-bottom: 7%;
+  margin: 0 1.8% 7% 2.2%;
+}
+.B-social-media > h4{
+  margin: 1% auto;
 }
 
 // Buttons
@@ -229,7 +232,7 @@ h4{
 
 // Symbol Lockets
 .B-symbol-lockets{
-  margin: 0 3%;
+  margin: 0 1.8% 5% 2.2%;
 }
 .B-jewellery-symbols{
   position: relative;
