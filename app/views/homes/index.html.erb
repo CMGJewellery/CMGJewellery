@@ -1,5 +1,399 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<h1>Homes</h1>
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign in', new_user_session_path %>
+<!-- about -->
+<div id="P-home-about">
+  <!-- <img src="img/eternity-bracelets-d.jpg"> -->
+  <%= image_tag 'eternity-bracelets-d.jpg' %>
+  <div class="P-home-filter"></div>
+  <!-- <picture>
+		<source srcset="eternity-bracelets-m.jpg" media="(max-width: 660px)">
+		<source srcset="eternity-bracelets-d.jpg" media="(max-width: 1500px)">
+		<%= image_tag 'eternity-bracelets-d.jpg' %>
+  </picture>       -->
+  <div id="P-about-content">
+    <a href="#">
+      <div style="flex: 1;" id="P-about-content-child-h4">
+        New In
+      </div>
+      <div style="flex: 2;" id="P-about-content-child-h2">
+        Eternity Bracelets
+      </div>
+      <div style="flex: 3;" id="P-about-content-child-p">
+        Welcome eye-catching elevation into your bracelet collections. The gentle arch of channel-set white sapphires makes the new adjustable Eternity Bracelet an integral addition to day-and-night decoration.
+      </div>
+      <div style="flex: 4" id="P-about-content-child-bnt">
+        <span>SHOP NOW</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- 4 Jewellery Collections -->
+  <div class="B-collections-seller">
+    <h4 class="B-disappear-responsive">Explore Fine and Demi-Fine Jewellery Collections</h4>
+    <div class="B-flex-container"> 
+      <div class="B-grid-container"> 
+        <div>
+          <%= link_to root_path, class:"B-big-link B-collections-seller-link" do %>
+            <%= image_tag 'top-promo-necklaces-d.jpg', class:'B-img'%>
+            <div class="B-collections-animation">
+              <div class="B-pink-bg-hover">
+              </div>
+              <button class="B-btn B-collections-description"><h3>Shop</h3></button>
+            </div>
+            <h3>Necklaces</h3>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to root_path, class:"B-big-link B-collections-seller-link" do %>
+            <%= image_tag 'top-promo-rings-d.jpg', class:'B-img' %>
+            <div class="B-collections-animation">
+              <div class="B-pink-bg-hover">
+              </div>
+              <button class="B-btn B-collections-description"><h3>Shop</h3></button>
+            </div>
+            <h3>Rings</h3>
+          <% end %>
+        </div>
+      </div>
+      <div class="B-grid-container">
+        <div>
+          <%= link_to root_path, class:"B-big-link B-collections-seller-link" do %>
+            <%= image_tag 'top-promo-bracelets-d.jpg', class:'B-img' %>
+            <div class="B-collections-animation">
+              <div class="B-pink-bg-hover">
+              </div>
+              <button class="B-btn B-collections-description"><h3>Shop</h3></button>
+            </div>
+            <h3>Bracelets</h3>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to root_path, class:"B-big-link B-collections-seller-link" do %>
+            <%= image_tag 'top-promo-earrings-d.jpg', class:'B-img' %>
+            <div class="B-collections-animation">
+              <div class="B-pink-bg-hover">
+              </div>
+              <button class="B-btn B-collections-description"><h3>Shop</h3></button>
+            </div>
+            <h3>Earrings</h3>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Zodiac Pendants -->
+  <div class="B-grid-container B-zodiac-pendants">
+    <div class="B-disappear-responsive">
+      <%= image_tag 'astronomy-jewellery-d.jpg', class:'B-img' %>
+    </div>
+    <div>
+      <div class="B-zodiac-container">
+        <div>
+          <h4>Discover</h4>
+          <h3>Zodiac Pendants</h3>
+          <p>Experiment with three alternate engraving fonts to add a set of initials to our luxurious zodiac pendants for an extra touch of personalisation.</p>
+          <!-- Bootstrap --> 
+          <!-- TODO Add the last 8 signs -->
+          <div id="carouselZodiac" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <%= image_tag 'Astley-Clarke-Capricorn-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39047YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Capricorn</h3>
+                <p>22nd December - 19th January</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP CAPRICORN JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Aquarius-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39054YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Aquarius</h3>
+                <p>20th January - 20th February</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP AQUARIUS JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Pisces-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39049YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Pisces</h3>
+                <p>19th February - 20th March</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP PISCES JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Aries-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39050YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Aries</h3>
+                <p>21st March - 19th April</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP ARIES JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Taurus-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39051YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Taurus</h3>
+                <p>20st April - 20th May</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP TAURUS JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Gemini-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39052YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Gemini</h3>
+                <p>21st May - 20th June</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP GEMINI JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Cancer-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39046YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Cancer</h3>
+                <p>21st June - 22nd July</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP CANCER JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Leo-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39053YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Leo</h3>
+                <p>23rd July - 22nd August</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP LEO JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Virgo-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39054YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Virgo</h3>
+                <p>23rd August - 22nd September</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP VIRGO JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Libra-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39055YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Libra</h3>
+                <p>23rd September - 22nd October</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP LIBRA JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Scorpio-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39056YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Scorpio</h3>
+                <p>23rd October - 21st November</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP SCORPIO JEWELLERY</button>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Astley-Clarke-Sagittarius-Zodiac-Biography-Pendant-Yellow-Gold-(Vermeil)-39057YNON.jpg', class:'d-block w-100', data: {holder:'true'} %>
+                <h3>Sagittarius</h3>
+                <p>22nd November - 21st December</p> 
+                <button class="B-btn B-full-btn B-btn-hover-black">ENGRAVE THIS PENDANT</button>
+                <button class="B-btn B-full-btn B-btn-hover-black">SHOP SAGITTARIUS JEWELLERY</button>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselZodiac" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon B-color-invert" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselZodiac" role="button" data-slide="next">
+              <span class="carousel-control-next-icon B-color-invert" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>       
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bangles -->
+  <div class="B-flex-container B-flower-bg">
+    <%= link_to root_path, class:"B-big-link" do %>
+      <div class="B-bangles-container B-white-font B-descendant-btn-hover-white">
+        <h4>Introducing</h4>
+        <h3>Mille Bangles</h3>
+        <p>The latest stackable bracelets are unveiled. As part of the demi-fine Floris jewellery collection and featuring its signature surface decoration, the MilleBangles thoughtfully composed, luxuriously crafted and may be engraved with a personal message.</p>   
+        <button class="B-btn B-white-button B-white-font">SHOP NOW</button>
+      </div>
+      <div class="B-disappear-responsive"> 
+        <%= image_tag 'video-cover-d.jpg', class:'B-bangles-seller' %>
+      </div> 
+      <div class="B-appear-responsive">
+        <%= image_tag 'video-cover-t.jpg', class:'B-bangles-seller' %>
+      </div>
+    <% end %>
+  </div>
+  <!-- Halo Hoops Earrings -->
+  <div>
+    <%= link_to root_path, class:"B-big-link B-grid-container B-halo-hoops B-descendant-btn-hover-black" do %>
+      <div>
+        <%= image_tag 'halo-hoops-d.jpg', class:'B-img' %>
+      </div>
+      <div class="B-flex-container B-halo-hoops-container">
+        <h4>Best-Sellers</h4>
+        <h3>Halo Hoop Earrings</h3>
+        <hr>
+        <p>The latest stackable bracelets are unveiled. As part of the demi-fine Floris jewellery collection and featuring its signature surface decoration, the MilleBangles thoughtfully composed, luxuriously crafted and may be engraved with a personal message.</p>   
+        <button class="B-btn">SHOP ALL</button>
+      </div>
+    <% end %>
+  </div>
+  <!-- Morganite -->
+  <div>
+    <%= link_to root_path, class:"B-big-link B-grid-container B-morganite B-descendant-btn-hover-black" do %>
+      <div class="B-flex-container B-morganite-container">
+        <h4>New In</h4>
+        <h3>The Morganite Movement</h3>
+        <hr>
+        <p>Pear and Oval cuts extend the best-selling pink morganite ring collection. Each gemstone is framed by a halo of brilliant-cut diamonds set in 14ct rose gold and is the perfect gesture to mark any milestone.</p>   
+        <button class="B-btn">DISCOVER YOURS</button>
+      </div>
+      <div>
+        <%= image_tag 'morganite-d.jpg', class:'B-img' %>
+      </div>  
+    <% end %>
+  </div>
+  <!-- Symbols and lockets -->
+  <div class="B-grid-container B-symbol-lockets">
+    <%= link_to root_path, class:"B-big-link B-jewellery-symbols B-descendant-btn-hover-white" do %>
+      <%= image_tag 'biography-promo-d.jpg', class:'B-img' %>
+      <div class="B-symbol-description B-white-font">
+        <h4 class="B-white-font">Discover Biography</h4>
+        <h3>Jewellery with Symbols</h3>
+        <p>Featuring semi-precious gemstone beads and white sapphire charms, our Biography pieces make perfect gifts for enduring sentimentality. What do the Evil Eye, Lightning Bolt, Hamsa or Cosmos symbols mean to you?</p>   
+        <button class="B-btn B-white-button B-white-font">SHOP NOW</button>
+      </div>
+    <% end %>
+    <%= link_to root_path, class:"B-big-link B-jewellery-symbols B-descendant-btn-hover-black" do %>
+      <%= image_tag 'locket-promo-d.jpg', class:'B-img B-disappear-responsive' %>
+      <%= image_tag 'locket-promo-t.jpg', class:'B-img B-appear-responsive' %>
+      <div class="B-symbol-description B-lockets">
+        <h4>Gifting</h4>
+        <h3>Locket Necklaces</h3>
+        <p>Experiment with three engraving fonts to Add a name, set of initials, short message or date to one of our luxurious locket pendants. Gift with a photograph or keepsake inside for a truly personal jewellery gift.</p>   
+        <button class="B-btn">SHOP NOW</button>
+      </div>
+    <% end %>
+  </div>
+  <!-- Social Media -->
+  <div class="B-social-media">
+    <h4>Follow Us</h4>
+    <h3>@astleyclarke</h3>
+    <div id="carouselSocialMedia" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="B-flex-container"> 
+            <div class="B-grid-container"> 
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '1.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '2.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+            <div class="B-grid-container">
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '3.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '4.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="B-flex-container"> 
+            <div class="B-grid-container"> 
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '5.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '6.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+            <div class="B-grid-container">
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '7.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '8.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="B-flex-container"> 
+            <div class="B-grid-container"> 
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '9.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '10.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+            <div class="B-grid-container">
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '11.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '12.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="B-flex-container"> 
+            <div class="B-grid-container"> 
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '13.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '14.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+            <div class="B-grid-container">
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '15.jpg', class:'B-img' %>
+                </a>
+              </div>
+              <div>
+                <a href="#" class="B-big-link B-collections-seller-link">
+                  <%= image_tag '16.jpg', class:'B-img' %>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselSocialMedia" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon B-color-invert" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselSocialMedia" role="button" data-slide="next">
+        <span class="carousel-control-next-icon B-color-invert" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>   
+  </div>
+
+<%#<h1>Homes</h1>
+<%#= link_to 'Sign up', new_user_registration_path %>
+<%#= link_to 'Sign in', new_user_session_path %>
