@@ -1,0 +1,71 @@
+.P-product-header {
+  background: asset-url('aubar-bracelets.jpg') no-repeat;
+  background-position-x: center;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.P-product-heading {
+  margin-top: 2%;
+}
+
+.P-product-content {
+  width: 60%;
+  margin-bottom: 0;
+}
+
+.P-product-filter {
+  position: sticky;
+  top: 40px;
+  border-bottom: 1px solid black;
+  background: white;
+  height: 35px;
+}
+
+.P-filter-cate-content {
+  position: absolute;
+  top: 35px;
+}
+
+.P-wrap-filter-cate {
+  list-style-type: none;
+}
+
+.P-filter-cate, .P-filter-clear, .P-filter-sort {
+  display: inline;
+  margin: 5px 5%;
+  cursor: pointer;
+}
+
+.P-filter-cate, .P-filter-clear {
+  float: left;
+}
+
+.P-filter-clear {
+  display: none;
+}
+
+.P-filter-sort {
+  float: right;
+}
+
+.P-filter-cate-content {
+  position: absolute;
+  // display: none;
+}
+
+.P-filter-cate-content-item {
+  list-style-type: none;
+  text-align: left;
+}
+
+.P-filter-cate-content-item-color {
+  width: 1px;
+  height: 1px;
+}
+
+.P-clear-float {
+  clear: both;
+}
