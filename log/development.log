@@ -1000,6 +1000,7 @@ Processing by HomesController#index as HTML
 Completed 200 OK in 1507ms (Views: 1505.8ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-04-26 12:13:20 +0700
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomesController#index as HTML
@@ -7467,5 +7468,13 @@ Processing by HomesController#index as HTML
   Rendering homes/index.html.erb within layouts/application
   Rendered homes/index.html.erb within layouts/application (10229.6ms)
 Completed 200 OK in 10588ms (Views: 10569.2ms | ActiveRecord: 0.0ms)
+=======
+Started GET "/" for 127.0.0.1 at 2018-04-30 12:13:27 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (15830.7ms)
+Completed 200 OK in 16366ms (Views: 16345.4ms | ActiveRecord: 0.0ms)
+>>>>>>> 7cd95aa92bf58632d0ea0e0c43d9e76b4980b7f2
 
 
