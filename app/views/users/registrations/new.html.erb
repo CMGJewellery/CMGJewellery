@@ -2,10 +2,9 @@
 <html class="B-body-form">
   <head>
     <title>CMGJewellery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="B-body-form B-flex-container">
     <div class="B-registration-container">
@@ -16,7 +15,7 @@
           <%= devise_error_messages! %>
             <div class="field">
               <%= f.label :name %><br />
-              <%= f.email_field :name, autofocus: true, autocomplete: "name", class:'B-text-input' %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'B-text-input' %>
             </div>
 
             <div class="field">
@@ -38,9 +37,10 @@
             </div>
           
             <div class="B-grid-container B-form-button-container">
-              <button class="B-form-button B-back-button">Go Back</button>
+              <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
+              <!-- <button class="B-form-button B-back-button">Go Back</button> -->
               <div class="actions">
-                <%= f.submit "Sign up", class:"B-form-button" %>
+                <%= f.submit "Sign Up", class:"B-form-button" %>
               </div>   
             <div>          
           <% end %>
@@ -48,5 +48,6 @@
       </div>  
       <%= render "users/shared/links" %>
     </div>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </body>
 </html>

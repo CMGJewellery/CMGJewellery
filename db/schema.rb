@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20180425040838) do
     t.date "birthday"
     t.string "gender"
     t.string "phone"
-    t.string "role"
+    t.string "role", default: "user"
     t.string "provider"
     t.string "uid"
     t.string "address"

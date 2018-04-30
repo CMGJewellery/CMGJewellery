@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
     add_column :users, :birthday, :date
     add_column :users, :gender, :string
     add_column :users, :phone, :string
-    add_column :users, :role, :string
+    add_column :users, :role, :string, default: 'user'
     add_column :users, :provider, :string
     add_column :users, :uid, :string
     add_column :users, :address, :string
