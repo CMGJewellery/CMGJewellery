@@ -13,12 +13,20 @@
 
 .P-product-content {
   width: 60%;
+  margin-bottom: 0;
 }
 
 .P-product-filter {
   position: sticky;
-  top: 0;
-  left: 0;
+  top: 40px;
+  border-bottom: 1px solid black;
+  background: white;
+  height: 35px;
+}
+
+.P-filter-cate-content {
+  position: absolute;
+  top: 35px;
 }
 
 .P-wrap-filter-cate {
@@ -27,7 +35,7 @@
 
 .P-filter-cate, .P-filter-clear, .P-filter-sort {
   display: inline;
-  margin: 1% 5%;
+  margin: 5px 5%;
   cursor: pointer;
 }
 
@@ -43,8 +51,9 @@
   float: right;
 }
 
-.P-filter-cate-wrap-content {
-  // position: sticky;
+.P-filter-cate-content {
+  position: absolute;
+  // display: none;
 }
 
 .P-filter-cate-content-item {

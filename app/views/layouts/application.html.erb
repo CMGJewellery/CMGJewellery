@@ -14,7 +14,7 @@
     <!-- brand -->
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
-        <div class="col-md-3 mt-2 text-center">
+        <div class="col-md-3 mt-2 text-center P-login">
           <i class="fa fa-user" style="color: black; font-size: 20px;" ></i>
           <%= link_to root_path, class:"P-login ml-1" do %>
             Sign In
@@ -48,23 +48,15 @@
       </button>
 
       <!-- Sign in/ register virtual to balance left right -->
-      <div class="collapse navbar-collapse justify-content-start text-center width-100" style="opacity: 0">
-        <form class="P-home-search" style="opacity: 0;">
-          <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
-          <button class="P-submit-search px-2" type="button">
-              <i class="fa fa-search" style="color: white;"></i>
-          </button>
-          <button class="P-submit-search px-2" type="submit">
-              <i class="fa fa-search" style="color: white;"></i>
-          </button>
-        </form>
-
-        <!-- cart -->
-        <!-- <%= link_to root_path, class:"P-cart-wrap mr-3" do %>
-            <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
-            <span class="P-cart" >Shopping Cart</span>
-            <span class="P-number-cart mb-3" >0</span>
-        <% end %> -->
+      <div class="collapse navbar-collapse justify-content-start text-center width-100 ml-3 mr-5 pr-5" style="opacity: 0">
+        <i class="fa fa-user" style="color: white; font-size: 15px;" ></i>
+        <div class="ml-1">
+          Sign In
+        </div>
+        <span class="mx-1" style="color: white; font-size: 15px;"> / </span> 
+        <div>
+          Register
+        </div>
       </div>
 
       <!-- Navigation option -->
@@ -83,7 +75,7 @@
 
           <li class="nav-item mx-3">
             <%= link_to root_path, class:"nav-link py-0" do %>
-              NEW IN
+              NEWIN
             <% end %>
           </li>
 
@@ -140,7 +132,7 @@
         </form>
 
         <!-- cart -->
-        <%= link_to root_path, class:"P-cart-wrap mr-3" do %>
+        <%= link_to root_path, class:"P-cart-wrap mr-0" do %>
             <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
             <!-- <span class="P-cart" >Shopping Cart</span> -->
             <span class="P-number-cart mb-3" >0</span>
