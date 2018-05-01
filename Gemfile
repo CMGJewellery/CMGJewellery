@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 4.1.0'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 gem 'jquery-validation-rails'
+gem 'jquery-ui-rails'
 # support window
 # gem 'wdm'
 group :production do
