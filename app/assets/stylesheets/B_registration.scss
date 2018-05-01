@@ -22,14 +22,14 @@
   font-size: 1.2vw;
   font-weight: 550;
 }
-.B-form-fields{
+.B-form-container{
+  margin: 6% 8%;
+  height: 90%;
+}
+.B-registration-form-fields{
   display: grid;
   height: 80%;
   grid-template-rows: 20% 20% 20% 20% 20%;
-}
-.B-form-container{
-  margin: 5% 8%;
-  height: 90%;
 }
 .B-text-input{
   width: 80%;

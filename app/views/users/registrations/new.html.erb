@@ -1,3 +1,4 @@
+<%# Using B_registration %>
 <!DOCTYPE html>
 <html class="B-body-form">
   <head>
@@ -6,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="B-body-form B-flex-container">
+
+  <body class="B-flex-container B-body-form">
     <div class="B-registration-container">
       <div class="B-registration-form">
         <div class="B-form-container">
           <center><h3>Sign up</h3></center>
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class: 'B-form-fields'}) do |f| %>
-          <%= devise_error_messages! %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class: 'B-registration-form-fields'}) do |f| %>
+          <%#= devise_error_messages! %>
             <div class="field">
               <%= f.label :name %><br />
               <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'B-text-input' %>
