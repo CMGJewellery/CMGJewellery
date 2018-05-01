@@ -14,7 +14,7 @@
     <!-- brand -->
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
-        <div class="col-md-3 mt-2 text-center P-login">
+        <div class="col-md-3 mt-2 text-center P-login-wrap">
           <i class="fa fa-user" style="color: black; font-size: 20px;" ></i>
           <%= link_to root_path, class:"P-login ml-1" do %>
             Sign In
@@ -25,7 +25,7 @@
           <% end %>
         </div>
 
-        <div class="col-md-6 mb-0">
+        <div class="col-md-5 mb-0">
           <%= link_to root_path do %>
             <p class="h1 text-center P-brand">CMG Jewellery</p>
           <% end %>
@@ -60,10 +60,7 @@
       </div> -->
 
       <!-- cart -->
-      <%= link_to root_path, class:"P-cart-wrap mx-5" do %>
-        <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
-        <span class="P-number-cart mb-3" >0</span>
-      <% end %>
+      <div class="mx-5 px-3"></div>
 
       <!-- Navigation option -->
       <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
@@ -134,6 +131,10 @@
           <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
         </button>
       </form>
+      <%= link_to root_path, class:"P-cart-wrap mx-2" do %>
+        <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
+        <span class="P-number-cart mb-3" >0</span>
+      <% end %>
     </nav>
 
     <%= yield %>
