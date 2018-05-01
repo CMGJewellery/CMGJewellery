@@ -1,26 +1,45 @@
-<h2>Log in</h2>
+<%# Using B_login and B_registration %>
+<!DOCTYPE html>
+<html class="B-body-form">
+  <head>
+    <title>CMGJewellery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <body class="B-flex-container B-body-form">
+    <div class="B-login-container">
+      <div class="B-login-form">
+        <div class="B-form-container">
+          <center><h3>Log In</h3></center>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: 'B-login-form-fields'}) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
+            </div>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
+            </div>    
+            <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
+            <div class="B-grid-container B-form-button-container">
+              <button class="B-form-button B-back-button">Go Back</button>
+              <div class="actions">
+              <%= f.submit "Log in", class:"B-form-button" %>
+              </div>      
+            </div>  
+          <% end %>
+          <%= render "users/shared/links" %>
+        </div>
+      </div>  
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  </body>
+</html>
