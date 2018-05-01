@@ -13,13 +13,13 @@
     <!-- brand -->
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
-        <div class="col-md-3 mt-2 text-center P-login-wrap">
-          <i class="fa fa-user" style="color: black; font-size: 20px;" ></i>
-          <%= link_to root_path, class:"P-login ml-1" do %>
+        <div class="col-md-3 mt-2 text-center">
+          <i class="fa fa-user P-login-wrap" style="color: black; font-size: 20px;" ></i>
+          <%= link_to root_path, class:"P-login P-login-wrap ml-1" do %>
             Sign In
           <% end %> 
-          <span class="mx-1" style="color: black; font-size: 20px;"> / </span> 
-          <%= link_to root_path, class:"P-login" do %>
+          <span class="mx-1 P-login-wrap" style="color: black; font-size: 20px;"> / </span> 
+          <%= link_to root_path, class:"P-login P-login-wrap" do %>
             Register
           <% end %>
         </div>
@@ -122,11 +122,9 @@
       </div>
 
       <!-- Search box -->
-<<<<<<< HEAD
       
       <form class="P-home-search">
         <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
-        <div id="P-overlay-search">fbdfbd</div>
         <button class="P-submit-search px-2" type="submit">
           <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
         </button>
@@ -135,26 +133,6 @@
         <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
         <span class="P-number-cart mb-3" >0</span>
       <% end %>
-=======
-      <div class="collapse navbar-collapse justify-content-end width-50">
-        <form class="P-home-search">
-          <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
-          <button class="P-submit-search px-2" type="button" id="P-search-bnt">
-              <i class="fa fa-search" style="color: white;"></i>
-          </button>
-          <button class="P-submit-search px-2" type="submit" id="P-search-submit">
-              <i class="fa fa-search" style="color: white;"></i>
-          </button>
-        </form>
-
-        <!-- cart -->
-        <%= link_to root_path, class:"P-cart-wrap mr-0" do %>
-            <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
-            <!-- <span class="P-cart" >Shopping Cart</span> -->
-            <span class="P-number-cart mb-3" >0</span>
-        <% end %>
-      </div>
->>>>>>> pbh/homepage
     </nav>
 
     <%= yield %>
