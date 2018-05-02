@@ -38,26 +38,26 @@ style_product = StyleOfProduct.create!([
 ])
 
 gemstone = GemStone.create!([
-  {name: 'Pearl'},
-  {name: 'Moonstone'},
-  {name: 'Apatite'},
-  {name: 'Cultured Freshwater Pearl'},
-  {name: 'Cultured White Sapphire'},
-  {name: 'Diamond'},
-  {name: 'Ruby'},
-  {name: 'Sapphire'},
-  {name: 'Rose Quartz'},
-  {name: 'Pink Opal'}
+  {name: 'Pearl', color: '#FFFFFF'},
+  {name: 'Moonstone', color: '#F4F8F0'},
+  {name: 'Apatite', color: '#8DD2C1'},
+  {name: 'Cultured Freshwater Pearl', color: '#F0F2E4'},
+  {name: 'Cultured White Sapphire', color: '#EBEDDF'},
+  {name: 'Diamond', color: '#FAFDFC'},
+  {name: 'Ruby', color: '#934049'},
+  {name: 'Sapphire', color: '#2E51C8'},
+  {name: 'Rose Quartz', color: '#F3B5CA'},
+  {name: 'Pink Opal', color: '#EAEAEA'}
 
 ])
 metal = Metal.create!([
-  {name: 'Black Ruthenium Plated'},
-  {name: 'Rose Gold (Solid)'},
-  {name: 'Rose Gold (Vermeil)'},
-  {name: 'Sterling Silver'},
-  {name: 'White Gold (Solid)'},
-  {name: 'Yellow Gold (Solid)'},
-  {name: 'Yellow Gold (Vermeil)'}
+  {name: 'Black Ruthenium Plated', color: '#020202'},
+  {name: 'Rose Gold (Solid)', color: '#FEE6D4'},
+  {name: 'Rose Gold (Vermeil)', color: '#E38450'},
+  {name: 'Sterling Silver', color: '#CECECE'},
+  {name: 'White Gold (Solid)', color: '#F7F7F7'},
+  {name: 'Yellow Gold (Solid)', color: '#DFC58C'},
+  {name: 'Yellow Gold (Vermeil)', color: '#C8C578'}
 ])
 
 product = Product.create!([

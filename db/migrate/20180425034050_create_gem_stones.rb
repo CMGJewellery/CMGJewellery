@@ -4,7 +4,7 @@ class CreateGemStones < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :details
       t.string :diamond_specification
-
+      t.string :color
       t.timestamps
     end
   end

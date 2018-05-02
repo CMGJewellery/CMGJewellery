@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  get 'user/edit'
-
-
-
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
     registrations: 'users/registrations',
 
   }
-  scope :admin do
-    resources :users
-  end
-
+  # resources :users
+  # scope :admin do
+  #   resources :users, only: [:destory]
+  # end
+  resources :users
   resources :images
   resources :products
   resources :style_of_products

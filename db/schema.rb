@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180425040838) do
     t.string "name"
     t.string "details"
     t.string "diamond_specification"
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20180425040838) do
     t.string "name"
     t.string "metal_type"
     t.string "metal_accents"
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
