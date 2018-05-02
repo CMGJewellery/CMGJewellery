@@ -1,8 +1,9 @@
 // This will only work if B_registration is imported!
 .B-email-reply-form{
-  background-image: asset-url('hero-d-custom.jpg'); 
+  background-image: asset-url('hero-d.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center; 
   padding: 3%;
   padding-left: 5%;
 }

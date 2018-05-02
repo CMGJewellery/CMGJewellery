@@ -30,7 +30,8 @@
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
+              <span class="B-eye-container"><i class="fa fa-eye" id="toggle" onclick="B_togglePasswordVisibility()"></i></span>
+              <%= f.password_field :password, autocomplete: "off", class:'B-text-input', id:'passwordField' %>     
             </div>
           
             <div class="field">

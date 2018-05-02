@@ -10,7 +10,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body class="B-flex-container B-body-form">
     <div class="B-login-container">
       <div class="B-login-form">
@@ -26,10 +25,13 @@
               <%= f.label :password %><br />
               <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
             </div>    
+            
             <% if devise_mapping.rememberable? -%>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
+              <div class="field B-styled-input-diamond">
+                <div class="B-styled-input-single">
+                  <%= f.check_box :remember_me, id:'B-checkbox-remember-me' %>
+                  <%= f.label :remember_me, for:'B-checkbox-remember-me' %>
+                </div>
               </div>
             <% end -%>
             <div class="B-grid-container B-form-button-container">
@@ -39,7 +41,7 @@
               </div>      
             </div>  
           <% end %>
-          <%= render "users/shared/links" %>
+          <%= render "users/shared/links" %> 
         </div>
       </div>  
     </div>
