@@ -148,7 +148,7 @@ span.ui-state-active {
   }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 992px) {
   .P-sub-filter {
     display: none;
   }
@@ -165,6 +165,9 @@ span.ui-state-active {
     width: 100% !important;
     left: 0;
     text-align: center;
+  }
+  .P-product-filter {
+    height: 55px;
   }
 }
 
