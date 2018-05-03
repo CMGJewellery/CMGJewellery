@@ -3,7 +3,15 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
+
+  def check_out_shopping_cart
+    
+  end
+  
+
   def index
+    @gem_stones = GemStone.all
+    @metals = Metal.all
     @products = Product.all
   end
 

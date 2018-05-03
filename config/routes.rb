@@ -5,10 +5,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
 
   }
-  # resources :users
-  # scope :admin do
-  #   resources :users, only: [:destory]
-  # end
+
+  get '/checkout/:user_id', to: 'product#check_out_shopping_cart', as: "check_out"
+
   resources :users
   resources :images
   resources :products

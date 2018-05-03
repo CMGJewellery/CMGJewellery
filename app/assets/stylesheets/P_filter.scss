@@ -20,13 +20,9 @@
   position: sticky;
   top: 40px;
   border-bottom: 1px solid black;
-  background: white;
-  height: 35px;
-}
-
-.P-filter-cate-content {
-  position: absolute;
-  top: 35px;
+  background-color: white;
+  height: 50px;
+  z-index: 5;
 }
 
 .P-wrap-filter-cate {
@@ -39,21 +35,32 @@
   cursor: pointer;
 }
 
-.P-filter-cate, .P-filter-clear {
+.P-filter-cate {
   float: left;
+  display: block;
+  width: 20%;
+  margin: 10px 0 0 0;
 }
 
 .P-filter-clear {
+  float: left;
   display: none;
+  margin: 10px 0 0 10%;
 }
 
 .P-filter-sort {
   float: right;
+  margin: 10px 15px 0 0;
 }
 
 .P-filter-cate-content {
   position: absolute;
-  // display: none;
+  top: 50px;
+  padding: 15px 0;
+  border: 1px solid black;
+  background: white;
+  width: 400px;
+  z-index: 6;
 }
 
 .P-filter-cate-content-item {
@@ -62,10 +69,110 @@
 }
 
 .P-filter-cate-content-item-color {
-  width: 1px;
-  height: 1px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border: 0.5px solid black;
+}
+
+.P-sub-filter {
+  display: block;
+  font-size: 10px;
+  color: #798794;
+  margin: 0;
 }
 
 .P-clear-float {
   clear: both;
+}
+
+#P-slider-range {
+  width: 90%;
+  
+}
+
+#P-amount-display {
+  display: inline-block;
+  font-size: 13px;
+  color: rgb(121, 135, 148);
+}
+
+#P-min-price, #P-amount, #P-max-price {
+  margin-top: 10px;
+}
+
+#P-min-price {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  float: left;
+}
+
+#P-max-price {
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+  float: right;
+}
+
+span.ui-slider-handle {
+  border-radius: 10px;
+  background: black !important;
+  width: 13px !important;
+  height: 13px !important;
+}
+
+span.ui-state-active {
+  background: black !important;
+}
+
+.ui-slider-range {
+  background: white !important;
+}
+
+.ui-slider-horizontal {
+  height: 5px !important;
+}
+
+#P-slider-range {
+  background: asset-url("amshopby-slider-bg.gif") repeat ;
+}
+
+.P-filter-cate-content-item:hover {
+  font-weight: bold;
+}
+
+@media (max-width: 990px) {
+  .P-product-filter {
+    top: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .P-sub-filter {
+    display: none;
+  }
+  .P-filter-cate > i {
+    display: block;
+  }
+  #P-filter-sort-big {
+    display: none;
+  }
+  #P-mobile-sort {
+    display: block !important;
+  }
+  .P-filter-cate-content {
+    width: 100% !important;
+    left: 0;
+    text-align: center;
+  }
+  .P-product-filter {
+    height: 55px;
+  }
+}
+
+@media (max-width: 500px) {
+  .P-product-content {
+    width: 90%;
+  }
 }

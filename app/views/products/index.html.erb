@@ -42,80 +42,43 @@
     <li class="P-filter-cate">
       Price 
       <i class="fa fa-chevron-down"></i>
+      <span class="P-sub-filter P-amount"></span>
+      <div class="P-filter-cate-content" style="display: none;">
+        <center>
+          <div id="P-slider-range"></div>
+        </center>
+        <div id="P-min-price">500,000đ</div>
+        <div class="P-amount" id="P-amount-display">5,000,000đ - 10,000,000đ</div>
+        <div id="P-max-price">20,000,000đ</div>
+      </div>
     </li>
     <li class="P-filter-cate">
       Mental
       <i class="fa fa-chevron-down"></i>
-      <div class="P-filter-cate-content">
+      <span class="P-sub-filter" id="P-sub-mental"></span>
+      <div class="P-filter-cate-content" style="display: none; width: 25%;">
         <ul class="P-filter-cate-wrap-content">
-          <li class="P-filter-cate-content-item">
-              <span class="P-filter-cate-content-item-color"></span>
-              Black Ruthenium Plated
+        <% @metals.each do |item| %>
+          <li class="P-filter-cate-content-item P-mental-cate">
+            <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
+            <%= item.name %>
           </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Rose Gold (Solid)
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Rose Gold (Vermeil)
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Sterling Silver
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            White Gold (Solid)
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Yellow Gold (Solid)
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Yellow Gold (Vermeil)
-          </li>
+        <% end %>
         </ul>
       </div>
     </li>
     <li class="P-filter-cate">
       Gemstone 
       <i class="fa fa-chevron-down"></i>
-      <div class="P-filter-cate-content">
+      <span class="P-sub-filter" id="P-sub-gemstone"></span>
+      <div class="P-filter-cate-content" style="display: none; width: 15%">
         <ul class="P-filter-cate-wrap-content">
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Agate
+          <% @gem_stones.each do |item| %>
+          <li class="P-filter-cate-content-item P-mental-cate">
+            <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
+            <%= item.name %>
           </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Apatite
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Amazonite
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Garnet
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-              Jade
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Ruby
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Pearl
-          </li>
-          <li class="P-filter-cate-content-item">
-            <span class="P-filter-cate-content-item-color"></span>
-            Diamond
-          </li>
+          <% end %>
         </ul>
       </div>
     </li>
@@ -123,40 +86,53 @@
       Clear all
       <i class="fa fa-times"></i>
     </li>
-    <li class="P-filter-sort">
+    <li class="P-filter-sort" id="P-filter-sort-big">
       Sort By:
       <select>
-        <option>
-          Price Low
-        </option>
-        <option>
-          Price High
-        </option>
-        <option>
-          New In
-        </option>
-        <option>
-          Best Seller
-        </option>
+        <option>Price Low</option>
+        <option>Price High</option>
+        <option>New In</option>
+        <option>Best Seller</option>
       </select>
     </li>
   </ul>
 </div>
-
+<!-- sort for mobile -->
+  <ul id="P-mobile-sort" style="display: none;">
+    <li class="P-filter-sort">
+      Sort By:
+     <select>
+        <option>Price Low</option>
+        <option>Price High</option>
+        <option>New In</option>
+        <option>Best Seller</option>
+      </select>
+    </li>
+  </ul>
 <div class="P-clear-float"></div>
 
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
-<p style="font-size: 100px"> djwbvhbehver</p>
+<p style="font-size: 50px">vfvfvfv</p>
+<p style="font-size: 50px">vfvfvfv</p>
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gem Stone</th>
+      <th>Metal</th>
+      <th>Style</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.gem_stone_id %></td>
+        <td><%= product.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

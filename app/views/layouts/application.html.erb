@@ -45,14 +45,14 @@
       <button class="navbar-toggler w-100" style="border: 0;" data-toggle="collapse" data-target="#collape-navbar-p">
         <span class="navbar-toggler-icon float-left"></span>
 
-        <%= link_to root_path, class:"P-cart-wrap float-right" do %>
-            <i class="fa fa-shopping-cart" style="font-size: 20px; color: white;"></i>
+        <%= link_to root_path, class:"P-cart-wrap-mobile float-right" do %>
+            <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
             <span class="P-number-cart" >0</span>
         <% end %>
       </button>
 
       <!-- Sign in/ register virtual to balance left right -->
-      <div class="collapse navbar-collapse justify-content-start text-center width-100 ml-3 mr-5 pr-5" style="opacity: 0">
+      <!-- <div class="collapse navbar-collapse justify-content-start text-center width-100 ml-3 mr-5 pr-5" style="opacity: 0">
         <i class="fa fa-user" style="color: white; font-size: 15px;" ></i>
         <div class="">
           Sign In
@@ -61,7 +61,10 @@
         <div>
           Register
         </div>
-      </div>
+      </div> -->
+
+      <!-- cart -->
+      <div class="mx-5 px-3"></div>
 
       <!-- Navigation option -->
       <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
@@ -124,76 +127,20 @@
       </div>
 
       <!-- Search box -->
-      <div class="collapse navbar-collapse justify-content-end width-50">
-        <form class="P-home-search">
-          <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
-          <button class="P-submit-search px-2" type="button" id="P-search-bnt">
-              <i class="fa fa-search" style="color: white;"></i>
-          </button>
-          <button class="P-submit-search px-2" type="submit" id="P-search-submit">
-              <i class="fa fa-search" style="color: white;"></i>
-          </button>
-        </form>
-
-        <!-- cart -->
-        <%= link_to root_path, class:"P-cart-wrap mr-0" do %>
-            <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
-            <!-- <span class="P-cart" >Shopping Cart</span> -->
-            <span class="P-number-cart mb-3" >0</span>
-        <% end %>
-      </div>
+      
+      <form class="P-home-search">
+        <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
+        <button class="P-submit-search px-2" type="submit">
+          <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
+        </button>
+      </form>
+      <%= link_to root_path, class:"P-cart-wrap mx-2" do %>
+        <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
+        <span class="P-number-cart mb-3" >0</span>
+      <% end %>
     </nav>
 
     <%= yield %>
-
-    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-bottom mt-2 py-0 justify-content-center" id="P-footer">
-      <div id="P-footer-list">
-        <ul class="navbar-nav text-center">
-          <li class="nav-item mx-3 P-footer-item">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              CONTACT US
-            <% end %>
-            <a href="# " class="nav-link py-0">CONTACT US</a>
-          </li>
-
-          <li class="nav-item mx-3 P-footer-item">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              FAQs
-            <% end %>
-            <a href="# " class="nav-link py-0">FAQs</a>
-          </li>
-
-          <li class="nav-item mx-3 P-footer-item">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              DELIVERY
-            <% end %>
-            <a href="# " class="nav-link py-0">DELIVERY</a>
-          </li>
-        </ul>
-      </div>
-
-      <div id="P-footer-social">
-        <ul class="navbar-nav text-center">
-          <li class="nav-item mx-1">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              <i class="fa fa-facebook-official" aria-hidden="true"></i>
-            <% end %>
-          </li>
-
-          <li class="nav-item mx-1">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            <% end %>
-          </li>
-
-          <li class="nav-item mx-1">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
     
     <!-- chỉ đụng khúc này -->
     <div class="footer">
