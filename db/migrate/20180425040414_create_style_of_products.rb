@@ -12,7 +12,7 @@ class CreateStyleOfProducts < ActiveRecord::Migration[5.1]
       t.string :necklace_length
       t.string :photograph_size
       t.string :category_name
-      t.string :status
+      t.string :status, default: 'public'
 
       t.timestamps
     end

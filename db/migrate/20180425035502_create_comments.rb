@@ -5,7 +5,7 @@ class CreateComments < ActiveRecord::Migration[5.1]
       t.belongs_to :style_of_product
       t.string :content
       t.integer :rating
-      t.string :status
+      t.string :status, default: 'public'
 
       t.timestamps
     end

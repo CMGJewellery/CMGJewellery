@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
 
       t.string :total_price
       t.integer :amount
-      t.string :status
+      t.string :status, default: 'public'
       t.string :address
       t.timestamps
     end
