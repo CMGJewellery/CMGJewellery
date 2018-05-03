@@ -28,7 +28,7 @@
 }
 .B-registration-form-fields{
   display: grid;
-  height: 80%;
+  height: 70%;
   grid-template-rows: 20% 20% 20% 20% 20%;
 }
 .B-text-input{
@@ -88,4 +88,7 @@
   color: gray !important;
   outline: none !important;
   text-align: center;
+}
+#B_messenger{
+  max-height: 10%;
 }

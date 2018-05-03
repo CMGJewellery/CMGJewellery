@@ -18,17 +18,16 @@
       <div class="B-login-form">
         <div class="B-form-container">
           <center><h3>Log In</h3></center>
-          <%= form_for resource, as: resource_name, url: session_path(resource_name), html: {class: 'B-login-form-fields'} do |f| %>
-
+          <p id="B_messenger"></p>
+          <%= form_for resource, as: resource_name, url: session_path(resource_name), html: {class: 'B-login-form-fields B-validator'} do |f| %>
             <div class="field">
               <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
+              <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
             </div>
             <div class="field">
               <%= f.label :password %><br />
               <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
             </div>    
-            
             <% if devise_mapping.rememberable? -%>
               <div class="field B-styled-input-diamond">
                 <div class="B-styled-input-single">
@@ -40,7 +39,7 @@
             <div class="B-grid-container B-form-button-container">
               <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
               <div class="actions">
-              <%= f.submit "Log in", class:"B-form-button" %>
+                <%= f.submit "Log in", class:"B-form-button" %>
               </div>      
             </div>  
           <% end %>

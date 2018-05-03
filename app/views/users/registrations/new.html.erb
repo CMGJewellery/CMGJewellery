@@ -8,14 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </head>
-
   <body class="B-flex-container B-body-form">
     <div class="B-registration-container">
       <div class="B-registration-form">
         <div class="B-form-container">
           <center><h3>Sign up</h3></center>
           <p id="B_messenger"></p>
-          <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: 'B-registration-form-fields', id: 'B-sign-up-form'} do |f| %>
+          <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: 'B-registration-form-fields B-validator'} do |f| %>
           <%#= devise_error_messages! %>
             <div class="field">
               <%= f.label :name %><br />
@@ -33,23 +32,21 @@
               <span class="B-eye-container"><i class="fa fa-eye" id="toggle" onclick="B_togglePasswordVisibility()"></i></span>
               <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>     
             </div>
-          
             <div class="field">
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "off", class:'B-text-input' %>
             </div>
-          
             <div class="B-grid-container B-form-button-container">
               <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
               <div class="actions">
                 <%= f.submit "Sign Up", class:"B-form-button" %>
               </div>   
               <%# id:"submit", type:'submit' %>
-            <div>          
+            </div>          
           <% end %>
+          <%= render "users/shared/links" %>
         </div>
       </div>  
-      <%= render "users/shared/links" %>
     </div>
   </body>
 </html>

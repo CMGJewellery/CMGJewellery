@@ -1,13 +1,13 @@
 <div class="B-email-reply-form">
   <div class="B-email-form-container B-white-font">
     <h3>Resend unlock instructions</h3>
-
-    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+    <p id="B_messenger"></p>
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class: 'B-validator' }) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
+        <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
       </div>
 
       <div class="actions">
