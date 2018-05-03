@@ -3,17 +3,17 @@ document.addEventListener("turbolinks:load", function (event) {
   var flag;
   $('#B-sign-up-form').submit(function () {
     flag = formValidation();
-    console.log(flag);
+    // console.log(flag);
     return flag;
   })
-  console.log(flag);
+  // console.log(flag);
 });
 function formValidation() {
   // Make quick references to our fields.
-  var fullname = document.getElementById('fullnameField');
-  var email = document.getElementById('emailField');
-  var password = document.getElementById('passwordField');
-  var passwordConfirmation = document.getElementById('passwordConfirmationField');
+  var fullname = document.getElementById('user_name');
+  var email = document.getElementById('user_email');
+  var password = document.getElementById('user_password');
+  var passwordConfirmation = document.getElementById('user_password_confirmation');
   // To check empty form fields.
   if (isEmpty(fullname) || isEmpty(email)) {
     return false;

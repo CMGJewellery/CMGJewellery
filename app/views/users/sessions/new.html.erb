@@ -18,7 +18,7 @@
       <div class="B-login-form">
         <div class="B-form-container">
           <center><h3>Log In</h3></center>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: 'B-login-form-fields' onsubmit='return formValidation()'}) do |f| %>
+          <%= form_for resource, as: resource_name, url: session_path(resource_name), html: {class: 'B-login-form-fields'} do |f| %>
 
             <div class="field">
               <%= f.label :email %><br />
