@@ -1,0 +1,50 @@
+// https://www.w3schools.com/howto/howto_js_snackbar.asp
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#B-notice {
+  visibility: hidden;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 1;
+  bottom: 30px;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#B-notice.show {
+  visibility: visible; /* Show the snackbar */
+
+.B_notice_box{
+  border-radius: 2px; /* Rounded borders */
+  text-align: center; /* Centered text */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  padding: 1.5% 2%;
+}
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: B_snack_bar_fadein 0.5s, B_snack_bar_fadeout 0.5s 2.5s;
+  animation: B_snack_bar_fadein 0.5s, B_snack_bar_fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes B_snack_bar_fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes B_snack_bar_fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes B_snack_bar_fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes B_snack_bar_fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

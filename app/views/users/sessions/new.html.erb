@@ -1,29 +1,52 @@
-<h2>Sign In</h2>
 <!-- noti when action user
-
   <p id="notice"><%= notice %></p> -->
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%# Using B_login and B_registration %>
+<!DOCTYPE html>
+<html class="B-body-form">
+  <head>
+    <title>CMGJewellery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <div id="B-notice">
+    <p class="B_notice_box"><%=notice%></p>
   </div>
+  <body class="B-flex-container B-body-form">
+    <div class="B-login-container">
+      <div class="B-login-form">
+        <div class="B-form-container">
+          <center><h3>Log In</h3></center>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: 'B-login-form-fields' onsubmit='return formValidation()'}) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
+            </div>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
+            </div>    
+            
+            <% if devise_mapping.rememberable? -%>
+              <div class="field B-styled-input-diamond">
+                <div class="B-styled-input-single">
+                  <%= f.check_box :remember_me, id:'B-checkbox-remember-me' %>
+                  <%= f.label :remember_me, for:'B-checkbox-remember-me' %>
+                </div>
+              </div>
+            <% end -%>
+            <div class="B-grid-container B-form-button-container">
+              <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
+              <div class="actions">
+              <%= f.submit "Log in", class:"B-form-button" %>
+              </div>      
+            </div>  
+          <% end %>
+          <%= render "users/shared/links" %> 
+        </div>
+      </div>  
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Sign In" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  </body>
+</html>

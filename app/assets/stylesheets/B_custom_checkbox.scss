@@ -1,0 +1,64 @@
+// source: https://codepen.io/MatthewShields/pen/XgeRWj
+.B-styled-input-single {
+  position: relative;
+  padding-left: 1.7vw;
+  label {
+    cursor: pointer;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 65%; // Check Box position
+    }
+    &:before { // Outter Box
+      left: 0;
+      width: 1.2vw;
+      height: 1.2vw;
+      margin: -1.05vw 0 0;
+      background: #f7f7f7;
+      box-shadow: 0 0 1px grey;
+    }
+    &:after { // Check Mark
+      left: 0.3vw;
+      width: 0.6vw;
+      height: 0.6vw;
+      margin: -0.8vw 0 0;
+      opacity: 0;
+      background: black;
+      //transform: translate3d(-40px, 0, 0) scale(0.5);
+      transition: 0.25s ease-in-out;
+    }
+  }
+  input[type="checkbox"] { // Makes the default box hidden
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    &:checked + label {
+      &:before {
+      }
+      &:after {
+       // transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+  }
+}
+.B-styled-input-diamond {
+  label {
+    &:before,
+    &:after {
+      border-radius: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+  }
+  input[type="checkbox"] {
+    &:checked + label {
+      &:after {
+        transform: rotate(45deg);
+        opacity: 1;
+      }
+    }
+  }
+}

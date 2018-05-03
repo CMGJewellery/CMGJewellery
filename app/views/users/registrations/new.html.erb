@@ -1,3 +1,4 @@
+<%# Using B_registration %>
 <!DOCTYPE html>
 <html class="B-body-form">
   <head>
@@ -5,49 +6,50 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </head>
-  <body class="B-body-form B-flex-container">
+
+  <body class="B-flex-container B-body-form">
     <div class="B-registration-container">
       <div class="B-registration-form">
         <div class="B-form-container">
           <center><h3>Sign up</h3></center>
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class: 'B-form-fields'}) do |f| %>
-          <%= devise_error_messages! %>
+          <p id="B_messenger"></p>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class: 'B-registration-form-fields', id: 'B-sign-up-form'}) do |f| %>
+          <%#= devise_error_messages! %>
             <div class="field">
               <%= f.label :name %><br />
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'B-text-input' %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'B-text-input', id:'fullnameField' %>
             </div>
-
             <div class="field">
               <%= f.label :email %><br />
-              <%= f.email_field :email, autocomplete: "email", class:'B-text-input' %>
+              <%= f.text_field :email, autocomplete: "email", class:'B-text-input', id:'emailField' %>
             </div>
-          
             <div class="field">
               <%= f.label :password %>
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
+              <span class="B-eye-container"><i class="fa fa-eye" id="toggle" onclick="B_togglePasswordVisibility()"></i></span>
+              <%= f.password_field :password, autocomplete: "off", class:'B-text-input', id:'passwordField' %>     
             </div>
           
             <div class="field">
               <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off", class:'B-text-input' %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class:'B-text-input', id:'passwordConfirmationField' %>
             </div>
           
             <div class="B-grid-container B-form-button-container">
               <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
-              <!-- <button class="B-form-button B-back-button">Go Back</button> -->
               <div class="actions">
-                <%= f.submit "Sign Up", class:"B-form-button" %>
+                <%= f.submit "Sign Up", class:"B-form-button", id:"submit", type:'submit' %>
               </div>   
+
             <div>          
           <% end %>
         </div>
       </div>  
       <%= render "users/shared/links" %>
     </div>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </body>
 </html>
