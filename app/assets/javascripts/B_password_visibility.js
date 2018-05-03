@@ -1,4 +1,5 @@
 function B_togglePasswordVisibility() {
+  // TODO: https://codepen.io/allurewebsolutions/pen/oxpggw
   var x = document.getElementById("passwordField");
   if (x.type === "password") {
     x.type = "text";

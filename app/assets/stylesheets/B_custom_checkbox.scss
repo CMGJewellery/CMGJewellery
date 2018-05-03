@@ -1,4 +1,4 @@
-// https://codepen.io/MatthewShields/pen/XgeRWj
+// source: https://codepen.io/MatthewShields/pen/XgeRWj
 .B-styled-input-single {
   position: relative;
   padding-left: 1.7vw;
@@ -25,7 +25,7 @@
       margin: -0.8vw 0 0;
       opacity: 0;
       background: black;
-      transform: translate3d(-40px, 0, 0) scale(0.5);
+      //transform: translate3d(-40px, 0, 0) scale(0.5);
       transition: 0.25s ease-in-out;
     }
   }
@@ -37,7 +37,7 @@
       &:before {
       }
       &:after {
-        transform: translate3d(0, 0, 0);
+       // transform: translate3d(0, 0, 0);
         opacity: 1;
       }
     }

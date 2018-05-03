@@ -10,12 +10,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <div id="B-notice">
+    <p class="B_notice_box"><%=notice%></p>
+  </div>
   <body class="B-flex-container B-body-form">
     <div class="B-login-container">
       <div class="B-login-form">
         <div class="B-form-container">
           <center><h3>Log In</h3></center>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: 'B-login-form-fields'}) do |f| %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: 'B-login-form-fields' onsubmit='return formValidation()'}) do |f| %>
 
             <div class="field">
               <%= f.label :email %><br />
@@ -35,7 +38,7 @@
               </div>
             <% end -%>
             <div class="B-grid-container B-form-button-container">
-              <button class="B-form-button B-back-button">Go Back</button>
+              <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
               <div class="actions">
               <%= f.submit "Log in", class:"B-form-button" %>
               </div>      
