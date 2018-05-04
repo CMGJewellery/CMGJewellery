@@ -1,5 +1,45 @@
-<h1>New Style Of Product</h1>
+<!-- <h1>New Style Of Product</h1>
 
 <%= render 'form', style_of_product: @style_of_product %>
 
-<%= link_to 'Back', style_of_products_path %>
+<%= link_to 'Back', style_of_products_path %> -->
+
+<form>
+  Main image <input type="file" name="main img" accept="image/*">
+  <br>
+  Sub image <input type="file" name="img" accept="image/*">
+  <br>
+  Name of Product: <input type="text" name="name_of_product">
+  <br>
+  Type:
+  <select>
+    <option value="necklaces">Necklaces</option>
+    <option value="rings">Rings</option>
+    <option value="bracelets">Bracelets</option>
+    <option value="earrings">Earrings</option>
+  </select>
+  <br>
+  Quanlity of styles: <input type="number" name="name_of_product">
+  <br>
+  <p>1st style</p>
+  Description: <input type="text" name="description">
+  <br>
+  Price: <input type="number" name="price">
+  <br>
+  Mental:
+  <select>
+    <option>Black Ruthenium Plated</option>
+    <option>Rose Gold (Solid)</option>
+    <option>Sterling</option>
+  </select>
+  <br>
+  Gemstone:
+  <select>
+    <option>Agate</option>
+    <option>Apatite</option>
+    <option>Amazonite</option>
+  </select>
+  <br>
+  Size: 
+  <br>
+</form>
