@@ -58,12 +58,14 @@
       <span class="P-sub-filter" id="P-sub-mental"></span>
       <div class="P-filter-cate-content" style="display: none; width: 25%;">
         <ul class="P-filter-cate-wrap-content">
-        <% @metals.each do |item| %>
-          <li class="P-filter-cate-content-item P-mental-cate">
-            <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
-            <%= item.name %>
-          </li>
-        <% end %>
+          <% @metals.each do |item| %>
+            <li class="P-filter-cate-content-item P-mental-cate">
+              <%= link_to root_path, id: item.id do %> <!-- using search -->
+                <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
+                <%= item.name %>
+              <% end %>  
+            </li>
+          <% end %>
         </ul>
       </div>
     </li>
@@ -74,10 +76,12 @@
       <div class="P-filter-cate-content" style="display: none; width: 15%">
         <ul class="P-filter-cate-wrap-content">
           <% @gem_stones.each do |item| %>
-          <li class="P-filter-cate-content-item P-mental-cate">
-            <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
-            <%= item.name %>
-          </li>
+            <li class="P-filter-cate-content-item P-mental-cate">
+              <%= link_to root_path, id: 'gem_stone_name' do %>
+                <%= item.name %>
+                <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </div>

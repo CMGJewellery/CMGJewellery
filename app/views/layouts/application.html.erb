@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </head>
 
   <body>
@@ -85,43 +86,21 @@
               NEW IN
             <% end %>
           </li>
+          <% StyleOfProduct::CATEGORY.each do |i| %>
+            <li class="nav-item mx-2">
+              <%= link_to i, products_path, class:"nav-link py-0"%>
+              <!-- cho nay se de ham search -->
+            </li>
+          <% end %>
 
-          <li class="nav-item mx-2">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              NECKLACES
-            <% end %>
-          </li>
-
-          <li class="nav-item mx-2">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              RINGS
-            <% end %>
-          </li>
-
-          <li class="nav-item mx-2">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              BRACELETS
-            <% end %>  
-          </li>
-
-          <li class="nav-item mx-2">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              EARRINGS
-            <% end %> 
-          </li>
-          
           <!-- Sign in - mobile only -->
           <li class="nav-item mx-2 P-login-mobile">
-              <%= link_to root_path, class:"nav-link py-0" do %>
-                SIGN IN
-              <% end %> 
+            <%= link_to 'Sign In', new_user_session_path, class:"nav-link py-0"%>
           </li>
           
           <!-- Register - mobile only -->
           <li class="nav-item mx-2 P-login-mobile">
-              <%= link_to root_path, class:"nav-link py-0" do %>
-                REGISTER
-              <% end %> 
+            <%= link_to 'Register', new_user_registration_path, class:"nav-link py-0" %>
           </li>
         </ul>
       </div>
@@ -141,15 +120,13 @@
     </nav>
 
     <%= yield %>
-    
-    <!-- chỉ đụng khúc này -->
-    <div class="footer">
 
+    <div class="footer">
       <!-- animated background -->
       <div class="background background--particles">
         <canvas class="pg-canvas" width="2000" height="600" style="display: block;"></canvas>
       </div>
-      
+  
       <!-- footer content -->
       <div class="column">
       	<div class="tittle text-center">Developers</div>
@@ -173,8 +150,5 @@
 
       <div class="copyright">© CMG Jewellery 2018 - Most Rights Reserved</div>
     </div>
-    <!-- nhớ là chỉ đụng khúc này -->
-
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

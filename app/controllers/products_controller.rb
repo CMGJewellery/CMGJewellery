@@ -5,9 +5,14 @@ class ProductsController < ApplicationController
   # GET /products.json
 
   def check_out_shopping_cart
-    
+
   end
-  
+
+  def search
+    gem_stone = GemStone.find_name(params[:gem_stone_name])
+    @list_products = Product.find_gem_stone_id(gem_stone.id)
+  end
+
 
   def index
     @gem_stones = GemStone.all
