@@ -2,25 +2,25 @@
 document.addEventListener("turbolinks:load", function (event) {
   var flag;
   $('.B-validator').submit(function () {
-    flag = B_formValidation();
+    flag = formValidation();
     return flag;
   })
 });
-function B_formValidation() {
+function formValidation() {
   // Make quick references to our fields.
   var fullname = document.getElementById('user_name');
   var email = document.getElementById('user_email');
   var password = document.getElementById('user_password');
   var passwordConfirmation = document.getElementById('user_password_confirmation');
   // To check empty form fields.
-  if ((B_isEmpty(fullname)) || B_isEmpty(email)) {
+  if ((isEmpty(fullname)) || isEmpty(email)) {
     return false;
   }
   // Check each input in the order that it appears in the form.
-  if (B_inputAlphabet(fullname, "* For your name please use alphabets only")) {
-    if (B_emailValidation(email, "* Please enter a valid email address")) {
-      if (B_lengthDefine(password, 6, 1000)) {
-        if(B_comparePassword(password, passwordConfirmation, "* Your password confirmation have to be identical")){
+  if (inputAlphabet(fullname, "* For your name please use alphabets only")) {
+    if (emailValidation(email, "* Please enter a valid email address")) {
+      if (lengthDefinePassword(password, passwordConfirmation, 6, 1000)) {
+        if(comparePassword(password, passwordConfirmation, "* Your password confirmation have to be identical")){
           document.getElementById('B_messenger').innerText ="";
           return true;
         }
@@ -29,9 +29,11 @@ function B_formValidation() {
   }
   return false;
 }
-function B_isEmpty(field)
+function isEmpty(field)
 {
-  if(field == null) return false;
+  if(field == null) {
+    return false;
+  }
   if (field.value.length == 0) {
     document.getElementById('B_messenger').innerText = "* All fields are mandatory *"; // This segment displays the validation rule for all fields
     field.focus();
@@ -39,7 +41,7 @@ function B_isEmpty(field)
   }
   return false;
 }
-function B_comparePassword(inputPass, inputPasswordConfirmation, alertMsg)
+function comparePassword(inputPass, inputPasswordConfirmation, alertMsg)
 {
   if(inputPass == null) return true;
   if(inputPasswordConfirmation == null) return true;
@@ -52,7 +54,7 @@ function B_comparePassword(inputPass, inputPasswordConfirmation, alertMsg)
   return false;
 }
 // Function that checks whether input text is an alphabetic character or not.
-function B_inputAlphabet(inputtext, alertMsg) {
+function inputAlphabet(inputtext, alertMsg) {
   if(inputtext == null) return true;
   var alphaExp = /^[a-zA-Z]+$/;
   if (inputtext.value.match(alphaExp)) {
@@ -64,19 +66,35 @@ function B_inputAlphabet(inputtext, alertMsg) {
   }
 }
 // Function that checks whether the input characters are restricted according to defined by user.
-function B_lengthDefine(inputtext, min, max) {
-  if(inputtext == null) return true;
-  var uInput = inputtext.value;
+function lengthDefinePassword(inputPass, inputPasswordConfirmation, min, max) {
+  
+  // Getting a form that doesn't have password field
+  if(inputPass == null) return true; 
+
+  // Getting a login form
+  var uInput = inputPass.value;
+  if(inputPasswordConfirmation == null) {
+    if (uInput.length <= 0){
+      document.getElementById('B_messenger').innerText = "* All fields are mandatory *";
+      inputPass.focus();
+      return false;
+    }
+    else {
+      return true;  // Pass to backend
+    }
+  }
+  
+  // Getting a sign up form
   if (uInput.length >= min && uInput.length <= max) {
     return true;
   } else {
-    document.getElementById('B_messenger').innerText = "* Please enter more than " + min + " characters *"; // This segment displays the validation rule for password
-    inputtext.focus();
+    document.getElementById('B_messenger').innerText = "* Please enter more than or equal to " + min + " characters *"; // This segment displays the validation rule for password
+    inputPass.focus();
     return false;
   }
 }
 // Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.
-function B_emailValidation(email, alertMsg) {
+function emailValidation(email, alertMsg) {
   if(email == null) return true;
   var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (emailExp.test(email.value)) {

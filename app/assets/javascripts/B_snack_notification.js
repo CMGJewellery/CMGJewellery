@@ -1,10 +1,10 @@
 $( document ).ready(function() {
   var x = document.getElementById('B-notice');
   if(x === null) return;
-  if(x.textContent.length > 8) B_showSnackBar(); // For some reasons it has 8 characters by default
+  if(x.textContent.length > 8) showSnackBar(); // For some reasons it has 8 characters by default
 });
 
-function B_showSnackBar() {
+function showSnackBar() {
   // Get the snackbar DIV
   var x = document.getElementById("B-notice");
 

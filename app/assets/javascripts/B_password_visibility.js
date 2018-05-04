@@ -1,4 +1,4 @@
-function B_togglePasswordVisibility() {
+function togglePasswordVisibility() {
   // TODO: https://codepen.io/allurewebsolutions/pen/oxpggw
   var x = document.getElementById("user_password");
   if (x.type === "password") {
