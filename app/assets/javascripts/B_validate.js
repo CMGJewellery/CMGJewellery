@@ -17,7 +17,7 @@ function formValidation() {
     return false;
   }
   // Check each input in the order that it appears in the form.
-  if (inputAlphabet(fullname, "* For your name please use alphabets only")) {
+  if (validateName(fullname, "* For your name please use alphabets only")) {
     if (emailValidation(email, "* Please enter a valid email address")) {
       if (lengthDefinePassword(password, passwordConfirmation, 6, 1000)) {
         if(comparePassword(password, passwordConfirmation, "* Your password confirmation have to be identical")){
@@ -54,9 +54,9 @@ function comparePassword(inputPass, inputPasswordConfirmation, alertMsg)
   return false;
 }
 // Function that checks whether input text is an alphabetic character or not.
-function inputAlphabet(inputtext, alertMsg) {
+function validateName(inputtext, alertMsg) {
   if(inputtext == null) return true;
-  var alphaExp = /^[a-zA-Z]+$/;
+  var alphaExp = /^(?![\x20\x27\x2D]|.*?[\p{Lu}]{2}|.*?[\x20]{2}|.*?[\x27]{2}|.*?[\x2D]{2}|.*?(\x20\x2D|\x2D\x20)|.*?(\x27\x2D|\x2D\x27)|.*?(\x27[\w]+\x27(\x20|$)))[\p{L}\x20\x27\x2D]+$(?<![\x20\x2D])/;
   if (inputtext.value.match(alphaExp)) {
     return true;
   } else {
@@ -83,7 +83,7 @@ function lengthDefinePassword(inputPass, inputPasswordConfirmation, min, max) {
       return true;  // Pass to backend
     }
   }
-  
+
   // Getting a sign up form
   if (uInput.length >= min && uInput.length <= max) {
     return true;
