@@ -17,7 +17,7 @@ admin = User.new(
 admin.skip_confirmation!
 admin.save!
 
-style_product = StyleOfProduct.create!([
+product = Product.create!([
   {name: 'White Sapphire Kula Eternity Bracelet', 
   user_id: '1', 
   description: 'Featuring a contemporary, white sapphire-set bar this 18 carat rose gold vermeil Kula Eternity bracelet takes inspiration from the band of gemstones seen in the eternity ring style and adds eye-catching elevation to any bracelet stack. Its arch has been anthropometrically designed to comfortably flatter the wrist.',
@@ -25,7 +25,9 @@ style_product = StyleOfProduct.create!([
   collection: 'Biography',
   price: '2782708',
   category_name: 'Bracelet',
-  status: 'public'},
+  status: 'public',
+  gem_stone_id: '8', metal_id: '3', amount: '12'
+},
 
   {name: 'Mille Beaded Ring',
   user_id: '1',
@@ -34,7 +36,29 @@ style_product = StyleOfProduct.create!([
   collection: 'Floris',
   price: '1636887',
   category_name: 'Ring',
-  status: 'public'}
+  status: 'public',
+  gem_stone_id: '2', metal_id: '4', amount: '22'
+},
+  {name: 'White Sapphire Kula Eternity Bracelet', 
+  user_id: '1', 
+  description: 'Featuring a modern, white sapphire-set bar this silver Kula Eternity bracelet interprets the band of gemstones seen in the eternity ring and offers elevated sparkle to any everyday bracelet stack. The arch of this bracelet has been anthropometrically designed to sit comfortably and flatteringly against the wrist.',
+  advantage: 'Kula nugget fastening gives adjustable fit|The ultimate piece for stacking up the wrist|Mix with gold and rose gold bracelets or match with other silver pieces',
+  collection: 'Biography',
+  price: '3182708',
+  category_name: 'Bracelet',
+  status: 'public',
+  gem_stone_id: '2', metal_id: '3', amount: '7'
+},
+  {name: 'Turquoise Vera Drop Hoop Earrings', 
+  user_id: '1', 
+  description: 'As part of the Stilla collection, these demi-fine Vera Drop Hoop Earrings feature suspended turquoise gemstone spheres that have been carefully selected for their beautiful blue colouring and statement appearance. These gemstones have been paired with tonal 18 carat rose gold vermeil hoops and celebrate semi-precious stones with a modern design approach.',
+  advantage: "Turquoise brings an energising pop of colour that's perfect for summer|Inspired by the flamboyant style of Peggy Guggenheim and the kinetic work of artist Alexander Calder",
+  collection: 'Stilla',
+  price: '4665033',
+  category_name: 'Earrings',
+  status: 'public',
+  gem_stone_id: '3', metal_id: '1', amount: '17'
+}
 ])
 
 gemstone = GemStone.create!([
@@ -58,13 +82,4 @@ metal = Metal.create!([
   {name: 'White Gold (Solid)', color: '#F7F7F7'},
   {name: 'Yellow Gold (Solid)', color: '#DFC58C'},
   {name: 'Yellow Gold (Vermeil)', color: '#C8C578'}
-])
-
-product = Product.create!([
-  {gem_stone_id: '8', metal_id: '3', style_of_product_id: '1', amount: '12'},
-  {gem_stone_id: '2', metal_id: '4', style_of_product_id: '1', amount: '22'},
-  {gem_stone_id: '5', metal_id: '2', style_of_product_id: '1', amount: '9'},
-  {gem_stone_id: '3', metal_id: '5', style_of_product_id: '2', amount: '27'},
-  {gem_stone_id: '7', metal_id: '1', style_of_product_id: '2', amount: '2'},
-  {gem_stone_id: '9', metal_id: '2', style_of_product_id: '2', amount: '19'},
 ])

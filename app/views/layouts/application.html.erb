@@ -86,13 +86,12 @@
               NEW IN
             <% end %>
           </li>
-          <% StyleOfProduct::CATEGORY.each do |i| %>
-            <li class="nav-item mx-2">
-              <%= link_to i, products_path, class:"nav-link py-0"%>
+          <% Product::CATEGORY.each do |i| %>
+            <li class="nav-item mx-2" data-turbolinks="false">
+              <%= link_to i.upcase, products_path, class:"nav-link py-0"%>
               <!-- cho nay se de ham search -->
             </li>
           <% end %>
-
           <!-- Sign in - mobile only -->
           <li class="nav-item mx-2 P-login-mobile">
             <%= link_to 'Sign In', new_user_session_path, class:"nav-link py-0"%>

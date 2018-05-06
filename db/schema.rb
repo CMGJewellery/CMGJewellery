@@ -14,13 +14,13 @@ ActiveRecord::Schema.define(version: 20180425040838) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "style_of_product_id"
+    t.integer "product_id"
     t.string "content"
     t.integer "rating"
-    t.string "status"
+    t.string "status", default: "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["style_of_product_id"], name: "index_comments_on_style_of_product_id"
+    t.index ["product_id"], name: "index_comments_on_product_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -67,27 +67,17 @@ ActiveRecord::Schema.define(version: 20180425040838) do
     t.integer "user_id"
     t.string "total_price"
     t.integer "amount"
-    t.string "status"
     t.string "address"
+    t.string "status", default: "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "gem_stone_id"
     t.integer "metal_id"
-    t.integer "style_of_product_id"
-    t.integer "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["gem_stone_id"], name: "index_products_on_gem_stone_id"
-    t.index ["metal_id"], name: "index_products_on_metal_id"
-    t.index ["style_of_product_id"], name: "index_products_on_style_of_product_id"
-  end
-
-  create_table "style_of_products", force: :cascade do |t|
-    t.integer "user_id"
     t.string "name"
     t.string "description"
     t.string "advantage"
@@ -97,10 +87,13 @@ ActiveRecord::Schema.define(version: 20180425040838) do
     t.string "necklace_length"
     t.string "photograph_size"
     t.string "category_name"
-    t.string "status"
+    t.integer "amount"
+    t.string "status", default: "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_style_of_products_on_user_id"
+    t.index ["gem_stone_id"], name: "index_products_on_gem_stone_id"
+    t.index ["metal_id"], name: "index_products_on_metal_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

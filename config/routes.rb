@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :users
   resources :images
   resources :products
-  resources :style_of_products
   resources :order_details
   resources :orders
   resources :comments

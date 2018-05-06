@@ -5,8 +5,8 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable, :confirmable,
   :lockable, :timeoutable
   
+  has_one :image  
   has_many :comments
   has_many :orders
-  has_one :image
-  has_many :style_of_products
+  has_many :products
 end

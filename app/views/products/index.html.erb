@@ -78,8 +78,8 @@
           <% @gem_stones.each do |item| %>
             <li class="P-filter-cate-content-item P-mental-cate">
               <%= link_to root_path, id: 'gem_stone_name' do %>
+                <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>              
                 <%= item.name %>
-                <div class="P-filter-cate-content-item-color" style="background-color:<%= item.color %>"></div>
               <% end %>
             </li>
           <% end %>
