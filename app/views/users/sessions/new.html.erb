@@ -15,7 +15,7 @@
       <p class="B_notice_box"><%=notice%></p>            
     <% end %>
     <% if alert %>
-      <p class="B_notice_box"><%= alert %></p>
+      <p class="B_notice_box"><%= alert %></p> 
     <% end %>
   </div>
   <body class="B-flex-container B-body-form">
@@ -41,12 +41,16 @@
                 </div>
               </div>
             <% end -%>
-            <div class="B-grid-container B-form-button-container">
-              <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
-              <div class="actions">
-                <%= f.submit "Log in", class:"B-form-button" %>
-              </div>      
-            </div>  
+            <div>
+              <div class="B-grid-container B-form-button-container">
+                <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
+                <div class="actions">
+                  <%= f.submit "Log in", class:"B-form-button" %>
+                </div>      
+              </div>  
+              <a href=#>Already have an account?</a>
+            </div>
+
           <% end %>
           <%= render "users/shared/links" %> 
         </div>

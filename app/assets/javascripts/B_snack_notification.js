@@ -7,10 +7,9 @@ $( document ).ready(function() {
 function showSnackBar() {
   // Get the snackbar DIV
   var x = document.getElementById("B-notice");
-
   // Add the "show" class to DIV
   x.className = "show";
 
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+  // After 3 seconds, remove the show class from DIV, fix the css file if you want to change 3000.
+  setTimeout(function(){ x.className = x.className.replace("show", "")}, 3000);
 }
