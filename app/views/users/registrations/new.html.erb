@@ -36,13 +36,16 @@
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "off", class:'B-text-input' %>
             </div>
-            <div class="B-grid-container B-form-button-container">
-              <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
-              <div class="actions">
-                <%= f.submit "Sign Up", class:"B-form-button" %>
-              </div>   
-              <%# id:"submit", type:'submit' %>
-            </div>          
+            <div>
+              <div class="B-grid-container B-form-button-container">
+                <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
+                <div class="actions">
+                  <%= f.submit "Sign Up", class:"B-form-button" %>
+                </div>   
+                <%# id:"submit", type:'submit' %>
+              </div>          
+              <a href=#>Already have an account?</a>
+            </div>
           <% end %>
           <%= render "users/shared/links" %>
         </div>
