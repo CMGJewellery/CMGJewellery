@@ -56,7 +56,7 @@ function comparePassword(inputPass, inputPasswordConfirmation, alertMsg)
 // Function that checks whether input text is an alphabetic character or not.
 function validateName(inputtext, alertMsg) {
   if(inputtext == null) return true;
-  var alphaExp = /^([A-Z]{1})+([[A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]]?)+$/gm;
+  var alphaExp = /^([A-Z]{1})+([[A-Za-z]+[,.]?[ ]?|[A-Za-z]+[-]]?)+$/gm;
   if (inputtext.value.match(alphaExp)) {
     return true;
   } else {
