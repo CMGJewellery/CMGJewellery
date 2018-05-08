@@ -1,18 +1,18 @@
+
 <div class="B-email-reply-form">
   <div class="B-email-form-container B-white-font">
     <h3>Resend confirmation instructions</h3>
-
-    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
-
+    <p id="B_messenger"></p>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'B-validator' }) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'B-text-input', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
       </div>
 
       <div class="actions">
         <%= f.submit "Resend confirmation instructions", class:'B-form-button' %>
       </div>
+      <%= devise_error_messages! %>     
     <% end %>
 
     <%= render "users/shared/links" %>
