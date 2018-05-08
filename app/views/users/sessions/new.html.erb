@@ -48,7 +48,8 @@
                   <%= f.submit "Log in", class:"B-form-button" %>
                 </div>      
               </div>  
-              <a href=#>Don't have an account yet?</a>
+              <%= link_to "Don't have an account yet?", new_user_registration_path %>
+              
             </div>
           <% end %>
           <%= render "users/shared/links" %> 

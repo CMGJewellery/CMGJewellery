@@ -43,8 +43,8 @@
                   <%= f.submit "Sign Up", class:"B-form-button" %>
                 </div>   
                 <%# id:"submit", type:'submit' %>
-              </div>          
-              <a href=#>Already have an account?</a>
+              </div>     
+              <%= link_to 'Already have an account?', new_user_session_path %>     
             </div>
           <% end %>
           <%= render "users/shared/links" %>
