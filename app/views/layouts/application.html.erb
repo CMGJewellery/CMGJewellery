@@ -14,19 +14,25 @@
       <div class="row">
         <div class="col-md-2 mt-2">
           <div class="row pull-right mt-1">
-            <i class="fa fa-user mt-1" style="color: black; font-size: 20px;" ></i>        
             <% if user_signed_in? && !current_user.nil? %>
-            <%= link_to current_user.name, root_path, class:"P-login ml-1" %>
-            <span class="mx-1" style="color: black; font-size: 20px;"> / </span>    
-            <%= link_to 'Log out', destroy_user_session_path, method: 'delete', class:"P-login" %>
-            <% if current_user.role == 'admin' %>
-              <%= link_to 'Admin page', root_path %>
-            <% end %>
+              <% if current_user.role == 'admin' %>
+                <!-- admin page -->
+                <i class="fa fa-user mt-1 P-login-wrap" style="color: red; font-size: 20px;" ></i>        
+                <%= link_to current_user.name, root_path, class:"P-login P-login-wrap ml-1" %>
+              <% else %>
+                <!-- profile user -->
+                <i class="fa fa-user mt-1" style="color: black; font-size: 20px;" ></i>        
+                <%= link_to current_user.name, root_path, class:"P-login P-login-wrap ml-1" %>
+              <% end %>
+              <span class="mx-1 P-login-wrap" style="color: black; font-size: 20px;"> / </span>    
+              <%= link_to 'Log out', destroy_user_session_path, method: 'delete', class:"P-login P-login-wrap" %>
+            
             <% else %>
+              <i class="fa fa-user mt-1 P-login-wrap" style="color: black; font-size: 20px;" ></i>        
               <div data-turbolinks="false">
-                <%= link_to 'Sign In', new_user_session_path, class:"P-login ml-1"%>
-                <span class="mx-1" style="color: black; font-size: 20px;"> / </span> 
-                <%= link_to 'Register', new_user_registration_path, class:"P-login"%>
+                <%= link_to 'Sign In', new_user_session_path, class:"P-login P-login-wrap ml-1"%>
+                <span class="mx-1 P-login-wrap" style="color: black; font-size: 20px;"> / </span> 
+                <%= link_to 'Register', new_user_registration_path, class:"P-login P-login-wrap"%>
               </div>
             <% end %>
           </div>
