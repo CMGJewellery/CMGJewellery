@@ -1,4 +1,5 @@
-<%= form_with(model: product, local: true) do |f| %>
+<div id="P-alert"></div>
+<%= form_with(model: product, local: true, class: 'P-form-new-product') do |f| %>
   <%# if product.errors.any? %>
     <!-- <div id="error_explanation">
       <h2><%#= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -15,6 +16,88 @@
     <%#= form.label :amount %>
     <%#= form.text_field :amount, id: :product_amount %>
   </div> -->
+
+  <!-- Name -->
+  <div class="P-wrap-new-product">
+    <div class="P-content-new-product">
+      <%= f.label :name %> <br>
+      <%= f.text_field :name_of_product, class: 'P-input-new-product', id:'P-name-new-product' %>
+    </div>
+
+    <!-- chị sửa chỗ này thành rails form -->
+    <!-- Type -->
+    <div class="P-content-new-product">
+      <%= f.label :type %> <br>
+      <select class="P-select-new-product" id="P-type-new-product">
+        <option>Necklaces</option>
+        <option>Rings</option>
+        <option>Bracelets</option>
+        <option>Earings</option>
+      </select>
+    </div>
+    <!-- hết cái div đó thôi -->
+
+    <!-- Price -->
+    <div class="P-content-new-product">
+      <%= f.label :price %> <br>
+      <%= f.text_field :price_of_product, class: 'P-input-new-product', id: 'P-price-new-product' %>
+    </div>
+
+    <!-- Description -->
+    <div class="P-content-new-product">
+      <%= f.label :description %> <br>
+      <%= f.text_field :description_of_product, class: 'P-input-new-product', id: 'P-description-new-product' %>
+    </div>
+
+    <!-- Advantage -->
+    <div class="P-content-new-product">
+      <%= f.label :Advantage %> <br>
+      <%= f.text_field :advantage1_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
+      <%= f.text_field :advantage2_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
+      <%= f.text_field :advantage3_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
+    </div>
+
+    <!-- Collection -->
+    <div class="P-content-new-product">
+        <%= f.label :collection %> <br>
+        <%= f.text_field :collection_of_product, class: 'P-input-new-product', id: 'P-collection-new-product' %>
+    </div>
+  </div>
+
+  <!-- chị sửa chỗ này thành rails form -->
+  <!-- Mental -->
+  <div class="P-content-new-product">
+      <%= f.label :mental %> <br>
+      <select class="P-select-new-product" id="P-mental-new-product">
+        <option>Black Ruthenium Plated</option>
+        <option>Rose Gold (Solid)</option>
+        <option>Rose Gold (Vermeil)</option>
+        <option>Sterling Silver</option>
+        <option>White Gold (Solid)</option>
+        <option>Yellow Gold (Solid)</option>
+        <option>Yellow Gold (Vermeil)</option>
+      </select>
+    </div>
+    <!-- hết cái div đó thôi -->
+
+    <!-- chị sửa chỗ này thành rails form -->
+    <!-- Gemstone -->
+    <div class="P-content-new-product">
+        <%= f.label :gemstone %> <br>
+        <select class="P-select-new-product" id="P-gemstone-new-product">
+          <option>Pearl</option>
+          <option>Moonstone</option>
+          <option>Apatite</option>
+          <option>Cultured Freshwater Pearl</option>
+          <option>Cultured White Sapphire</option>
+          <option>Diamond</option>
+          <option>Ruby</option>
+          <option>Sapphire</option>
+          <option>Rose Quartz</option>
+          <option>Pink Opal</option>
+        </select>
+      </div>
+      <!-- hết cái div đó thôi -->
 
   <div class="actions">
     <%= f.submit %>
