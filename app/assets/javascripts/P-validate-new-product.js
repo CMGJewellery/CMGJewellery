@@ -15,9 +15,11 @@ function newProductValid() {
   var collection = document.getElementById("P-collection-new-product");
   // var mental = document.getElementById("P-mental-new-product");
   // var gemstone = document.getElementById("P-gemstone-new-product");
+  var img = document.getElementsByClassName("P-upload-img-field");
 
   if (PisEmpty(name) || PisEmpty(price) || PisEmpty(description) || 
-  PisEmpty(advantage[0]) || PisEmpty(advantage[1]) || PisEmpty(advantage[2]) || PisEmpty(collection)) {
+  PisEmpty(advantage[0]) || PisEmpty(advantage[1]) || PisEmpty(advantage[2]) || PisEmpty(collection) || 
+  PisEmptyImg(img[0]) || PisEmpty(img[1]) || PisEmpty(img[2]) || PisEmpty(img[3])) {
     return false;
   }
 
@@ -43,6 +45,18 @@ function PisEmpty(field) {
   if (field.value.length == 0) {
     document.getElementById('P-alert').innerText = "* All fields are mandatory *" ;
     field.focus();
+    return true;
+  };
+
+  return false;
+}
+
+function PisEmptyImg(field) {
+  if (field.value.length == 0) {
+    document.getElementById('P-alert').innerText = "* All fields are mandatory *" ;
+    var index = $(field).index(field);
+    var element = $(".P-choose-img-label");
+    $(element[index]).css("background", "red");
     return true;
   };
 

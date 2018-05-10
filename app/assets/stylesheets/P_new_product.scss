@@ -1,0 +1,23 @@
+.P-wrap-upload-img {
+  display: inline-block;
+  margin: 1%;
+}
+
+.P-label-upload-img {
+  cursor: pointer;
+}
+
+.P-no-img-label {
+  width: 200px;
+  margin: 10px 0;
+  border: 1px solid black;
+}
+
+.P-upload-img-field {
+  display: none;
+}
+
+.P-label-upload-img > span {
+  padding: 0 10px;
+  border: 1px solid black;
+}
