@@ -17,19 +17,19 @@ function newProductValid() {
   // var gemstone = document.getElementById("P-gemstone-new-product");
   var img = document.getElementsByClassName("P-upload-img-field");
 
-  if (PisEmpty(name) || PisEmpty(price) || PisEmpty(description) || 
-  PisEmpty(advantage[0]) || PisEmpty(advantage[1]) || PisEmpty(advantage[2]) || PisEmpty(collection) || 
-  PisEmptyImg(img[0]) || PisEmpty(img[1]) || PisEmpty(img[2]) || PisEmpty(img[3])) {
+  if (isEmptyP(name) || isEmptyP(price) || isEmptyP(description) || 
+  isEmptyP(advantage[0]) || isEmptyP(advantage[1]) || isEmptyP(advantage[2]) || isEmptyP(collection) || 
+  isEmptyImgP(img[0]) || isEmptyImgP(img[1]) || isEmptyImgP(img[2]) || isEmptyImgP(img[3])) {
     return false;
   }
 
-  if (PvalidName(name, 50, "* Name of products cointains maximum 50 characters", "* Name of products cointains only letters and numbers")) {
-    if(PvalidPrice(price)) {
-      if (PvalidLength(description, 500, "* Description contains maximum 500 characters")) {
-        if (PvalidLength(advantage[0], 200, "* Advantage contains maximum 200 characters")) {
-          if (PvalidLength(advantage[1], 200, "* Advantage contains maximum 200 characters")) {
-            if (PvalidLength(advantage[2], 200, "* Advantage contains maximum 200 characters")) {
-              if (PvalidName(collection, 30, "* Collection contains maximum 30 characters", "* Collection contains only letters and numbers")) {
+  if (validNameP(name, 50, "* Name of products cointains maximum 50 characters", "* Name of products cointains only letters and numbers")) {
+    if(validPriceP(price)) {
+      if (validLengthP(description, 500, "* Description contains maximum 500 characters")) {
+        if (validLengthP(advantage[0], 200, "* Advantage contains maximum 200 characters")) {
+          if (validLengthP(advantage[1], 200, "* Advantage contains maximum 200 characters")) {
+            if (validLengthP(advantage[2], 200, "* Advantage contains maximum 200 characters")) {
+              if (validNameP(collection, 30, "* Collection contains maximum 30 characters", "* Collection contains only letters and numbers")) {
                 return true;
               }
             }
@@ -41,7 +41,7 @@ function newProductValid() {
   return false;
 }
 
-function PisEmpty(field) {
+function isEmptyP(field) {
   if (field.value.length == 0) {
     document.getElementById('P-alert').innerText = "* All fields are mandatory *" ;
     field.focus();
@@ -51,7 +51,7 @@ function PisEmpty(field) {
   return false;
 }
 
-function PisEmptyImg(field) {
+function isEmptyImgP(field) {
   if (field.value.length == 0) {
     document.getElementById('P-alert').innerText = "* All fields are mandatory *" ;
     var index = $(field).index(field);
@@ -63,7 +63,7 @@ function PisEmptyImg(field) {
   return false;
 }
 
-function PvalidName(name, max, alertMsgLong, alertMsg) {
+function validNameP(name, max, alertMsgLong, alertMsg) {
   var alphaExp = /^([A-Z]{1})+([[A-Za-z0-9-]+[,.]?[ ]?|[A-Za-z0-9-]+[-]]?)+$/;
 
   if (name.value.match(alphaExp)) {
@@ -80,7 +80,7 @@ function PvalidName(name, max, alertMsgLong, alertMsg) {
   }
 }
 
-function PvalidPrice(price) {
+function validPriceP(price) {
   var alphaExp = /^[0-9]*$/;
 
   if (price.value.match(alphaExp)) {
@@ -97,7 +97,7 @@ function PvalidPrice(price) {
   };
 }
 
-function PvalidLength(field, max, alertMsg) {
+function validLengthP(field, max, alertMsg) {
   if (field.value.length > max) {
     document.getElementById("P-alert").innerText = alertMsg;
     field.focus();
@@ -105,3 +105,10 @@ function PvalidLength(field, max, alertMsg) {
   };
   return true;
 }
+
+// $(document).ready(function() {
+//   $("#P-name-new-product").focusout(function(){
+//     var name = document.getElementById("P-name-new-product");
+//     validNameP(name, 50, "* Name of products cointains maximum 50 characters", "* Name of products cointains only letters and numbers");
+//   });
+// });

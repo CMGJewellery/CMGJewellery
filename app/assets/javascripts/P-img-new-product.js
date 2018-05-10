@@ -5,10 +5,12 @@ function readURL(input) {
       reader.onload = function (e) {
         var index = $(".P-upload-img-field").index(input);
         var imgElement = $('.P-no-img-label');
+        var width = $('.P-no-img-label').css("width");
+        var height = $('.P-no-img-label').css("height");
         $(imgElement[index])
               .attr('src', e.target.result)
-              .width(200)
-              .height(200);
+              .width(width)
+              .height(height);
       };
 
       reader.readAsDataURL(input.files[0]);
