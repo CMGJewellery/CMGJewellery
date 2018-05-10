@@ -17,17 +17,51 @@
     <%#= form.text_field :amount, id: :product_amount %>
   </div> -->
 
-  <!-- Name -->
+  <!-- chị sửa chỗ này thành rails form -->
   <div class="P-wrap-new-product">
+    <div class="P-wrap-upload-img">
+      <label for="P-upload-img1" class="P-label-upload-img">
+        <%= image_tag 'no-img.png', class:"P-no-img-label" %> <br>
+        <span class="P-choose-img-label">Choose file</span>
+      </label>
+      <input id="P-upload-img1" class="P-upload-img-field" type="file" accept="image/*" onchange="readURL(this);">
+    </div>
+        
+    <div class="P-wrap-upload-img">
+      <label for="P-upload-img2" class="P-label-upload-img">
+        <%= image_tag 'no-img.png', class:"P-no-img-label" %> <br>
+        <span class="P-choose-img-label">Choose file</span>
+      </label>
+      <input id="P-upload-img2" class="P-upload-img-field" type="file" accept="image/*" onchange="readURL(this);">
+    </div>
+
+    <div class="P-wrap-upload-img">
+      <label for="P-upload-img3" class="P-label-upload-img">
+        <%= image_tag 'no-img.png', class:"P-no-img-label" %> <br>
+        <span class="P-choose-img-label">Choose file</span>
+      </label>
+      <input id="P-upload-img3" class="P-upload-img-field" type="file" accept="image/*" onchange="readURL(this);">
+    </div>
+
+    <div class="P-wrap-upload-img">
+      <label for="P-upload-img4" class="P-label-upload-img">
+        <%= image_tag 'no-img.png', class:"P-no-img-label" %> <br>
+        <span class="P-choose-img-label">Choose file</span>
+      </label>
+      <input id="P-upload-img4" class="P-upload-img-field" type="file" accept="image/*" onchange="readURL(this);">
+    </div>
+    <!-- 4 cái div bên trên đó chị -->
+
+    <!-- Name -->
     <div class="P-content-new-product">
-      <%= f.label :name %> <br>
+      <%= f.label :name %>
       <%= f.text_field :name_of_product, class: 'P-input-new-product', id:'P-name-new-product' %>
     </div>
 
     <!-- chị sửa chỗ này thành rails form -->
     <!-- Type -->
     <div class="P-content-new-product">
-      <%= f.label :type %> <br>
+      <%= f.label :type %>
       <select class="P-select-new-product" id="P-type-new-product">
         <option>Necklaces</option>
         <option>Rings</option>
@@ -39,19 +73,19 @@
 
     <!-- Price -->
     <div class="P-content-new-product">
-      <%= f.label :price %> <br>
+      <%= f.label :price %>
       <%= f.text_field :price_of_product, class: 'P-input-new-product', id: 'P-price-new-product' %>
     </div>
 
     <!-- Description -->
     <div class="P-content-new-product">
-      <%= f.label :description %> <br>
+      <%= f.label :description %>
       <%= f.text_field :description_of_product, class: 'P-input-new-product', id: 'P-description-new-product' %>
     </div>
 
     <!-- Advantage -->
     <div class="P-content-new-product">
-      <%= f.label :Advantage %> <br>
+      <%= f.label :Advantage %>
       <%= f.text_field :advantage1_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
       <%= f.text_field :advantage2_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
       <%= f.text_field :advantage3_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
@@ -59,7 +93,7 @@
 
     <!-- Collection -->
     <div class="P-content-new-product">
-        <%= f.label :collection %> <br>
+        <%= f.label :collection %>
         <%= f.text_field :collection_of_product, class: 'P-input-new-product', id: 'P-collection-new-product' %>
     </div>
   </div>
@@ -67,7 +101,7 @@
   <!-- chị sửa chỗ này thành rails form -->
   <!-- Mental -->
   <div class="P-content-new-product">
-      <%= f.label :mental %> <br>
+      <%= f.label :mental %>
       <select class="P-select-new-product" id="P-mental-new-product">
         <option>Black Ruthenium Plated</option>
         <option>Rose Gold (Solid)</option>
@@ -83,7 +117,7 @@
     <!-- chị sửa chỗ này thành rails form -->
     <!-- Gemstone -->
     <div class="P-content-new-product">
-        <%= f.label :gemstone %> <br>
+        <%= f.label :gemstone %>
         <select class="P-select-new-product" id="P-gemstone-new-product">
           <option>Pearl</option>
           <option>Moonstone</option>
