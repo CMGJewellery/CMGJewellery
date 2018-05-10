@@ -1,28 +1,82 @@
-.H-admin-page{
+#H-admin-page{
 	overflow: hidden;
 }
 
-.H-admin-menu{
+#H-admin-menu{
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	width: 260px;
+	font-size: 16px;
+	color: white;
 	background-color: rgb(60, 60, 60);
+	overflow: auto;
+	transition: right 0.3s;
 }
 
-.H-admin-content{
+#H-admin-menu::-webkit-scrollbar{
+    width: 6px;
+}
+
+#H-admin-menu::-webkit-scrollbar-thumb{
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#H-admin-menu:hover::-webkit-scrollbar-thumb{
+	background-color: rgba(200, 200, 200, 0.5);
+}
+
+
+#H-admin-menu > *:not(.H-admin-menu-hr){
+	margin: 20px;
+	padding: 10px;
+}
+
+#H-admin-content{
 	position: fixed;
 	top: 0;
 	right: 0;
 	height: 100vh;
 	width: calc(100vw - 260px);
 	background-color: rgb(240, 240, 240);
+	transition: right 0.3s;
 }
 
-.H-slide-button{
+#H-slide-button{
 	position: absolute;
 	right: 20px;
 	top: 20px;
 	display: none;
+}
+
+#H-admin-menu-page-name{
+	text-align: center;
+	font-size: 20px;
+}
+
+.H-admin-menu-block-container{
+	overflow: hidden;
+	height: 18px;
+	transition: height 0.3s;
+}
+
+.H-admin-menu-tittle{
+	display: inline;
+}
+
+.H-admin-menu-show-button{
+	display: inline;
+	float: right;
+}
+
+.H-admin-menu-content{
+	margin: 20px 0 0 10px;
+}
+
+.H-admin-menu-hr{
+	margin: 20px;
+	border-color: rgb(100, 100, 100);
+	border-width: 1px;
+	border-top-width: 0;
 }
