@@ -12,16 +12,19 @@ function formValidation() {
   var email = document.getElementById('user_email');
   var password = document.getElementById('user_password');
   var passwordConfirmation = document.getElementById('user_password_confirmation');
+  var fullnameMessenger = document.getElementById('user_name_messenger');
+  var emailMessenger = document.getElementById('user_email_messenger');
+  var passwordMessenger = document.getElementById('user_password_messenger');
+  var passwordConfirmationMessenger = document.getElementById('user_password_confirmation_messenger');
   // To check empty form fields.
-  if ((isEmpty(fullname)) || isEmpty(email)) {
+  if (isEmpty(fullname, fullnameMessenger) || isEmpty(email, emailMessenger)) {
     return false;
   }
   // Check each input in the order that it appears in the form.
-  if (validateName(fullname, "* Please enter a valid name")) {
-    if (emailValidation(email, "* Please enter a valid email address")) {
-      if (lengthDefinePassword(password, passwordConfirmation, 6, 1000)) {
-        if(comparePassword(password, passwordConfirmation, "* Your password confirmation have to be identical")){
-          document.getElementById('B_messenger').innerText ="";
+  if (validateName(fullname, fullnameMessenger, "* Please enter a valid name")) {
+    if (emailValidation(email, emailMessenger, "* Please enter a valid email address")) {
+      if (lengthDefinePassword(password, passwordConfirmation, passwordMessenger, 6, 1000)) {
+        if(comparePassword(password, passwordConfirmation, passwordConfirmationMessenger, "* Your password confirmation have to be identical")){
           return true;
         }
       }
@@ -29,44 +32,53 @@ function formValidation() {
   }
   return false;
 }
-function isEmpty(field)
+function isEmpty(field, fieldMessenger)
 {
   if(field == null) {
     return false;
   }
   if (field.value.length == 0) {
-    document.getElementById('B_messenger').innerText = "* All fields are mandatory *"; // This segment displays the validation rule for all fields
+    fieldMessenger.innerText = "* All fields are mandatory *"; // This segment displays the validation rule for all fields
+    fieldMessenger.style.visibility = "visible";
     field.focus();
     return true;
   }
+  fieldMessenger.innerText = "*";
+  fieldMessenger.style.visibility = "hidden";
   return false;
 }
-function comparePassword(inputPass, inputPasswordConfirmation, alertMsg)
+function comparePassword(inputPass, inputPasswordConfirmation, fieldMessenger, alertMsg)
 {
   if(inputPass == null) return true;
   if(inputPasswordConfirmation == null) return true;
   if(inputPass.value === inputPasswordConfirmation.value) 
   {
+    fieldMessenger.innerText = "*";
+    fieldMessenger.style.visibility = "hidden";
     return true;
   }
-  document.getElementById('B_messenger').innerText = alertMsg; // This segment displays the validation rule for name.
+  fieldMessenger.innerText = alertMsg; // This segment displays the validation rule for name.
+  fieldMessenger.style.visibility = "visible";
   inputPasswordConfirmation.focus();
   return false;
 }
 // Function that checks whether input text is an alphabetic character or not.
-function validateName(inputtext, alertMsg) {
+function validateName(inputtext, fieldMessenger, alertMsg) {
   if(inputtext == null) return true;
   var alphaExp = /^([A-Z]{1})+([[A-Za-z]+[,.]?[ ]?|[A-Za-z]+[-]]?)+$/gm;
   if (inputtext.value.match(alphaExp)) {
+    fieldMessenger.innerText = "*";
+    fieldMessenger.style.visibility = "hidden";
     return true;
   } else {
-    document.getElementById('B_messenger').innerText = alertMsg; // This segment displays the validation rule for name.
+    fieldMessenger.innerText = alertMsg; // This segment displays the validation rule for name.
+    fieldMessenger.style.visibility = "visible";
     inputtext.focus();
     return false;
   }
 }
 // Function that checks whether the input characters are restricted according to defined by user.
-function lengthDefinePassword(inputPass, inputPasswordConfirmation, min, max) {
+function lengthDefinePassword(inputPass, inputPasswordConfirmation, fieldMessenger, min, max) {
   
   // Getting a form that doesn't have password field
   if(inputPass == null) return true; 
@@ -75,32 +87,41 @@ function lengthDefinePassword(inputPass, inputPasswordConfirmation, min, max) {
   var uInput = inputPass.value;
   if(inputPasswordConfirmation == null) {
     if (uInput.length <= 0){
-      document.getElementById('B_messenger').innerText = "* All fields are mandatory *";
+      fieldMessenger.innerText = "* All fields are mandatory *";
+      fieldMessenger.style.visibility = "visible";
       inputPass.focus();
       return false;
     }
     else {
+      fieldMessenger.innerText = "*";
+      fieldMessenger.style.visibility = "hidden";
       return true;  // Pass to backend
     }
   }
 
   // Getting a sign up form
   if (uInput.length >= min && uInput.length <= max) {
+    fieldMessenger.style.visibility = "hidden";
+    fieldMessenger.innerText = "*";
     return true;
   } else {
-    document.getElementById('B_messenger').innerText = "* Please enter more than or equal to " + min + " characters *"; // This segment displays the validation rule for password
+    fieldMessenger.innerText = "* Please enter more than or equal to " + min + " characters *"; // This segment displays the validation rule for password
+    fieldMessenger.style.visibility = "visible";
     inputPass.focus();
     return false;
   }
 }
 // Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.
-function emailValidation(email, alertMsg) {
+function emailValidation(email, fieldMessenger, alertMsg) {
   if(email == null) return true;
   var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (emailExp.test(email.value)) {
+    fieldMessenger.innerText = "*";
+    fieldMessenger.style.visibility = "hidden";
     return true;
   } else {
-    document.getElementById('B_messenger').innerText = alertMsg; // This segment displays the validation rule for email.
+    fieldMessenger.innerText = alertMsg; // This segment displays the validation rule for email.
+    fieldMessenger.style.visibility = "visible";
     email.focus();
     return false;
   }
