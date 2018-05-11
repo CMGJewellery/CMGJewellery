@@ -15,7 +15,7 @@
 .P-input-new-product, .P-select-new-product {
   width: 80%;
   height: 40px;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 0 20px;
   background: #e6e6e6;
   color: #2F2F2F;
@@ -23,8 +23,8 @@
   border: none;
 }
 
-#P-description-new-product {
-  
+.P-input-new-product:focus {
+  animation: focusInP 0.25s ease-out;
 }
 
 .P-no-img-label {
@@ -41,10 +41,58 @@
 
 .P-label-upload-img > span {
   padding: 5px 15px;
-  margin-top: 5px;
   border-radius: 25px;
   color: #2F2F2F;
   background: #e6e6e6;
+  box-shadow: 0 4px #999;
+  display: inline-block;
+}
+
+.P-label-upload-img:hover span {
+  background: #CBC8DB;
+}
+
+.P-label-upload-img:active span {
+  background: #CBC8DB;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+.P-price-new-product {
+  padding-right: 20px;
+}
+
+.P-price-new-product:after {
+  content: "đ";
+  color: #2F2F2F;
+  background: #CBC8DB;
+  font-size: 15px;
+  padding: 8.5px 10px;
+  position: absolute;
+  top: 45%;
+  right: 12%;
+  border-radius: 0 15px 15px 0;
+}
+
+@keyframes focusInP {
+  0% {
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.15), 0 0px 20px 0 rgba(0, 0, 0, 0.14);
+  }
+  20% {
+    box-shadow: 0 0px 10px 2px rgba(0, 0, 0, 0.15), 0 0px 22px 2px rgba(0, 0, 0, 0.14);
+  }
+  40% {
+    box-shadow: 0 0px 12px 4px rgba(0, 0, 0, 0.15), 0 0px 24px 4px rgba(0, 0, 0, 0.14);
+  }
+  60% {
+    box-shadow: 0 0px 14px 6px rgba(0, 0, 0, 0.15), 0 0px 26px 6px rgba(0, 0, 0, 0.14);
+  }
+  80% {
+    box-shadow: 0 0px 16px 8px rgba(0, 0, 0, 0.15), 0 0px 28px 8px rgba(0, 0, 0, 0.14);
+  }
+  100% {
+    box-shadow: 0 0px 16px 8px rgba(0, 0, 0, 0.0), 0 0px 28px 8px rgba(0, 0, 0, 0.0);
+  }
 }
 
 @media (max-width: 992px) {

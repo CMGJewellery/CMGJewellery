@@ -62,7 +62,7 @@
 
     <div class="row">
       <!-- Name -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :name, class:"P-label-new-product" %> <br>
         <%= f.text_field :name_of_product, class: 'P-input-new-product', id:'P-name-new-product' %>
         <br>
@@ -70,9 +70,9 @@
       </div>
 
       <!-- Price -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2 P-price-new-product">
         <%= f.label :price, class:"P-label-new-product" %> <br>
-        <%= f.text_field :price_of_product, class: 'P-input-new-product', id: 'P-price-new-product' %>
+        <%= f.number_field :price_of_product, class: 'P-input-new-product', id: 'P-price-new-product' %>
         <br>
         <div class="P-alert"></div>
       </div>
@@ -80,7 +80,7 @@
 
     <div class="row">
       <!-- Description -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :description, class:"P-label-new-product" %> <br>
         <%#= f.text_field :description_of_product, class: 'P-input-new-product', id: 'P-description-new-product' %>
         <!-- chị sửa chỗ này thành rails form giúp em -->
@@ -90,7 +90,7 @@
       </div>
 
       <!-- Advantage -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :Advantage, class:"P-label-new-product" %> <br>
         <%= f.text_field :advantage1_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
         <%= f.text_field :advantage2_of_product, class: 'P-input-new-product P-advantage-new-product', style:"margin: 10px 0;" %> <br>
@@ -100,7 +100,7 @@
 
     <div class="row">
       <!-- Collection -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :collection, class:"P-label-new-product" %> <br>
         <%= f.text_field :collection_of_product, class: 'P-input-new-product', id: 'P-collection-new-product' %>
         <br>
@@ -109,7 +109,7 @@
 
       <!-- chị sửa chỗ này thành rails form -->
       <!-- Type -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :type, class:"P-label-new-product" %> <br>
         <select class="P-select-new-product" id="P-type-new-product">
           <option>Necklaces</option>
@@ -124,7 +124,7 @@
     <div class="row">
       <!-- chị sửa chỗ này thành rails form -->
       <!-- Mental -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :mental, class:"P-label-new-product" %> <br>
         <select class="P-select-new-product" id="P-mental-new-product">
           <option>Black Ruthenium Plated</option>
@@ -140,7 +140,7 @@
       
       <!-- chị sửa chỗ này thành rails form -->
       <!-- Gemstone -->
-      <div class="P-content-new-product col-md-6">
+      <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :gemstone, class:"P-label-new-product" %> <br>
         <select class="P-select-new-product" id="P-gemstone-new-product">
           <option>Pearl</option>
