@@ -53,6 +53,7 @@
 
 .P-label-upload-img:hover span, .P-submit-new-product:hover {
   background: #CBC8DB;
+  transition: 0.5s;
 }
 
 .P-label-upload-img:active span, .P-submit-new-product:active {
@@ -63,7 +64,7 @@
 
 #P-price-new-product {
   padding-right: 20px;
-  padding-left: 30px;
+  padding-left: 35px;
 }
 
 .P-price-new-product:after {
@@ -107,12 +108,34 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1252px) {
   .P-no-img-label {
     width: 150px;
     height: 150px;
   }
   .P-alert {
     right: 15%;
+  }
+}
+
+@media (max-width: 890px) {
+  .P-no-img-label {
+    width: 100px;
+    height: 100px;
+  }
+  .P-label-upload-img {
+    padding: 2px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .P-no-img-label {
+    width: 150px;
+    height: 150px;
+  }
+  .P-label-upload-img {
+    padding: 5px 15px;
+    font-size: 15px;
   }
 }
