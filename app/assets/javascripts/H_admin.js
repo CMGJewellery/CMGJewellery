@@ -29,11 +29,11 @@ document.addEventListener("turbolinks:load", function (event){
 			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[0];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[0]
 			if (showButton.innerHTML == "v"){
-				blockContainer.style.height = "144px";
+				blockContainer.style.height = "154px";
 				showButton.innerHTML = "^";
 			}
 			else{
-				blockContainer.style.height = "48px";
+				blockContainer.style.height = "53px";
 				showButton.innerHTML = "v";
 			};
 		});
@@ -43,11 +43,11 @@ document.addEventListener("turbolinks:load", function (event){
 			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[1];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[2]
 			if (showButton.innerHTML == "v"){
-				blockContainer.style.height = "192px";
+				blockContainer.style.height = "207px";
 				showButton.innerHTML = "^";
 			}
 			else{
-				blockContainer.style.height = "48px";
+				blockContainer.style.height = "53px";
 				showButton.innerHTML = "v";
 			};
 		});
@@ -57,11 +57,11 @@ document.addEventListener("turbolinks:load", function (event){
 			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[2];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[3]
 			if (showButton.innerHTML == "v"){
-				blockContainer.style.height = "144px";
+				blockContainer.style.height = "154px";
 				showButton.innerHTML = "^";
 			}
 			else{
-				blockContainer.style.height = "48px";
+				blockContainer.style.height = "53px";
 				showButton.innerHTML = "v";
 			};
 		});
@@ -71,11 +71,11 @@ document.addEventListener("turbolinks:load", function (event){
 			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[3];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[4]
 			if (showButton.innerHTML == "v"){
-				blockContainer.style.height = "144px";
+				blockContainer.style.height = "154px";
 				showButton.innerHTML = "^";
 			}
 			else{
-				blockContainer.style.height = "48px";
+				blockContainer.style.height = "53px";
 				showButton.innerHTML = "v";
 			};
 		});

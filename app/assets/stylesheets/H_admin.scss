@@ -4,11 +4,12 @@
 
 #H-admin-menu{
 	position: fixed;
+	text-align: left;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	width: 260px;
-	font-size: 16px;
+	font-size: 15px;
 	color: white;
 	background-color: rgb(60, 60, 60);
 	overflow: auto;
@@ -59,7 +60,7 @@
 
 .H-admin-menu-block-container{
 	overflow: hidden;
-	height: 48px;
+	height: 53px;
 	transition: height 0.3s;
 }
 
@@ -87,81 +88,6 @@
 
 .H-admin-menu-hr{
 	margin: 20px;
+	border: 0 0 1px 0;
 	border-color: rgb(100, 100, 100);
-	border-width: 1px;
-	border-top-width: 0;
-}
-
-/*dashboard section*/
-
-.H-section-name{
-	font-size: 30px;
-	margin: 20px;
-}
-
-.H-first-row{
-	margin: 0;
-	padding: 0;
-}
-
-.H-2-of-first-row{
-	margin: 0;
-	padding: 0;
-	float: left;
-}
-
-.H-first-row-elements{
-	float: left;
-	margin: 20px 40px 20px 0;
-	padding: 15px;
-	width: calc((100vw - 580px)/4);
-	background-color: white;
-	position: relative;
-}
-
-@media(max-width: 1300px){
-	.H-first-row-elements{
-		width: calc((100vw - 440px)/2);
-	}
-	.H-2-of-first-row:nth-of-type(2) .H-first-row-elements:first-of-type{
-		margin-left: 40px;
-	}
-}
-
-@media(max-width: 1000px){
-	.H-first-row-elements{
-		width: calc((100vw - 180px)/2);
-	}
-	.H-2-of-first-row:nth-of-type(2) .H-first-row-elements:first-of-type{
-		margin-left: 40px;
-	}
-}
-
-@media(max-width: 700px){
-	.H-first-row-elements{
-		width: calc(100vw - 120px);
-		margin-left: 40px;
-	}
-}
-
-.H-2-of-first-row:first-of-type .H-first-row-elements:first-of-type{
-	margin-left: 40px;
-}
-
-.H-first-row-element-icon{
-	background-color: green;
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	top: -15px;
-	left: 15px;
-}
-
-.H-first-row-element-tittle{
-	text-align: right;
-}
-
-.H-first-row-element-content{
-	font-size: 30px;
-	text-align: right;
 }
