@@ -22,7 +22,7 @@ function formValidation() {
   }
   // Check each input in the order that it appears in the form.
   if (validateName(fullname, fullnameMessenger, "* Please enter a valid name")) {
-    if (emailValidation(email, emailMessenger, "* Please enter a valid email address")) {
+    if (validateEmail(email, emailMessenger, "* Please enter a valid email address")) {
       if (lengthDefinePassword(password, passwordConfirmation, passwordMessenger, 6, 1000)) {
         if(comparePassword(password, passwordConfirmation, passwordConfirmationMessenger, "* Your password confirmation have to be identical")){
           return true;
@@ -112,7 +112,7 @@ function lengthDefinePassword(inputPass, inputPasswordConfirmation, fieldMesseng
   }
 }
 // Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.
-function emailValidation(email, fieldMessenger, alertMsg) {
+function validateEmail(email, fieldMessenger, alertMsg) {
   if(email == null) return true;
   var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (emailExp.test(email.value)) {
