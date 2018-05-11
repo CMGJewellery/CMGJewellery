@@ -1,20 +1,10 @@
 .B-login-container{
-  background-image: asset-url('video-background-d.jpg'); 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80%;
-  width: 90%;
-}
-.B-login-form{
-  float: left;
-  text-align: left;
-  width: 35%;
-  height: 100%;
-  background-color: white;
+  height: 100vh;
+  grid-template-columns: 35% 65%;
 }
 .B-login-form-fields{
   display: grid;
   height: 60%;
   grid-template-rows: 25% 25% 25% 25%;
+  margin-bottom: 57%;
 }

@@ -4,19 +4,20 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right; 
-  padding: 5%;
+  padding: 3% 0;
+  grid-template-columns: 25% 50% 25%;
 }
 .B-email-form-container{
   box-sizing: border-box;
   background-color: rgba($color: $color-white, $alpha: 1);
-  width: 50%;
-  padding: 3%;
+  width: 100%;
+  padding: 5%;
   margin: 0 auto;
   text-align: left;
 }
-.B-email-form-container .B-text-input{
-  margin-bottom: 5%;
-}
 .B-email-form-container .B-form-button{
-  width: 50%;
+  width: 80%;
+}
+.B-small-forms{
+  padding-bottom: 7%
 }

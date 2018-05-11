@@ -12,10 +12,10 @@
   .B-appear-mobile-responsive{
     display: block;
   }
-  p, h4, .B-btn, label, em, .B-form-button{
+  p, h4, .B-btn, label, em, .B-form-button, .B-text-input, .B-eye-container{
     font-size: 4vw;
   }
-  .B-form-container a{
+  .B-form-bottom-links, .B-form-message-container{
     font-size: 3.5vw;
   }
   h3{
@@ -71,6 +71,34 @@
   // Forms
   .B-form-button-container{
     display: grid;
+  }
+  .B-email-reply-form{
+    padding: 0;
+  }
+  .B-styled-input-single {
+    label {
+      cursor: pointer;
+      &:before,
+      &:after {
+        content: '';
+        top: 45%; // Check Box position
+      }
+      &:before { // Outter Box
+        left: 0;
+        width: 2.4vw;
+        height: 2.4vw;
+        margin: -2.1vw 0 0;
+      }
+      &:after { // Check Mark
+        left: 0.7vw;
+        width: 1.2vw;
+        height: 1.2vw;
+        margin: -1.6vw 0 0;
+      }
+    }
+  }
+  .B-styled-input-single{ //Remember Me
+    padding-left: 4vw;
   }
 }
 

@@ -10,7 +10,7 @@
   </head>
   <body class="B-body-form">
     <div class="B-grid-container B-registration-container">
-      <div id="carouselExampleSlidesOnly" class="carousel slide B-disappear-mobile-responsive B-carousel-container" data-ride="carousel">
+      <div class="carousel slide B-disappear-mobile-responsive B-carousel-container" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
             <%= image_tag 'carousel-1', class:'d-block w-100 img-fluid', data: {holder:'true'} %>
@@ -65,10 +65,12 @@
                 </div>   
                 <%# id:"submit", type:'submit' %>
               </div>     
-              <%= link_to 'Already have an account?', new_user_session_path %>     
+              <%= link_to 'Already have an account?', new_user_session_path, class:"B-form-bottom-links" %>     
             </div>
           <% end %>
-          <%= render "users/shared/links", class:"B-form-bottom-links" %>
+          <div class="B-form-bottom-links">
+            <%= render "users/shared/links"%>
+          </div>
         </div>
       </div>  
     </div>

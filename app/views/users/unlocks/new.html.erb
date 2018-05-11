@@ -1,20 +1,21 @@
-<div class="B-email-reply-form">
-  <div class="B-email-form-container B-white-font">
+<div class="B-grid-container B-email-reply-form">
+  <div></div>
+  <div class="B-email-form-container">
     <h3>Resend unlock instructions</h3>
-    <p id="B_messenger"></p>
-    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class: 'B-validator' }) do |f| %>
-
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class: 'B-small-forms B-validator' }) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
         <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
+        <p class="B-form-message-container" id="user_email_messenger">*</p>
       </div>
-
       <div class="actions">
         <%= f.submit "Resend unlock instructions", class:'B-form-button' %>
       </div>
       <%= devise_error_messages! %>      
     <% end %>
-
-    <%= render "users/shared/links" %>
+    <div class="B-form-bottom-links">
+      <%= render "users/shared/links"%>
+    </div>
   </div>
+  <div></div>
 </div>

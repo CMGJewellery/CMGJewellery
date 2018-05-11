@@ -1,5 +1,6 @@
-<div class="B-email-reply-form">
-  <div class="B-email-form-container B-white-font">
+<div class="B-grid-container B-email-reply-form">
+  <div></div>
+  <div class="B-email-form-container">
     <h3>Change your password</h3>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'B-validator'}) do |f| %>
       <%= f.hidden_field :reset_password_token %>
@@ -11,18 +12,18 @@
         <% end %>
         <%= f.password_field :password, autofocus: true, autocomplete: "off", class:'B-text-input' %>
       </div>
-
       <div class="field">
         <%= f.label :password_confirmation, "Confirm new password" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class:'B-text-input' %>
       </div>
-
       <div class="actions">
         <%= f.submit "Change my password", class:'B-form-button' %>
       </div>
       <%= devise_error_messages! %>      
     <% end %>
-
-    <%= render "users/shared/links" %>
+    <div class="B-form-bottom-links">
+      <%= render "users/shared/links"%>
+    </div>
   </div>
+  <div></div>
 </div>

@@ -38,7 +38,7 @@ function isEmpty(field, fieldMessenger)
     return false;
   }
   if (field.value.length == 0) {
-    fieldMessenger.innerText = "* All fields are mandatory *"; // This segment displays the validation rule for all fields
+    fieldMessenger.innerText = "* This field is mandatory *"; // This segment displays the validation rule for all fields
     fieldMessenger.style.visibility = "visible";
     field.focus();
     return true;

@@ -18,21 +18,23 @@
       <p class="B_notice_box"><%= alert %></p> 
     <% end %>
   </div>
-  <body class="B-flex-container B-body-form">
-    <div class="B-login-container">
-      <div class="B-login-form">
+  <body class="B-body-form">
+    <div class="B-grid-container B-login-container">
+      <div class="B-registration-form">
         <div class="B-form-container">
           <center><h3>Log In</h3></center>
-          <p id="B_messenger"></p>
           <%= form_for resource, as: resource_name, url: session_path(resource_name), html: {class: 'B-login-form-fields B-validator'} do |f| %>
+          <%#= devise_error_messages! %>
             <div class="field">
               <%= f.label :email %><br />
               <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
+              <p class="B-form-message-container" id="user_email_messenger">*</p>
             </div>
             <div class="field">
               <%= f.label :password %><br />
               <span class="B-eye-container"><i class="fa fa-eye" id="toggle" onclick="togglePasswordVisibility()"></i></span>
               <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
+              <p class="B-form-message-container" id="user_password_messenger">*</p>
             </div>    
             <% if devise_mapping.rememberable? -%>
               <div class="field B-styled-input-diamond">
@@ -44,18 +46,37 @@
             <% end -%>
             <div>
               <div class="B-grid-container B-form-button-container">
-                <%= link_to 'Go Back', root_path, class:'B-form-button B-back-button' %>
+                <%= link_to root_path, class:"B-form-button B-back-button" do %>
+                  <span>Go Back</span>
+                <% end %>
                 <div class="actions">
                   <%= f.submit "Log in", class:"B-form-button" %>
                 </div>      
               </div>  
-              <%= link_to "Don't have an account yet?", new_user_registration_path %>
-              
+              <%= link_to "Don't have an account yet?", new_user_registration_path, class:"B-form-bottom-links"  %>
             </div>
           <% end %>
-          <%= render "users/shared/links" %> 
+          <div class="B-form-bottom-links">
+            <%= render "users/shared/links"%>
+          </div>
         </div>
       </div>  
+      <div class="carousel slide B-disappear-mobile-responsive B-carousel-container" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <%= image_tag 'carousel-1', class:'d-block w-100 img-fluid', data: {holder:'true'} %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'carousel-2', class:'d-block w-100 img-fluid', data: {holder:'true'} %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'carousel-3', class:'d-block w-100 img-fluid', data: {holder:'true'} %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'carousel-4', class:'d-block w-100 img-fluid', data: {holder:'true'} %>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
