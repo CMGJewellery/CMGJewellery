@@ -16,11 +16,12 @@
   width: 80%;
   height: 40px;
   border-radius: 15px;
-  padding: 0 20px;
+  padding: 0 20px 3px 15px;
   background: #e6e6e6;
   color: #2F2F2F;
   outline: none;
   border: none;
+  position: relative;
 }
 
 .P-input-new-product:focus {
@@ -39,27 +40,30 @@
   display: none;
 }
 
-.P-label-upload-img > span {
+.P-label-upload-img > span, .P-submit-new-product {
   padding: 5px 15px;
   border-radius: 25px;
   color: #2F2F2F;
   background: #e6e6e6;
   box-shadow: 0 4px #999;
   display: inline-block;
+  border: none;
+  outline: none;
 }
 
-.P-label-upload-img:hover span {
+.P-label-upload-img:hover span, .P-submit-new-product:hover {
   background: #CBC8DB;
 }
 
-.P-label-upload-img:active span {
+.P-label-upload-img:active span, .P-submit-new-product:active {
   background: #CBC8DB;
   box-shadow: 0 1px #666;
   transform: translateY(4px);
 }
 
-.P-price-new-product {
+#P-price-new-product {
   padding-right: 20px;
+  padding-left: 30px;
 }
 
 .P-price-new-product:after {
@@ -70,8 +74,16 @@
   padding: 8.5px 10px;
   position: absolute;
   top: 45%;
-  right: 12%;
-  border-radius: 0 15px 15px 0;
+  left: 10%;
+  border-radius: 15px 0 0 15px;
+}
+
+.P-alert {
+  position: absolute;
+  top: 57%;
+  right: 14%;
+  font-size: 15px;
+  display: none;
 }
 
 @keyframes focusInP {
@@ -99,5 +111,8 @@
   .P-no-img-label {
     width: 150px;
     height: 150px;
+  }
+  .P-alert {
+    right: 15%;
   }
 }

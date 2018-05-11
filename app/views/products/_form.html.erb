@@ -66,7 +66,10 @@
         <%= f.label :name, class:"P-label-new-product" %> <br>
         <%= f.text_field :name_of_product, class: 'P-input-new-product', id:'P-name-new-product' %>
         <br>
-        <div class="P-alert"></div>
+        <div class="P-alert">
+          <span id="P-alert-name">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
       </div>
 
       <!-- Price -->
@@ -74,7 +77,10 @@
         <%= f.label :price, class:"P-label-new-product" %> <br>
         <%= f.number_field :price_of_product, class: 'P-input-new-product', id: 'P-price-new-product' %>
         <br>
-        <div class="P-alert"></div>
+        <div class="P-alert">
+          <span id="P-alert-price">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
       </div>
     </div>
 
@@ -84,17 +90,34 @@
         <%= f.label :description, class:"P-label-new-product" %> <br>
         <%#= f.text_field :description_of_product, class: 'P-input-new-product', id: 'P-description-new-product' %>
         <!-- chị sửa chỗ này thành rails form giúp em -->
-        <textarea class="P-input-new-product" style="width: 80%; height: 75%; padding:10px 20px 10% 20px;"></textarea>
+        <textarea class="P-input-new-product" style="width: 80%; height: 75%; padding:10px 20px 10% 15px;"></textarea>
         <br>
-        <div class="P-alert"></div>
+        <div class="P-alert" style="top: 52%;">
+          <span id="P-alert-des">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
       </div>
 
       <!-- Advantage -->
       <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :Advantage, class:"P-label-new-product" %> <br>
         <%= f.text_field :advantage1_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
+        <div class="P-alert" style="top: 23%;">
+          <span id="P-alert-advan1">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
+
         <%= f.text_field :advantage2_of_product, class: 'P-input-new-product P-advantage-new-product', style:"margin: 10px 0;" %> <br>
+        <div class="P-alert" style="top: 53%;">
+          <span id="P-alert-advan2">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
+        
         <%= f.text_field :advantage3_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
+        <div class="P-alert" style="top: 81%;">
+          <span id="P-alert-advan3">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
       </div>
     </div>
 
@@ -104,7 +127,10 @@
         <%= f.label :collection, class:"P-label-new-product" %> <br>
         <%= f.text_field :collection_of_product, class: 'P-input-new-product', id: 'P-collection-new-product' %>
         <br>
-        <div class="P-alert"></div>
+        <div class="P-alert">
+          <span id="P-alert-collect">sometext</span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
       </div>
 
       <!-- chị sửa chỗ này thành rails form -->
@@ -162,6 +188,6 @@
   
 
   <div class="actions" style="margin-top: 20px;">
-    <%= f.submit %>
+    <%= f.submit :Create, class:"P-submit-new-product" %>
   </div>
 <% end %>
