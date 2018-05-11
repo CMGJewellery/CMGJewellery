@@ -8,10 +8,69 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </head>
 
-  <body>
-    test test test
+  <body id="H-admin-page">
 
-    <%= yield %>
+	<!-- menu section -->
+	<div id="H-admin-menu">
+		
+		<div id="H-admin-menu-page-name">CMG JEWELLERY</div>
+		<hr class="H-admin-menu-hr">
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Hung Hung Hang</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">My Profile</div>
+			<div class="H-admin-menu-content">Log Out</div>
+		</div>
+		<hr class="H-admin-menu-hr">
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Dashboard</div>
+			</div>
+		</div>
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Products</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">Add</div>
+			<div class="H-admin-menu-content">Edit</div>
+			<div class="H-admin-menu-content">Status</div>
+		</div>
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Accounts</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">Add</div>
+			<div class="H-admin-menu-content">List</div>
+		</div>
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Orders</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">View</div>
+			<div class="H-admin-menu-content">Update Status</div>
+		</div>
+	
+	</div>
+	<!-- end of menu section -->
+	
+	<!-- content section -->
+	<div id="H-admin-content">
+	
+		<%= yield %>
+		<div id="H-slide-button">X</div>
+	
+	</div>
+	<!-- end of content section -->
 
 
   </body>
