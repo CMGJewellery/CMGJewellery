@@ -21,13 +21,13 @@
   font-size: 1.2vw;
 }
 .B-form-container{
-  margin: 5% 8%;
+  margin: 7%;
 }
 .B-registration-form-fields{
   display: grid;
   height: 70%;
   grid-template-rows: 20% 20% 20% 20% 20%;
-  margin-bottom: 20%;
+  margin-bottom: 50%;
 }
 .B-text-input{
   width: 80%;
@@ -56,6 +56,8 @@
   max-width: 74%;
 }
 .B-eye-container{
+  position: absolute;
+  right: 20%;
   font-size: 1.5vw;
   width: 5% !important;
   display: inline-block;
@@ -72,6 +74,7 @@
   border:none;
   outline: none;
   border-radius: 1%;
+  padding: 1%;
 }
 .B-form-button:hover{
   background-color: $color-dark-red;

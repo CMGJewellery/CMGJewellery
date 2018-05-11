@@ -30,10 +30,10 @@
               <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
               <p class="B-form-message-container" id="user_email_messenger">*</p>
             </div>
-            <div class="field">
+            <div class="field", style="position:relative">
               <%= f.label :password %><br />
-              <span class="B-eye-container"><i class="fa fa-eye" id="toggle" onclick="togglePasswordVisibility()"></i></span>
               <%= f.password_field :password, autocomplete: "off", class:'B-text-input' %>
+              <span class="B-eye-container"><i class="fa fa-eye" id="toggle" onclick="togglePasswordVisibility()"></i></span>
               <p class="B-form-message-container" id="user_password_messenger">*</p>
             </div>    
             <% if devise_mapping.rememberable? -%>
@@ -46,9 +46,7 @@
             <% end -%>
             <div>
               <div class="B-grid-container B-form-button-container">
-                <%= link_to root_path, class:"B-form-button B-back-button" do %>
-                  <span>Go Back</span>
-                <% end %>
+                <%= link_to 'Go Back', root_path, class:"B-form-button B-back-button"%>
                 <div class="actions">
                   <%= f.submit "Log in", class:"B-form-button" %>
                 </div>      

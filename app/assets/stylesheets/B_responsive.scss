@@ -12,14 +12,14 @@
   .B-appear-mobile-responsive{
     display: block;
   }
-  p, h4, .B-btn, label, em, .B-form-button, .B-text-input, .B-eye-container{
+  p, h4, .B-btn, label, .B-form-button, .B-text-input, .B-eye-container{
     font-size: 4vw;
   }
-  .B-form-bottom-links, .B-form-message-container{
+  .B-form-bottom-links, em, .B-form-message-container{
     font-size: 3.5vw;
   }
   h3{
-    font-size: 7vw;
+    font-size: 10vw;
   }
   .B-collections-seller-link{
     border: 1px solid #e7e7e7;
@@ -77,6 +77,7 @@
   }
   .B-styled-input-single {
     label {
+      font-size: 3.2vw;
       cursor: pointer;
       &:before,
       &:after {

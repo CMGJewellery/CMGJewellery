@@ -1,7 +1,7 @@
 <div class="B-grid-container B-email-reply-form">
   <div></div>
   <div class="B-email-form-container">
-    <h3>Resend confirmation instructions</h3>
+    <h3>Resend confirmation email</h3>
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'B-small-forms B-validator' }) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -9,7 +9,7 @@
         <p class="B-form-message-container" id="user_email_messenger">*</p>
       </div>
       <div class="actions">
-        <%= f.submit "Resend confirmation instructions", class:'B-form-button' %>
+        <%= f.submit "Confirm!", class:'B-form-button' %>
       </div>
       <%= devise_error_messages! %>     
     <% end %>
