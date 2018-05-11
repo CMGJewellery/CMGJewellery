@@ -40,7 +40,7 @@
   display: none;
 }
 
-.P-label-upload-img > span, .P-submit-new-product {
+.P-choose-img-label, .P-submit-new-product {
   padding: 5px 15px;
   border-radius: 25px;
   color: #2F2F2F;
@@ -49,11 +49,11 @@
   display: inline-block;
   border: none;
   outline: none;
+  transition: 0.5s;
 }
 
 .P-label-upload-img:hover span, .P-submit-new-product:hover {
   background: #CBC8DB;
-  transition: 0.5s;
 }
 
 .P-label-upload-img:active span, .P-submit-new-product:active {
