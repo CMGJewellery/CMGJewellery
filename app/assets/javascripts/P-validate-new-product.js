@@ -39,14 +39,13 @@ document.addEventListener("turbolinks:load", function (event) {
   });
 
   $('.P-form-new-product').submit(function() {
-
-    result[0] = notEmptyFieldP(name, "#P-alert-name", 0); 
-    result[1] = notEmptyFieldP(price, "#P-alert-price", 1); 
-    result[2] = notEmptyFieldP(description, "#P-alert-des", 2); 
-    result[3] = notEmptyFieldP(advantage[0], "#P-alert-advan1", 3); 
-    result[4] = notEmptyFieldP(advantage[1], "#P-alert-advan2", 4); 
-    result[5] = notEmptyFieldP(advantage[2], "#P-alert-advan3", 5); 
-    result[6] = notEmptyFieldP(collection, "#P-alert-collect", 6);
+    if (result[0] == undefined) result[0] = notEmptyFieldP(name, "#P-alert-name", 0);
+    if (result[1] == undefined) result[1] = notEmptyFieldP(price, "#P-alert-price", 1); 
+    if (result[2] == undefined) result[2] = notEmptyFieldP(description, "#P-alert-des", 2); 
+    if (result[3] == undefined) result[3] = notEmptyFieldP(advantage[0], "#P-alert-advan1", 3); 
+    if (result[4] == undefined) result[4] = notEmptyFieldP(advantage[1], "#P-alert-advan2", 4); 
+    if (result[5] == undefined) result[5] = notEmptyFieldP(advantage[2], "#P-alert-advan3", 5); 
+    if (result[6] == undefined) result[6] = notEmptyFieldP(collection, "#P-alert-collect", 6);
     result[7] = notEmptyUploadP(img[0]);
     result[8] = notEmptyUploadP(img[1]);
     result[9] = notEmptyUploadP(img[2]);
