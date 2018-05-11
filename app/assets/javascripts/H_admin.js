@@ -23,16 +23,59 @@ document.addEventListener("turbolinks:load", function (event){
 	
 		// when click on show button in menu
 		var tittleContainerArr = document.getElementsByClassName("H-admin-menu-tittle-container");
+	
+		// admin name
 		tittleContainerArr[0].addEventListener("click", function(){
-			var index = 0;
 			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[0];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[0]
 			if (showButton.innerHTML == "v"){
-				blockContainer.style.height = "56px";
+				blockContainer.style.height = "144px";
 				showButton.innerHTML = "^";
 			}
 			else{
-				blockContainer.style.height = "18px";
+				blockContainer.style.height = "48px";
+				showButton.innerHTML = "v";
+			};
+		});
+	
+		// products
+		tittleContainerArr[2].addEventListener("click", function(){
+			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[1];
+			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[2]
+			if (showButton.innerHTML == "v"){
+				blockContainer.style.height = "192px";
+				showButton.innerHTML = "^";
+			}
+			else{
+				blockContainer.style.height = "48px";
+				showButton.innerHTML = "v";
+			};
+		});
+	
+		// accounts
+		tittleContainerArr[3].addEventListener("click", function(){
+			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[2];
+			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[3]
+			if (showButton.innerHTML == "v"){
+				blockContainer.style.height = "144px";
+				showButton.innerHTML = "^";
+			}
+			else{
+				blockContainer.style.height = "48px";
+				showButton.innerHTML = "v";
+			};
+		});
+	
+		// orders
+		tittleContainerArr[4].addEventListener("click", function(){
+			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[3];
+			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[4]
+			if (showButton.innerHTML == "v"){
+				blockContainer.style.height = "144px";
+				showButton.innerHTML = "^";
+			}
+			else{
+				blockContainer.style.height = "48px";
 				showButton.innerHTML = "v";
 			};
 		});

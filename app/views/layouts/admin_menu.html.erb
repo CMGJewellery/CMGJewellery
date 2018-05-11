@@ -10,44 +10,118 @@
 
   <body id="H-admin-page">
 
-    <div id="H-admin-menu">
+	<!-- menu section -->
+	<div id="H-admin-menu">
+		
+		<div id="H-admin-menu-page-name">CMG JEWELLERY</div>
+		<hr class="H-admin-menu-hr">
 	
-	    <div id="H-admin-menu-page-name">CMG JEWELLERY</div>
-	    <hr class="H-admin-menu-hr">
-
-	    <div class="H-admin-menu-block-container">
-		    <div class="H-admin-menu-tittle-container">
-			    <div class="H-admin-menu-tittle">Hung Hung Hang</div>
-			    <div class="H-admin-menu-show-button">v</div>
-		    </div>
-		    <div class="H-admin-menu-content">My Profile</div>
-	    </div>
-	    <hr class="H-admin-menu-hr">
-
-	    <div class="H-admin-menu-title">Dashboard</div>
-
-	    <div class="H-admin-menu-content-container">
-		    <div class="H-admin-menu-title">Products</div>
-			  <div class="H-admin-menu-content">Add</div>
-		  	<div class="H-admin-menu-content">Edit</div>
-		  	<div class="H-admin-menu-content">Status</div>
-	    </div>
-
-	    <div class="H-admin-menu-title">Accounts</div>
-	    <div class="H-admin-menu-content">Add</div>
-      <div class="H-admin-menu-content">List</div>
-      
-	    <div class="H-admin-menu-title">Orders</div>
-		  <div class="H-admin-menu-content">View</div>
-      <div class="H-admin-menu-content">Update Status</div>
-      
-    </div>
-    <!-- end of menu -->
-
-    <div id="H-admin-content">
-	    <div>Content</div>
-	    <div id="H-slide-button">X</div>
-    </div>
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Hung Hung Hang</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">My Profile</div>
+			<div class="H-admin-menu-content">Log Out</div>
+		</div>
+		<hr class="H-admin-menu-hr">
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Dashboard</div>
+			</div>
+		</div>
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Products</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">Add</div>
+			<div class="H-admin-menu-content">Edit</div>
+			<div class="H-admin-menu-content">Status</div>
+		</div>
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Accounts</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">Add</div>
+			<div class="H-admin-menu-content">List</div>
+		</div>
+	
+		<div class="H-admin-menu-block-container">
+			<div class="H-admin-menu-tittle-container">
+				<div class="H-admin-menu-tittle">Orders</div>
+				<div class="H-admin-menu-show-button">v</div>
+			</div>
+			<div class="H-admin-menu-content">View</div>
+			<div class="H-admin-menu-content">Update Status</div>
+		</div>
+	
+	</div>
+	<!-- end of menu section -->
+	
+	<!-- content section -->
+	<div id="H-admin-content">
+	
+		<div id="H-dashboard" class="HP-sections-of-admin">
+			
+			<!-- dashboard section -->
+			<div class="H-section-name">Dashboard</div>
+	
+			<div class="H-first-row">
+	
+				<div class="H-2-of-first-row">
+	
+					<div class="H-first-row-elements">
+						<div class="H-first-row-element-icon"></div>
+						<div class="H-first-row-element-tittle">Bookings</div>
+						<div class="H-first-row-element-content">184</div>
+						<hr class="H-first-row-element-hr">
+						<div class="H-first-row-element-details">Get More Space...</div>
+					</div>
+	
+					<div class="H-first-row-elements">
+						<div class="H-first-row-element-icon"></div>
+						<div class="H-first-row-element-tittle">Views</div>
+						<div class="H-first-row-element-content">75,125</div>
+						<hr class="H-first-row-element-hr">
+						<div class="H-first-row-element-details">Google Analytics</div>
+					</div>
+	
+				</div>
+	
+				<div class="H-2-of-first-row">
+	
+					<div class="H-first-row-elements">
+						<div class="H-first-row-element-icon"></div>
+						<div class="H-first-row-element-tittle">Revenues</div>
+						<div class="H-first-row-element-content">$3,245</div>
+						<hr class="H-first-row-element-hr">
+						<div class="H-first-row-element-details">Last 24 Hours</div>
+					</div>
+	
+					<div class="H-first-row-elements">
+						<div class="H-first-row-element-icon"></div>
+						<div class="H-first-row-element-tittle">Followers</div>
+						<div class="H-first-row-element-content">+245</div>
+						<hr class="H-first-row-element-hr">
+						<div class="H-first-row-element-details">Just Updated</div>
+					</div>
+	
+				</div>
+	
+			</div>
+			<!-- end of dashboard section -->
+	
+		</div>
+	
+		<div id="H-slide-button">X</div>
+	
+	</div>
+	<!-- end of content section -->
 
     <%= yield %>
 
