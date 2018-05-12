@@ -43,6 +43,8 @@
 	transition: right 0.3s;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	padding: 5%;
+	
 }
 
 #H-admin-content::-webkit-scrollbar{
@@ -55,6 +57,7 @@
 
 #H-admin-content:hover::-webkit-scrollbar-thumb{
 	background-color: rgba(200, 200, 200, 0.5);
+	overflow: auto;
 }
 
 #H-slide-button{
