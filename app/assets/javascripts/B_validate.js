@@ -1,11 +1,12 @@
 //https://www.formget.com/form-validation-using-javascript/
-document.addEventListener("turbolinks:load", function(event) {
+document.addEventListener("turbolinks:load", function (event) {
   var flag;
-  $(".B-validator").submit(function() {
+  $(".B-validator").submit(function () {
     flag = formValidation();
     return flag;
   });
 });
+
 function formValidation() {
   // Make quick references to our fields.
   var fullname = document.getElementById("user_name");
@@ -35,30 +36,33 @@ function formValidation() {
         "* Please enter a valid email address"
       )
     ) {
-      if (
-        lengthDefinePassword(
-          password,
-          passwordConfirmation,
-          passwordMessenger,
-          6,
-          1000
-        )
-      ) {
+      if(checkEmailExisted(fullname, passwordConfirmation)){
         if (
-          comparePassword(
+          lengthDefinePassword(
             password,
             passwordConfirmation,
-            passwordConfirmationMessenger,
-            "* Your password confirmation have to be identical"
+            passwordMessenger,
+            6,
+            1000
           )
         ) {
-          return true;
+          if (
+            comparePassword(
+              password,
+              passwordConfirmation,
+              passwordConfirmationMessenger,
+              "* Your password confirmation have to be identical"
+            )
+          ) {
+            return true;
+          }
         }
       }
     }
   }
   return false;
 }
+
 function isEmpty(field, fieldMessenger) {
   if (field == null) {
     return false;
@@ -73,6 +77,7 @@ function isEmpty(field, fieldMessenger) {
   fieldMessenger.style.visibility = "hidden";
   return false;
 }
+
 function comparePassword(
   inputPass,
   inputPasswordConfirmation,
@@ -148,7 +153,7 @@ function lengthDefinePassword(
 // Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.
 function validateEmail(email, fieldMessenger, alertMsg) {
   if (email == null) return true;
-  var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var emailExp = /^[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|vn|info))$/;
   if (emailExp.test(email.value)) {
     fieldMessenger.innerText = "*";
     fieldMessenger.style.visibility = "hidden";
@@ -162,17 +167,19 @@ function validateEmail(email, fieldMessenger, alertMsg) {
 }
 
 //-------------------------
-function checkEmailExisted() {
+function checkEmailExisted(fullname, passwordConfirmation) {
+  if((fullname == null) || (passwordConfirmation == null)) return true;
   var checkMail = true;
   var email = $("#user_email").val();
   var msg = $("#user_email_messenger").html("");
   $.ajax({
     url: "/check_email",
     method: "get",
-    data: { txt_email: email },
-    success: function(data) {
+    data: {
+      txt_email: email
+    }, async: false,
+    success: function (data) {
       if (data.check) {
-        //console.log(data.check);
         msg.html("* This email is already taken");
         $("#user_email_messenger").css("visibility", "visible");
         $("#user_email").focus();

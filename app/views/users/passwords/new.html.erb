@@ -3,7 +3,6 @@
   <div class="B-email-form-container">
     <h3>Forgot your password?</h3>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'B-small-forms B-validator'}) do |f| %>
-      <%= devise_error_messages! %>
       <div class="field">
         <%= f.label :email %><br />
         <%= f.text_field :email, autofocus: true, autocomplete: "email", class:'B-text-input' %>
@@ -19,5 +18,6 @@
   </div>
   <div></div>
 </div>
+<%= devise_error_messages! %>
 
 
