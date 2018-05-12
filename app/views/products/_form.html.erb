@@ -67,6 +67,10 @@
           </span>
           </div>
         </div>
+        <div class="P-alert">
+          <span id="P-alert-type"></span>
+          <i class="fa fa-exclamation-circle" style="color: red;"></i>
+        </div>
       </div>
       <!-- hết cái div đó thôi -->
     </div>
@@ -78,8 +82,7 @@
         <%#= f.text_field :description_of_product, class: 'P-input-new-product', id: 'P-description-new-product' %>
         <!-- chị sửa chỗ này thành rails form giúp em -->
         <textarea class="P-input-new-product" id="P-description-new-product" style="width: 100%; height: 75%; padding:10px 20px 10% 15px;"></textarea>
-        <br>
-        <div class="P-alert" style="top: 52%;">
+        <div class="P-alert">
           <span id="P-alert-des"></span>
           <i class="fa fa-exclamation-circle" style="color: red;"></i>
         </div>
@@ -89,19 +92,19 @@
       <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :Advantage, class:"P-label-new-product" %> <br>
         <%= f.text_field :advantage1_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
-        <div class="P-alert" style="top: 21%;">
+        <div class="P-alert">
           <span id="P-alert-advan1"></span>
           <i class="fa fa-exclamation-circle" style="color: red;"></i>
         </div>
 
-        <%= f.text_field :advantage2_of_product, class: 'P-input-new-product P-advantage-new-product', style:"margin: 10px 0;" %> <br>
-        <div class="P-alert" style="top: 49.5%;">
+        <%= f.text_field :advantage2_of_product, class: 'P-input-new-product P-advantage-new-product' %> <br>
+        <div class="P-alert">
           <span id="P-alert-advan2"></span>
           <i class="fa fa-exclamation-circle" style="color: red;"></i>
         </div>
         
         <%= f.text_field :advantage3_of_product, class: 'P-input-new-product P-advantage-new-product'%> <br>
-        <div class="P-alert" style="top: 79%;">
+        <div class="P-alert">
           <span id="P-alert-advan3"></span>
           <i class="fa fa-exclamation-circle" style="color: red;"></i>
         </div>

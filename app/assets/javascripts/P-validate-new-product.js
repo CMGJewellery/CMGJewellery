@@ -1,63 +1,63 @@
-// document.addEventListener("turbolinks:load", function (event) {
-//   var flag = true;
-//   var result = new Array();//to store each return boolean
-//   //declare quick reference
-//   var name = document.getElementById("P-name-new-product");
-//   var price = document.getElementById("P-price-new-product");
-//   var description = document.getElementById("P-description-new-product");
-//   var advantage = document.getElementsByClassName("P-advantage-new-product");
-//   var collection = document.getElementById("P-collection-new-product");
-//   var img = document.getElementsByClassName("P-upload-img-field");
+document.addEventListener("turbolinks:load", function (event) {
+  var flag = true;
+  var result = new Array();//to store each return boolean
+  //declare quick reference
+  var name = document.getElementById("P-name-new-product");
+  var price = document.getElementById("P-price-new-product");
+  var description = document.getElementById("P-description-new-product");
+  var advantage = document.getElementsByClassName("P-advantage-new-product");
+  var collection = document.getElementById("P-collection-new-product");
+  var img = document.getElementsByClassName("P-upload-img-field");
 
-//   $("#P-name-new-product").focusout(function() {
-//     result[0] = validNameP(name, 50, "#P-alert-name", 0);
-//   });
+  $("#P-name-new-product").focusout(function() {
+    result[0] = validNameP(name, 50, "#P-alert-name", 0);
+  });
 
-//   $("#P-price-new-product").focusout(function() {
-//     result[1] = validPriceP(price, "#P-alert-price", 1, 20000000, 500000);
-//   });
+  $("#P-price-new-product").focusout(function() {
+    result[1] = validPriceP(price, "#P-alert-price", 1, 20000000, 500000);
+  });
 
-//   $("#P-description-new-product").focusout(function() {
-//     result[2] = validLengthP(description, "#P-alert-des", 2, 500);
-//   });
+  $("#P-description-new-product").focusout(function() {
+    result[2] = validLengthP(description, "#P-alert-des", 2, 500);
+  });
 
-//   var inputAdvanElement = $(".P-advantage-new-product");
-//   $(inputAdvanElement[0]).focusout(function() {
-//     result[3] = validLengthP(advantage[0], "#P-alert-advan1", 3, 300);
-//   });
+  var inputAdvanElement = $(".P-advantage-new-product");
+  $(inputAdvanElement[0]).focusout(function() {
+    result[3] = validLengthP(advantage[0], "#P-alert-advan1", 3, 300);
+  });
 
-//   $(inputAdvanElement[1]).focusout(function() {
-//     result[4] = validLengthP(advantage[0], "#P-alert-advan2", 4, 300);
-//   });
+  $(inputAdvanElement[1]).focusout(function() {
+    result[4] = validLengthP(advantage[0], "#P-alert-advan2", 4, 300);
+  });
 
-//   $(inputAdvanElement[2]).focusout(function() {
-//     result[5] = validLengthP(advantage[0], "#P-alert-advan3", 5, 300);
-//   });
+  $(inputAdvanElement[2]).focusout(function() {
+    result[5] = validLengthP(advantage[0], "#P-alert-advan3", 5, 300);
+  });
 
-//   $("#P-collection-new-product").focusout(function() {
-//     result[6] = validNameP(collection, 30, "#P-alert-collect", 6);
-//   });
+  $("#P-collection-new-product").focusout(function() {
+    result[6] = validNameP(collection, 30, "#P-alert-collect", 6);
+  });
 
-//   $('.P-form-new-product').submit(function() {
-//     if (result[0] == undefined) result[0] = notEmptyFieldP(name, "#P-alert-name", 0);
-//     if (result[1] == undefined) result[1] = notEmptyFieldP(price, "#P-alert-price", 1); 
-//     if (result[2] == undefined) result[2] = notEmptyFieldP(description, "#P-alert-des", 2); 
-//     if (result[3] == undefined) result[3] = notEmptyFieldP(advantage[0], "#P-alert-advan1", 3); 
-//     if (result[4] == undefined) result[4] = notEmptyFieldP(advantage[1], "#P-alert-advan2", 4); 
-//     if (result[5] == undefined) result[5] = notEmptyFieldP(advantage[2], "#P-alert-advan3", 5); 
-//     if (result[6] == undefined) result[6] = notEmptyFieldP(collection, "#P-alert-collect", 6);
-//     result[7] = notEmptyUploadP(img[0]);
-//     result[8] = notEmptyUploadP(img[1]);
-//     result[9] = notEmptyUploadP(img[2]);
-//     result[10] = notEmptyUploadP(img[3]);
+  $('.P-form-new-product').submit(function() {
+    if (result[0] == undefined) result[0] = notEmptyFieldP(name, "#P-alert-name", 0);
+    if (result[1] == undefined) result[1] = notEmptyFieldP(price, "#P-alert-price", 1); 
+    if (result[2] == undefined) result[2] = notEmptyFieldP(description, "#P-alert-des", 2); 
+    if (result[3] == undefined) result[3] = notEmptyFieldP(advantage[0], "#P-alert-advan1", 3); 
+    if (result[4] == undefined) result[4] = notEmptyFieldP(advantage[1], "#P-alert-advan2", 4); 
+    if (result[5] == undefined) result[5] = notEmptyFieldP(advantage[2], "#P-alert-advan3", 5); 
+    if (result[6] == undefined) result[6] = notEmptyFieldP(collection, "#P-alert-collect", 6);
+    result[7] = notEmptyUploadP(img[0]);
+    result[8] = notEmptyUploadP(img[1]);
+    result[9] = notEmptyUploadP(img[2]);
+    result[10] = notEmptyUploadP(img[3]);
 
-//     var i;
-//     for (i = 0 ; i <= 10 ; i++) {
-//       if (result[i] == false) flag = false;
-//     } 
-//     return flag;
-//   })
-// });
+    var i;
+    for (i = 0 ; i <= 10 ; i++) {
+      if (result[i] == false) flag = false;
+    } 
+    return flag;
+  })
+});
 
 // function newProductValid() {
 //   var name = document.getElementById("P-name-new-product");
