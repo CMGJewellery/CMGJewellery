@@ -8,44 +8,18 @@ document.addEventListener("turbolinks:load", function (event) {
   var advantage = document.getElementsByClassName("P-advantage-new-product");
   var collection = document.getElementById("P-collection-new-product");
   var img = document.getElementsByClassName("P-upload-img-field");
-
-  $("#P-name-new-product").focusout(function() {
-    result[0] = validNameP(name, 50, "#P-alert-name", 0);
-  });
-
-  $("#P-price-new-product").focusout(function() {
-    result[1] = validPriceP(price, "#P-alert-price", 1, 20000000, 500000);
-  });
-
-  $("#P-description-new-product").focusout(function() {
-    result[2] = validLengthP(description, "#P-alert-des", 2, 500);
-  });
-
-  var inputAdvanElement = $(".P-advantage-new-product");
-  $(inputAdvanElement[0]).focusout(function() {
-    result[3] = validLengthP(advantage[0], "#P-alert-advan1", 3, 300);
-  });
-
-  $(inputAdvanElement[1]).focusout(function() {
-    result[4] = validLengthP(advantage[0], "#P-alert-advan2", 4, 300);
-  });
-
-  $(inputAdvanElement[2]).focusout(function() {
-    result[5] = validLengthP(advantage[0], "#P-alert-advan3", 5, 300);
-  });
-
-  $("#P-collection-new-product").focusout(function() {
-    result[6] = validNameP(collection, 30, "#P-alert-collect", 6);
-  });
+  var quanlity = document.getElementById("P-quanlity-new-product");
 
   $('.P-form-new-product').submit(function() {
-    if (result[0] == undefined) result[0] = notEmptyFieldP(name, "#P-alert-name", 0);
-    if (result[1] == undefined) result[1] = notEmptyFieldP(price, "#P-alert-price", 1); 
-    if (result[2] == undefined) result[2] = notEmptyFieldP(description, "#P-alert-des", 2); 
-    if (result[3] == undefined) result[3] = notEmptyFieldP(advantage[0], "#P-alert-advan1", 3); 
-    if (result[4] == undefined) result[4] = notEmptyFieldP(advantage[1], "#P-alert-advan2", 4); 
-    if (result[5] == undefined) result[5] = notEmptyFieldP(advantage[2], "#P-alert-advan3", 5); 
-    if (result[6] == undefined) result[6] = notEmptyFieldP(collection, "#P-alert-collect", 6);
+    flag = true;
+    result[0] = validLengthP(name, 50, "#P-alert-name", 0);
+    result[1] = validNumP(price, "#P-alert-price", 1, 20000000, 500000); 
+    result[2] = validLengthP(description, 500, "#P-alert-des", 2); 
+    result[3] = validLengthP(advantage[0], 300, "#P-alert-advan1", 3); 
+    result[4] = validLengthP(advantage[0], 300, "#P-alert-advan2", 4); 
+    result[5] = validLengthP(advantage[0], 300, "#P-alert-advan3", 5); 
+    result[6] = validLengthP(collection, 30, "#P-alert-collect", 6);
+    result[7] = validNumP(quanlity, "#P-alert-quanlity", 7, 1000, 1);
     result[7] = notEmptyUploadP(img[0]);
     result[8] = notEmptyUploadP(img[1]);
     result[9] = notEmptyUploadP(img[2]);
@@ -172,10 +146,10 @@ function notEmptyFieldP(field, idAlert, indexAlert) {
 
   if (field.value.length != 0) {
     flag = true;
-    $(elementAlert[indexAlert]).css("display", "none");
+    $(elementAlert[indexAlert]).css("opacity", "0");
   } else {
     flag = false;
-    $(elementAlert[indexAlert]).css("display", "block");
+    $(elementAlert[indexAlert]).css("opacity", "1");
     $(idAlert).text("This field is required!");
   };
 
@@ -189,14 +163,11 @@ function notEmptyUploadP(field) {
   if (field.value.length == 0) {
     flag = false
     $(element[index]).css("background", "red");
-    setTimeout(function() {
-      $(element[index]).css("background", "#e6e6e6");
-    }, 1500);
   } else flag = true;
   return flag;
 }
 
-function validNameP(field, max, idAlert, indexAlert) {
+function validLengthP(field, max, idAlert, indexAlert) {
   var flag;
   var elementAlert = $(".P-alert");
   var alphaExp = /^([A-Z]{1})+([[A-Za-z0-9-]+[,.]?[ ]?|[A-Za-z0-9-]+[-]]?)+$/;
@@ -208,15 +179,15 @@ function validNameP(field, max, idAlert, indexAlert) {
       //check match regex
       if (field.value.match(alphaExp)) {
         flag = true;
-        $(elementAlert[indexAlert]).css("display", "none");
+        $(elementAlert[indexAlert]).css("opacity", "0");
       } else {
         flag = false;
-        $(elementAlert[indexAlert]).css("display", "block");
-        $(idAlert).text("Please enter valid name!");
+        $(elementAlert[indexAlert]).css("opacity", "1");
+        $(idAlert).text("Must not contains special characters");
       };
     } else {
       flag = false;
-      $(elementAlert[indexAlert]).css("display", "block");
+      $(elementAlert[indexAlert]).css("opacity", "1");
       $(idAlert).text("Cointains less than " +max+ " characters");
     };
   } else {
@@ -226,18 +197,18 @@ function validNameP(field, max, idAlert, indexAlert) {
   return flag;
 }
 
-function validPriceP(field, idAlert, indexAlert, max, min) {
+function validNumP(field, idAlert, indexAlert, max, min) {
   var flag;
   var elementAlert = $(".P-alert");
   
   if (notEmptyFieldP(field, idAlert, indexAlert)) {
     if (field.value < min || field.value > max) {
       flag = false;
-      $(elementAlert[indexAlert]).css("display", "block");
-      $(idAlert).text("Price must between " +min+ " and " +max);
+      $(elementAlert[indexAlert]).css("opacity", "1");
+      $(idAlert).text("Must between " +min+ " and " +max);
     } else {
       flag = true;
-      $(elementAlert[indexAlert]).css("display", "none");
+      $(elementAlert[indexAlert]).css("opacity", "0");
     }
   } else {
     flag = false;
@@ -246,22 +217,22 @@ function validPriceP(field, idAlert, indexAlert, max, min) {
   return flag;
 };
 
-function validLengthP(field, idAlert, indexAlert, maxLength) {
-  var flag;
-  var elementAlert = $(".P-alert");
+// function validLengthP(field, idAlert, indexAlert, maxLength) {
+//   var flag;
+//   var elementAlert = $(".P-alert");
 
-  if (notEmptyFieldP(field, idAlert, indexAlert)) {
-    if (field.value.length > maxLength) {
-      flag = false;
-      $(elementAlert[indexAlert]).css("display", "block");
-      $(idAlert).text("Contains less than " +maxLength+ "characters");
-    } else {
-      flag = true;
-      $(elementAlert[indexAlert]).css("display", "none");
-    };
-  } else {
-    flag = false;
-  };
+//   if (notEmptyFieldP(field, idAlert, indexAlert)) {
+//     if (field.value.length > maxLength) {
+//       flag = false;
+//       $(elementAlert[indexAlert]).css("opacity", "1");
+//       $(idAlert).text("Contains less than " +maxLength+ "characters");
+//     } else {
+//       flag = true;
+//       $(elementAlert[indexAlert]).css("opacity", "0");
+//     };
+//   } else {
+//     flag = false;
+//   };
 
-  return flag;
-}
+//   return flag;
+// }
