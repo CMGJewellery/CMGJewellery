@@ -13,6 +13,9 @@
  */
  @import "bootstrap";
  @import "font-awesome";
+// import fonts
+ @import url('https://fonts.googleapis.com/css?family=Lato|Raleway|Alex+Brush|Contrail+One|Yantramanav');
+ 
 //  Binh
  @import "B_global_variables";
  @import "B_main";
@@ -22,10 +25,10 @@
  @import "B_custom_checkbox";
  @import "B_snack_bar";
  @import "B_responsive";
- @import url('https://fonts.googleapis.com/css?family=Lato|Raleway|Alex+Brush');
 // Phuc 
  @import "P_header-about-footer";
- @import url('https://fonts.googleapis.com/css?family=Contrail+One');
- @import url('https://fonts.googleapis.com/css?family=Yantramanav');
+ @import "P_filter";
+ @import "P_new_product";
 // Hung
 @import "H_footer";
+@import "H_admin";
