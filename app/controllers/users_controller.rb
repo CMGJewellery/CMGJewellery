@@ -27,6 +27,16 @@ class UsersController < ApplicationController
     end
   end
 
+  # check existed mail
+  def check_email
+    email = params[:txt_email].downcase
+    user = User.find_by_email(email)
+    respond_to do |format|
+    format.json { render json: { check: !user.nil? }}
+    # true if email ready existed
+    end
+  end
+
   private
     def user_params
       # params.require(:user).permit(:)

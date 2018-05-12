@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
 
   get '/checkout/:user_id', to: 'product#check_out_shopping_cart', as: "check_out"
-  
+  get '/check_email', to: 'users#check_email' # check existed email
   #--------- True routes
   # user can edit profile
   # resources :users, only: [:edit, :update] do
