@@ -12,7 +12,8 @@
 	font-size: 15px;
 	color: white;
 	background-color: rgb(60, 60, 60);
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	transition: right 0.3s;
 }
 
@@ -28,7 +29,6 @@
 	background-color: rgba(200, 200, 200, 0.5);
 }
 
-
 #H-admin-menu > *:not(.H-admin-menu-hr){
 	margin: 15px;
 }
@@ -41,13 +41,27 @@
 	width: calc(100vw - 260px);
 	background-color: #FAF7FF;
 	transition: right 0.3s;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#H-admin-content::-webkit-scrollbar{
+    width: 6px;
+}
+
+#H-admin-content::-webkit-scrollbar-thumb{
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#H-admin-content:hover::-webkit-scrollbar-thumb{
+	background-color: rgba(200, 200, 200, 0.5);
 }
 
 #H-slide-button{
 	position: absolute;
-	right: 20px;
-	top: 20px;
+	right: 15px;
+	top: 15px;
+	font-size: 30px;
 	display: none;
 }
 

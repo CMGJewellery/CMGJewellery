@@ -1,23 +1,30 @@
 document.addEventListener("turbolinks:load", function (event){
 
 	var slideButton = document.getElementById("H-slide-button");
+	var slideButtonInner = document.getElementById("H-admin-font-awesome-slide-button");
 	var menu = document.getElementById("H-admin-menu");
 	var content = document.getElementById("H-admin-content");
+	var slideButtonStatus = 0;
+	var showButtonStatus = [0, 0, 0, 0];
 	
 	function init(){
 	
 		// when click on slide button
 		slideButton.addEventListener("click", function(){
-			if (slideButton.innerHTML == "X"){
+			if (slideButtonStatus == 0){
 				menu.style.right = "-260px";
 				content.style.right = "0";
-				slideButton.innerHTML = "=";
+				slideButtonInner.classList.remove("fa-times");
+				slideButtonInner.classList.add("fa-bars");
+				slideButtonStatus = 1;
 			}
 			else{
 				menu.style.left = "auto";
 				menu.style.right = "0";
 				content.style.right = "260px";
-				slideButton.innerHTML = "X";
+				slideButtonInner.classList.remove("fa-bars");
+				slideButtonInner.classList.add("fa-times");
+				slideButtonStatus = 0;
 			};
 		});
 	
@@ -26,57 +33,73 @@ document.addEventListener("turbolinks:load", function (event){
 	
 		// admin name
 		tittleContainerArr[0].addEventListener("click", function(){
-			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[0];
+			var showButton = document.getElementsByClassName("H-admin-menu-font-awesome-show-button")[0];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[0]
-			if (showButton.innerHTML == "v"){
+			if (showButtonStatus[0] == 0){
 				blockContainer.style.height = "154px";
-				showButton.innerHTML = "^";
+				showButton.classList.remove("fa-angle-down");
+				showButton.classList.add("fa-angle-up");
+				showButtonStatus[0] = 1;
 			}
 			else{
 				blockContainer.style.height = "53px";
-				showButton.innerHTML = "v";
+				showButton.classList.remove("fa-angle-up");
+				showButton.classList.add("fa-angle-down");
+				showButtonStatus[0] = 0;
 			};
 		});
 	
 		// products
 		tittleContainerArr[2].addEventListener("click", function(){
-			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[1];
+			var showButton = document.getElementsByClassName("H-admin-menu-font-awesome-show-button")[1];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[2]
-			if (showButton.innerHTML == "v"){
-				blockContainer.style.height = "207px";
-				showButton.innerHTML = "^";
+			if (showButtonStatus[1] == 0){
+				blockContainer.style.height = "154px";
+				showButton.classList.remove("fa-angle-down");
+				showButton.classList.add("fa-angle-up");
+				showButtonStatus[1] = 1;
 			}
 			else{
 				blockContainer.style.height = "53px";
-				showButton.innerHTML = "v";
+				showButton.classList.remove("fa-angle-up");
+				showButton.classList.add("fa-angle-down");
+				showButtonStatus[1] = 0;
 			};
 		});
 	
 		// accounts
 		tittleContainerArr[3].addEventListener("click", function(){
-			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[2];
+			var showButton = document.getElementsByClassName("H-admin-menu-font-awesome-show-button")[2];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[3]
-			if (showButton.innerHTML == "v"){
+			if (showButtonStatus[2] == 0){
 				blockContainer.style.height = "154px";
-				showButton.innerHTML = "^";
+				showButton.classList.remove("fa-angle-down");
+				showButton.classList.add("fa-angle-up");
+				showButtonStatus[2] = 1;
 			}
 			else{
 				blockContainer.style.height = "53px";
-				showButton.innerHTML = "v";
+				showButton.classList.remove("fa-angle-up");
+				showButton.classList.add("fa-angle-down");
+				showButtonStatus[2] = 0;
 			};
 		});
 	
 		// orders
 		tittleContainerArr[4].addEventListener("click", function(){
-			var showButton = document.getElementsByClassName("H-admin-menu-show-button")[3];
+			var showButton = document.getElementsByClassName("H-admin-menu-font-awesome-show-button")[3];
 			var blockContainer = document.getElementsByClassName("H-admin-menu-block-container")[4]
-			if (showButton.innerHTML == "v"){
+			if (showButtonStatus[3] == 0){
 				blockContainer.style.height = "154px";
-				showButton.innerHTML = "^";
+				showButton.classList.remove("fa-angle-down");
+				showButton.classList.add("fa-angle-up");
+				showButtonStatus[3] = 1;
 			}
 			else{
 				blockContainer.style.height = "53px";
-				showButton.innerHTML = "v";
+				showButton.classList.remove("fa-angle-up");
+				showButton.classList.add("fa-angle-down");
+				showButtonStatus[3] = 0;
 			};
 		});
 	};
@@ -94,16 +117,18 @@ document.addEventListener("turbolinks:load", function (event){
 		else{
 			slideButton.style.display = "block";
 			content.style.width = "100vw";
-			if (slideButton.innerHTML == "X"){
+			if (slideButtonStatus == 0){
 				menu.style.left = "auto";
 				menu.style.right = "0";
 				content.style.right = "260px";
-				slideButton.innerHTML = "X";
+				slideButtonInner.classList.remove("fa-bars");
+				slideButtonInner.classList.add("fa-times");
 			}
 			else{
 				menu.style.right = "-260px";
 				content.style.right = "0";
-				slideButton.innerHTML = "=";
+				slideButtonInner.classList.remove("fa-times");
+				slideButtonInner.classList.add("fa-bars");
 			};
 		}
 	};
