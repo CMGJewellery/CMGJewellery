@@ -5,6 +5,9 @@ class UsersController < ApplicationController
       redirect_to edit_user_path(@current_user), flash: {notice: 'Profile updated sucessfully!'}
     end
   end
+  def edit
+  
+  end
 
   def check_old_password
     @user = User.find_by_id(@current_user.id)
