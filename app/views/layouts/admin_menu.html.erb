@@ -18,11 +18,17 @@
 	
 		<div class="H-admin-menu-block-container">
 			<div class="H-admin-menu-tittle-container">
-				<div class="H-admin-menu-tittle"><i class="fa fa-key"><pre style="display: inline;">  </pre></i>Hung Hung Hang</div>
+				<div class="H-admin-menu-tittle"><i class="fa fa-key"><pre style="display: inline;">  </pre></i><%= current_user.name %></div>
 				<div class="H-admin-menu-show-button"><i class="fa fa-angle-down H-admin-menu-font-awesome-show-button"></i></div>
 			</div>
-			<div class="H-admin-menu-content"><i class="fa fa-address-card-o"><pre style="display: inline;">  </pre></i>My Profile</div>
-			<div class="H-admin-menu-content"><i class="fa fa-sign-out"><pre style="display: inline;">  </pre></i>Log Out</div>
+
+			<%= link_to edit_user_path(current_user) do %>
+				<div class="H-admin-menu-content"><i class="fa fa-address-card-o"><pre style="display: inline;">  </pre></i>My Profile</div>
+			<% end %>
+			<%= link_to destroy_user_session_path, method: 'delete' do %>
+				<div class="H-admin-menu-content"><i class="fa fa-sign-out"><pre style="display: inline;">  </pre></i>Log Out</div>
+			<% end %>
+			
 		</div>
 		<hr class="H-admin-menu-hr">
 	
@@ -37,7 +43,10 @@
 				<div class="H-admin-menu-tittle"><i class="fa fa-shopping-bag"><pre style="display: inline;">  </pre></i>Products</div>
 				<div class="H-admin-menu-show-button"><i class="fa fa-angle-down H-admin-menu-font-awesome-show-button"></i></div>
 			</div>
+			<%= link_to new_user_product_path(current_user) do %>
 			<div class="H-admin-menu-content"><i class="fa fa-plus"><pre style="display: inline;">  </pre></i>Add</div>
+			<% end %>
+			
 			<div class="H-admin-menu-content"><i class="fa fa-pencil"><pre style="display: inline;">  </pre></i>Edit</div>
 			<div class="H-admin-menu-content"><i class="fa fa-shield"><pre style="display: inline;">  </pre></i>Status</div>
 		</div>

@@ -18,11 +18,11 @@
               <% if current_user.role == 'admin' %>
                 <!-- admin page -->
                 <i class="fa fa-user mt-1 P-login-wrap" style="color: red; font-size: 20px;" ></i>        
-                <%= link_to current_user.name, root_path, class:"P-login P-login-wrap ml-1" %>
+                <%= link_to current_user.name, new_user_product_path(current_user), class:"P-login P-login-wrap ml-1" %>
               <% else %>
                 <!-- profile user -->
                 <i class="fa fa-user mt-1" style="color: black; font-size: 20px;" ></i>        
-                <%= link_to current_user.name, root_path, class:"P-login P-login-wrap ml-1" %>
+                <%= link_to current_user.name, edit_user_path(current_user), class:"P-login P-login-wrap ml-1" %>
               <% end %>
               <span class="mx-1 P-login-wrap" style="color: black; font-size: 20px;"> / </span>    
               <%= link_to 'Log out', destroy_user_session_path, method: 'delete', class:"P-login P-login-wrap" %>
@@ -88,9 +88,7 @@
           </li>
 
           <li class="nav-item mx-2">
-            <%= link_to root_path, class:"nav-link py-0" do %>
-              NEW IN
-            <% end %>
+            <%= link_to 'NEW IN', root_path, class:"nav-link py-0" %>              
           </li>
           <% Product::CATEGORY.each do |i| %>
             <li class="nav-item mx-2" data-turbolinks="false">

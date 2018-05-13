@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_user!, only: [:edit, :update, :destory, :create, :new]
+  before_action :authenticate_user!, only: [:edit, :update, :destory, :create, :new]
+  before_action :check_admin_role, only: [:edit, :update, :create, :new, :destory]
 
-  layout "admin_menu"
+
+  layout "admin_menu", only: [:edit, :update, :create, :new, :destory]
   # GET /products
   # GET /products.json
 
@@ -29,6 +31,8 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    @metals = Metal.all
+    @gem_stones = GemStone.all
     @product = Product.new
   end
 
@@ -73,6 +77,14 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  protected
+  def check_admin_role
+    # puts current_user.role
+    if current_user.present?
+      redirect_to root_path, notice: 'User are not admin!.' if !current_user.role == 'admin'
     end
   end
 
