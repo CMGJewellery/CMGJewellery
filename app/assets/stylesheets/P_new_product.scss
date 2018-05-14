@@ -28,6 +28,8 @@
 .P-label-new-product {
   width: 100%;
   text-align: left;
+  font-size: 15px !important;
+  margin-bottom: 5px !important;
 }
 
 .P-input-new-product, .P-select-new-product {
@@ -98,7 +100,7 @@
   font-size: 15px;
   padding: 8.5px 10px;
   position: absolute;
-  top: 31px;
+  top: 28px;
   left: 15px;
   text-decoration: underline;
 }
