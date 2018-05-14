@@ -23,10 +23,12 @@
       <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :category_name, class:"P-label-new-product" %> <br>
 
-        <div class="P-radio-new-product" id="P-type-new-product">
+        <div class="P-radio-new-product form-group" id="P-type-new-product">
          <% Product::CATEGORY.each do |type| %>
-          <%= f.radio_button :category_name, type %>
-          <%= f.label type%>
+          <div class="custom-control custom-radio">
+            <%= f.radio_button :category_name, type, class:"custom-control-input" %>
+            <%= f.label type, class:"custom-control-label"%>
+          </div>
          <% end %>
 
           <!-- <div class="row ml-2">
