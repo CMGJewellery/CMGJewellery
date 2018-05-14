@@ -25,9 +25,10 @@
 
         <div class="P-radio-new-product form-group" id="P-type-new-product">
          <% Product::CATEGORY.each do |type| %>
+         <%#= f.radio_button :category_name, type, class:"custom-control-input" %>
           <div class="custom-control custom-radio">
-            <%= f.radio_button :category_name, type, class:"custom-control-input" %>
-            <%= f.label type, class:"custom-control-label"%>
+            <%= f.radio_button :category_name, type, class:"custom-control-input", id: type%>
+            <%= f.label type, class:"custom-control-label", for: type%>
           </div>
          <% end %>
 
