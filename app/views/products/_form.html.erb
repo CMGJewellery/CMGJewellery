@@ -15,7 +15,7 @@
       <!-- Price -->
       <div class="P-content-new-product col-md-6 mt-2 P-price-new-product">
         <%= f.label :price, class:"P-label-new-product" %> <br>
-        <%= f.number_field :price, id: :product_price, class: 'P-input-new-product' %><br>
+        <%= f.number_field :price, id: :product_price, class: 'P-input-new-product P-input-price-new-product' %><br>
         <div class="P-alert"><span id="P-alert-price">demo</span></div>
       </div>
 
@@ -25,7 +25,7 @@
 
         <div class="P-radio-new-product" id="P-type-new-product">
          <% Product::CATEGORY.each do |type| %>
-          <%= f.radio_button :category_name, type%>
+          <%= f.radio_button :category_name, type %>
           <%= f.label type%>
          <% end %>
 

@@ -2,13 +2,13 @@ document.addEventListener("turbolinks:load", function (event) {
   var flag = true;
   var result = new Array();//to store each return boolean
   //declare quick reference
-  var name = document.getElementById("P-name-new-product");
-  var price = document.getElementById("P-price-new-product");
-  var description = document.getElementById("P-description-new-product");
+  var name = document.getElementById("product_name");
+  var price = document.getElementById("product_price");
+  var description = document.getElementById("product_description");
   var advantage = document.getElementsByClassName("P-advantage-new-product");
-  var collection = document.getElementById("P-collection-new-product");
-  var img = document.getElementsByClassName("P-upload-img-field");
-  var quanlity = document.getElementById("P-quanlity-new-product");
+  var collection = document.getElementById("product_collection");
+  // var img = document.getElementsByClassName("P-upload-img-field");
+  var quanlity = document.getElementById("product_amount");
 
   $('.P-form-new-product').submit(function() {
     flag = true;
@@ -16,21 +16,21 @@ document.addEventListener("turbolinks:load", function (event) {
     result[1] = validNumP(price, "#P-alert-price", 1, 20000000, 500000); 
     result[2] = validLengthP(description, 500, "#P-alert-des", 2); 
     result[3] = validLengthP(advantage[0], 300, "#P-alert-advan1", 3); 
-    result[4] = validLengthP(advantage[0], 300, "#P-alert-advan2", 4); 
-    result[5] = validLengthP(advantage[0], 300, "#P-alert-advan3", 5); 
+    result[4] = validLengthP(advantage[1], 300, "#P-alert-advan2", 4); 
+    result[5] = validLengthP(advantage[2], 300, "#P-alert-advan3", 5); 
     result[6] = validLengthP(collection, 30, "#P-alert-collect", 6);
-    result[7] = validNumP(quanlity, "#P-alert-quanlity", 7, 1000, 1);
-    result[7] = notEmptyUploadP(img[0]);
-    result[8] = notEmptyUploadP(img[1]);
-    result[9] = notEmptyUploadP(img[2]);
-    result[10] = notEmptyUploadP(img[3]);
+    result[7] = validNumP(quanlity, "#P-alert-quanlity", 7, 1000, 7);
+    // result[7] = notEmptyUploadP(img[0]);
+    // result[8] = notEmptyUploadP(img[1]);
+    // result[9] = notEmptyUploadP(img[2]);
+    // result[10] = notEmptyUploadP(img[3]);
 
     var i;
-    for (i = 0 ; i <= 10 ; i++) {
+    for (i = 0 ; i <= 7 ; i++) {
       if (result[i] == false) flag = false;
     } 
     return flag;
-  })
+  });
 });
 
 // function newProductValid() {
@@ -170,7 +170,7 @@ function notEmptyUploadP(field) {
 function validLengthP(field, max, idAlert, indexAlert) {
   var flag;
   var elementAlert = $(".P-alert");
-  var alphaExp = /^([A-Z]{1})+([[A-Za-z0-9-]+[,.]?[ ]?|[A-Za-z0-9-]+[-]]?)+$/;
+  var alphaExp = /^[a-zA-Z0-9_. -]*$/;
 
   //check whether field is empty
   if (notEmptyFieldP(field, idAlert, indexAlert)) {
