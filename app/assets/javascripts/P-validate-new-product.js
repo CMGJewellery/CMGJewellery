@@ -9,136 +9,31 @@ document.addEventListener("turbolinks:load", function (event) {
   var collection = document.getElementById("product_collection");
   // var img = document.getElementsByClassName("P-upload-img-field");
   var quanlity = document.getElementById("product_amount");
+  var category = document.getElementsByClassName("P-category-new-product");
 
   $('.P-form-new-product').submit(function() {
     flag = true;
     result[0] = validLengthP(name, 50, "#P-alert-name", 0);
-    result[1] = validNumP(price, "#P-alert-price", 1, 20000000, 500000); 
-    result[2] = validLengthP(description, 500, "#P-alert-des", 2); 
-    result[3] = validLengthP(advantage[0], 300, "#P-alert-advan1", 3); 
-    result[4] = validLengthP(advantage[1], 300, "#P-alert-advan2", 4); 
-    result[5] = validLengthP(advantage[2], 300, "#P-alert-advan3", 5); 
-    result[6] = validLengthP(collection, 30, "#P-alert-collect", 6);
-    result[7] = validNumP(quanlity, "#P-alert-quanlity", 7, 1000, 7);
+    result[1] = validNumP(price, "#P-alert-price", 1, 20000000, 500000);
+    result[2] = validCheckP(category, "#P-alert-category", 2); 
+    result[3] = validLengthP(description, 500, "#P-alert-des", 3); 
+    result[4] = validLengthP(advantage[0], 300, "#P-alert-advan1", 4); 
+    result[5] = validLengthP(advantage[1], 300, "#P-alert-advan2", 5); 
+    result[6] = validLengthP(advantage[2], 300, "#P-alert-advan3", 6); 
+    result[7] = validLengthP(collection, 30, "#P-alert-collect", 7);
+    result[8] = validNumP(quanlity, "#P-alert-quanlity", 8, 1000, 5);
     // result[7] = notEmptyUploadP(img[0]);
     // result[8] = notEmptyUploadP(img[1]);
     // result[9] = notEmptyUploadP(img[2]);
     // result[10] = notEmptyUploadP(img[3]);
 
     var i;
-    for (i = 0 ; i <= 7 ; i++) {
+    for (i = 0 ; i <= 8 ; i++) {
       if (result[i] == false) flag = false;
     } 
     return flag;
   });
 });
-
-// function newProductValid() {
-//   var name = document.getElementById("P-name-new-product");
-//   // var type = document.getElementById("P-type-new-product");
-//   var price = document.getElementById("P-price-new-product");
-//   var description = document.getElementById("P-description-new-product");
-//   var advantage = document.getElementsByClassName("P-advantage-new-product");
-//   var collection = document.getElementById("P-collection-new-product");
-//   // var mental = document.getElementById("P-mental-new-product");
-//   // var gemstone = document.getElementById("P-gemstone-new-product");
-//   var img = document.getElementsByClassName("P-upload-img-field");
-
-//   if (isEmptyP(name) || isEmptyP(price) || isEmptyP(description) || 
-//   isEmptyP(advantage[0]) || isEmptyP(advantage[1]) || isEmptyP(advantage[2]) || isEmptyP(collection) || 
-//   isEmptyImgP(img[0]) || isEmptyImgP(img[1]) || isEmptyImgP(img[2]) || isEmptyImgP(img[3])) {
-//     return false;
-//   }
-
-//   if (validNameP(name, 50, "* Name of products cointains maximum 50 characters", "* Name of products cointains only letters and numbers")) {
-//     if(validPriceP(price)) {
-//       if (validLengthP(description, 500, "* Description contains maximum 500 characters")) {
-//         if (validLengthP(advantage[0], 200, "* Advantage contains maximum 200 characters")) {
-//           if (validLengthP(advantage[1], 200, "* Advantage contains maximum 200 characters")) {
-//             if (validLengthP(advantage[2], 200, "* Advantage contains maximum 200 characters")) {
-//               if (validNameP(collection, 30, "* Collection contains maximum 30 characters", "* Collection contains only letters and numbers")) {
-//                 return true;
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//   return false;
-// }
-
-// function isEmptyP(field) {
-//   if (field.value.length == 0) {
-//     document.getElementById('P-alert').innerText = "* All fields are mandatory *" ;
-//     field.focus();
-//     return true;
-//   };
-
-//   return false;
-// }
-
-// function isEmptyImgP(field) {
-//   if (field.value.length == 0) {
-//     document.getElementById('P-alert').innerText = "* All fields are mandatory *" ;
-//     var index = $(field).index(field);
-//     var element = $(".P-choose-img-label");
-//     $(element[index]).css("background", "red");
-//     return true;
-//   };
-
-//   return false;
-// }
-
-// function validNameP(name, max, alertMsgLong, alertMsg) {
-//   var alphaExp = /^([A-Z]{1})+([[A-Za-z0-9-]+[,.]?[ ]?|[A-Za-z0-9-]+[-]]?)+$/;
-
-//   if (name.value.match(alphaExp)) {
-//     if (name.value.length > max) {
-//       document.getElementById("P-alert").innerText = alertMsgLong;
-//       name.focus();
-//       return false;
-//     }
-//     return true;
-//   } else {
-//     document.getElementById("P-alert").innerText = alertMsg;
-//     name.focus();
-//     return false;
-//   }
-// }
-
-// function validPriceP(price) {
-//   var alphaExp = /^[0-9]*$/;
-
-//   if (price.value.match(alphaExp)) {
-//     if ((price.value < 500000) || (price.value > 20000000)) {
-//       document.getElementById("P-alert").innerText = "* Price must be between 500,00đ and 20,000,000đ *";
-//       price.focus();
-//       return false;
-//     }
-//     return true;
-//   } else {
-//     document.getElementById("P-alert").innerText = "* Price contains only numbers *";
-//     price.focus();
-//     return false;
-//   };
-// }
-
-// function validLengthP(field, max, alertMsg) {
-//   if (field.value.length > max) {
-//     document.getElementById("P-alert").innerText = alertMsg;
-//     field.focus();
-//     return false;
-//   };
-//   return true;
-// }
-
-// $(document).ready(function() {
-//   $("#P-name-new-product").focusout(function(){
-//     var name = document.getElementById("P-name-new-product");
-//     validNameP(name, 50, "* Name of products cointains maximum 50 characters", "* Name of products cointains only letters and numbers");
-//   });
-// });
 
 function notEmptyFieldP(field, idAlert, indexAlert) {
   var flag;
@@ -217,22 +112,19 @@ function validNumP(field, idAlert, indexAlert, max, min) {
   return flag;
 };
 
-// function validLengthP(field, idAlert, indexAlert, maxLength) {
-//   var flag;
-//   var elementAlert = $(".P-alert");
-
-//   if (notEmptyFieldP(field, idAlert, indexAlert)) {
-//     if (field.value.length > maxLength) {
-//       flag = false;
-//       $(elementAlert[indexAlert]).css("opacity", "1");
-//       $(idAlert).text("Contains less than " +maxLength+ "characters");
-//     } else {
-//       flag = true;
-//       $(elementAlert[indexAlert]).css("opacity", "0");
-//     };
-//   } else {
-//     flag = false;
-//   };
-
-//   return flag;
-// }
+function validCheckP(field, idAlert, indexAlert) {
+  var i;
+  var flag = false;
+  var elementAlert = $(".P-alert");
+  for (i = 0 ; i < field.length ; i++) {
+    if (field[i].checked) {
+      flag = true;
+      $(elementAlert[indexAlert]).css("opacity", "0");
+    }
+  }
+  if (!flag) {
+    $(elementAlert[indexAlert]).css("opacity", "1");
+    $(idAlert).text("This field is required!");
+  }
+  return flag;
+}

@@ -115,9 +115,31 @@
   font-style: italic;
 }
 
+.custom-control {
+  padding: 0 0.25rem 0 1rem !important; 
+  outline: none;
+}
+
 .custom-control-label::after {
   background-color: black;
   border-radius: 100%;
+  width: 0.8rem !important;
+  height: 0.8rem !important;
+  top: 0.35rem !important;
+  left: 0.1rem !important;
+}
+
+.custom-control-label::before {
+  display: none;
+}
+
+.P-radio-label-new-product {
+  font-weight: unset;
+  font-size: 15px;
+}
+
+.P-wrap-radio-new-product {
+  display: inline-block;
 }
 
 // @keyframes focusInP {
@@ -162,6 +184,12 @@
 @media (max-width: 990px) {
   .P-label-wrap-new-product {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .P-wrap-radio-new-product {
+    display: block;
   }
 }
 

@@ -23,47 +23,23 @@
       <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :category_name, class:"P-label-new-product" %> <br>
 
-        <div class="P-radio-new-product form-group" id="P-type-new-product">
-         <% Product::CATEGORY.each do |type| %>
-         <%#= f.radio_button :category_name, type, class:"custom-control-input" %>
-          <div class="custom-control custom-radio">
-            <%= f.radio_button :category_name, type, class:"custom-control-input", id: type%>
-            <%= f.label type, class:"custom-control-label", for: type%>
-          </div>
-         <% end %>
-
-          <!-- <div class="row ml-2">
-          <span class="col-md-6 custom-control custom-radio">
-              <input type="radio" value="necklaces" name="type" id="P-type-necklaces" class="custom-control-input" checked>Necklaces
-              <label class="custom-control-label" for="P-type-necklaces"></label>
-          </span>
-          <span class="col-md-6 custom-control custom-radio">
-              <input type="radio" value="rings" name="type" id="P-type-rings" class="custom-control-input">Rings
-              <label class="custom-control-label" for="P-type-rings"></label>
-          </span>
-          </div>
-          <div class="row ml-2">
-          <span class="col-md-6 custom-control custom-radio">
-            <input type="radio" value="bracelets" name="type" id="P-type-bracelets" class="custom-control-input">Bracelets
-            <label class="custom-control-label" for="P-type-bracelets"></label>
-          </span>
-          <span class="col-md-6 custom-control custom-radio">
-            <input type="radio" value="earings" name="type" id="P-type-earings" class="custom-control-input">Earings
-            <label class="custom-control-label" for="P-type-earings"></label>
-          </span>
-          </div> -->
-        
-        
+        <div class="P-radio-new-product" id="P-type-new-product">
+          <% Product::CATEGORY.each do |type| %>
+            <div class="custom-control custom-radio P-wrap-radio-new-product">
+              <%= f.radio_button :category_name, type, class:"custom-control-input P-category-new-product", id: type%>
+              <%= f.label type, class:"custom-control-label P-radio-label-new-product", for: type%>
+            </div>
+          <% end %>
+          <div class="P-alert"><span id="P-alert-category">demo</span></div>
         </div>
       </div>
-      <!-- hết cái div đó thôi -->
     </div>
 
     <div class="row">
       <!-- Description -->
       <div class="P-content-new-product col-md-6 mt-2" style="height: 29vh;">
         <%= f.label :description, class:"P-label-new-product" %> <br>
-        <%= f.text_field :description, id: :product_description, class: "P-input-new-product", style: "width: 100%; height: 75%; padding:10px 20px 10% 15px;" %>
+        <%= f.text_area :description, id: :product_description, class: "P-input-new-product", style: "width: 100%; height: 75%; padding:10px 20px 10% 15px;" %>
         <!-- <textarea class="P-input-new-product" id="P-description-new-product" style="width: 100%; height: 75%; padding:10px 20px 10% 15px;"></textarea> -->
         <br>
         <div class="P-alert">
