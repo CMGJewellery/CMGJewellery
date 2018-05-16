@@ -12,8 +12,8 @@
     <!-- brand -->
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
-        <div class="col-md-2 mt-2">
-          <div class="row pull-right mt-1">
+        <div class="col-md-3 mt-2">
+          <div class="row pull-right mt-1 ml-5 float-left">
             <% if user_signed_in? && !current_user.nil? %>
               <% if current_user.role == 'admin' %>
                 <!-- admin page -->
@@ -37,7 +37,8 @@
             <% end %>
           </div>
         </div>
-        <div class="col-md-7 mb-0">
+
+        <div class="col-md-6 mb-0">
           <%= link_to root_path do %>
             <p class="h1 text-center P-brand">CMG Jewellery</p>
           <% end %>
@@ -58,20 +59,19 @@
         <% end %>
       </button>
 
-      <!-- Sign in/ register virtual to balance left right -->
-      <!-- <div class="collapse navbar-collapse justify-content-start text-center width-100 ml-3 mr-5 pr-5" style="opacity: 0">
-        <i class="fa fa-user" style="color: white; font-size: 15px;" ></i>
-        <div class="">
-          Sign In
-        </div>
-        <span class="" style="color: white; font-size: 15px;"> / </span> 
-        <div>
-          Register
-        </div>
-      </div> -->
 
-      <!-- cart -->
-      <div class="mx-5 px-3"></div>
+      <div style="display: inherit; opacity:0;">
+        <form class="P-home-search" style="padding: 0;">
+        <input type="text" class="P-input-home-search2" style="font-size: 15px; padding: 5px;" name="search" placeholder="I'm looking for ...">
+        <button class="P-submit-search px-2" type="submit">
+          <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
+        </button>
+      </form>
+      <%= link_to root_path, class:"P-cart-wrap mx-2" do %>
+        <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
+        <span class="P-number-cart mt-3" >0</span>
+      <% end %>
+      </div>
 
       <!-- Navigation option -->
       <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
