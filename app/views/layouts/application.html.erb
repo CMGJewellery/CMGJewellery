@@ -17,21 +17,21 @@
             <% if user_signed_in? && !current_user.nil? %>
               <% if current_user.role == 'admin' %>
                 <!-- admin page -->
-                <i class="fa fa-user mt-1 P-login-wrap" style="color: red; font-size: 20px;" ></i>        
+                <i class="fa fa-user mt-1 P-login-wrap" style="color: red;" ></i>        
                 <%= link_to current_user.name, new_user_product_path(current_user), class:"P-login P-login-wrap ml-1" %>
               <% else %>
                 <!-- profile user -->
-                <i class="fa fa-user mt-1" style="color: black; font-size: 20px;" ></i>        
+                <i class="fa fa-user mt-1" style="color: black;" ></i>        
                 <%= link_to current_user.name, edit_user_path(current_user), class:"P-login P-login-wrap ml-1" %>
               <% end %>
-              <span class="mx-1 P-login-wrap" style="color: black; font-size: 20px;"> / </span>    
+              <span class="mx-1 P-login-wrap P-span-login"> / </span>    
               <%= link_to 'Log out', destroy_user_session_path, method: 'delete', class:"P-login P-login-wrap" %>
             
             <% else %>
-              <i class="fa fa-user mt-1 P-login-wrap" style="color: black; font-size: 20px;" ></i>        
+              <i class="fa fa-user mt-1 P-login-wrap P-span-login"></i>        
               <div data-turbolinks="false">
                 <%= link_to 'Sign In', new_user_session_path, class:"P-login P-login-wrap ml-1"%>
-                <span class="mx-1 P-login-wrap" style="color: black; font-size: 20px;"> / </span> 
+                <span class="mx-1 P-login-wrap P-span-login"> / </span> 
                 <%= link_to 'Register', new_user_registration_path, class:"P-login P-login-wrap"%>
               </div>
             <% end %>
@@ -59,10 +59,10 @@
         <% end %>
       </button>
 
-
+      <!-- virtual to balance -->
       <div style="display: inherit; opacity:0;">
         <form class="P-home-search" style="padding: 0;">
-        <input type="text" class="P-input-home-search2" style="font-size: 15px; padding: 5px;" name="search" placeholder="I'm looking for ...">
+        <input type="text" class="P-input-home-search2" style="font-size: 0.8vw; padding: 5px;" name="search" placeholder="I'm looking for ...">
         <button class="P-submit-search px-2" type="submit">
           <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
         </button>
