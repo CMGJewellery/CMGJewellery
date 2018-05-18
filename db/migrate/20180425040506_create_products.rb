@@ -10,9 +10,9 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :advantage
       t.string :collection
       t.integer :price
-      t.string :dimensions
-      t.string :necklace_length
-      t.string :photograph_size
+      t.string :advantage_1
+      t.string :advantage_2
+      t.string :advantage_3
       t.string :category_name
       t.integer :amount
       t.string :status, default: 'public'

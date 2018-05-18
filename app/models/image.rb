@@ -1,4 +1,6 @@
 class Image < ApplicationRecord
-  belongs_to :product
-  belongs_to :user
+  mount_uploader :url, ProductImageUploader
+
+  belongs_to :product, optional: true
+  belongs_to :user, optional: true
 end
