@@ -233,7 +233,7 @@
     }
 }
 
-@media (max-width: 810px) {
+@media (max-width: 885px) {
     #P-about-content {
         top: 3em;
     }
@@ -255,6 +255,9 @@
     }
     .P-cart-wrap-mobile>span {
         font-size: 17px;
+    }
+    #P-about-content-child-bnt > span {
+        font-size: 20px;
     }
 } 
 

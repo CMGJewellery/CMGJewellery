@@ -90,11 +90,14 @@
     </div>
 
     <div class="row">
-      <!-- Mental -->
+      <!-- Metal -->
       <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :metal, class:"P-label-new-product" %> <br>
         <%= f.collection_select :metal_id, @metals, :id, :name, 
           {prompt: 'Choose Metal'},{class:"P-select-new-product", id: :product_metal} %>
+        <div class="P-alert">
+          <span id="P-alert-metal">demo</span>
+        </div>  
       </div>
 
       <!-- Gemstone -->
@@ -102,6 +105,9 @@
         <%= f.label :gem_stone, class:"P-label-new-product" %> <br>
         <%= f.collection_select :gem_stone_id, @gem_stones, :id, :name, 
           {prompt: 'Choose Gem Stones'},{class:"P-select-new-product", id: :product_gem_stone} %>
+        <div class="P-alert">
+          <span id="P-alert-gemstone">demo</span>
+        </div>
       </div>
     </div>
 
