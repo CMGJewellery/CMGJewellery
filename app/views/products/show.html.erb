@@ -1,9 +1,20 @@
 <p id="notice"><%= notice %></p>
+<!-- 
+Cái này để lấy hình ra đừng có đụng nhá
 
+<img src="<%= @product.images.first.url%>" alt="">
+<%# (@product.images.length - 1).times do |i| %>
+  <img src="<%#= @product.images[i + 1].url%>" alt="">
+<%# end %> -->
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
 <p>
   <strong>Amount:</strong>
   <%= @product.amount %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+<%#= link_to 'Edit', edit_product_path(@product) %> |
+<%#= link_to 'Back', products_path %>

@@ -3,6 +3,8 @@ class Product < ApplicationRecord
 
   has_many :gem_stones
   has_many :images
+  accepts_nested_attributes_for :images
+
   has_many :metals
   has_many :comments
 

@@ -34,6 +34,8 @@ class ProductsController < ApplicationController
     @metals = Metal.all
     @gem_stones = GemStone.all
     @product = Product.new
+    @image = @product.images.build
+    
   end
 
   # GET /products/1/edit
@@ -43,15 +45,21 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    @user = current_user
+    @product = @user.products.build(product_params)
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        unless params[:images].nil?
+          params[:images]['url'].each do |img|
+            @image = @product.images.create!(url: img, product_id: @product_id)
+          end
+        end
+        format.html { redirect_to product_path(@product), notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { render json: @product.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -96,6 +104,9 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:amount)
+      params.require(:product).permit(
+        :name, :description, :advantage_1,:advantage_2, :advantage_3, :collection, 
+        :price, :category_name, :amount, :status, 
+        :user_id, :gem_stone_id, :metal_id)
     end
 end

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   }
 
   get '/checkout/:user_id', to: 'product#check_out_shopping_cart', as: "check_out"
+  
+  resources :products, only: [:show, :index]
+  
   # user can edit profile
   resources :users, only: [:edit, :update] do
     # only admin can manage post
@@ -15,7 +18,6 @@ Rails.application.routes.draw do
     end
   end
   # everyone can view products
-  resources :products, only: [:show, :index]
   #----------------------------
   
   # resources :images
