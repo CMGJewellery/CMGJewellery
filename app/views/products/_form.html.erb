@@ -15,7 +15,7 @@
       <!-- Price -->
       <div class="P-content-new-product col-md-6 mt-2 P-price-new-product">
         <%= f.label :price, class:"P-label-new-product" %> <br>
-        <%= f.number_field :price, id: :product_price, class: 'P-input-new-product P-input-price-new-product' %><br>
+        <%= f.text_field :price, id: :product_price, class: 'P-input-new-product P-input-price-new-product' %><br>
         <div class="P-alert"><span id="P-alert-price">demo</span></div>
       </div>
 
@@ -39,7 +39,7 @@
       <!-- Description -->
       <div class="P-content-new-product col-md-6 mt-2" style="height: 29vh;">
         <%= f.label :description, class:"P-label-new-product" %> <br>
-        <%= f.text_area :description, id: :product_description, class: "P-input-new-product", style: "width: 100%; height: 75%; padding:10px 20px 10% 15px;" %>
+        <%= f.text_area :description, id: :product_description, class: "P-input-new-product", style: "width: 100%; height: 75%; padding:10px 20px 10% 15px; resize: none;" %>
         <!-- <textarea class="P-input-new-product" id="P-description-new-product" style="width: 100%; height: 75%; padding:10px 20px 10% 15px;"></textarea> -->
         <br>
         <div class="P-alert">
@@ -81,7 +81,7 @@
       <!-- Quanlity -->
       <div class="P-content-new-product col-md-6 mt-2">
         <%= f.label :amount, class:"P-label-new-product" %> <br>
-        <%= f.number_field :amount, id: :product_amount, class: 'P-input-new-product'%>
+        <%= f.text_field :amount, id: :product_amount, class: 'P-input-new-product'%>
         <br>
         <div class="P-alert">
           <span id="P-alert-quanlity">demo</span>
@@ -153,18 +153,23 @@
     </div> -->
  <!-- Cái Cái đoạn hình của Phúc code   -->
 
-    <div class="row mt-2 justify-content-center" id="product_img_field_container">
-      <%= f.fields_for :images do |i| %>
-        <div class="M-img-field">
-          <button class='btn btn-danger M-btn-image'><i class="fa fa-plus-circle fa-3x"></i></br>Add Image
-          </button>
-           <%= i.file_field :url, multiple: false, name: "images[url][]", class: "M-image-input", onchange:"previewImages(event)" %>
-          <div class="M-image-output">
-            <div class='btn btn-light M-image-remove' onclick='removeImages(event)'><i class="fa fa-trash"></i></div>
+    <div>
+      <div class="row mt-2 justify-content-center" id="product_img_field_container">
+        <%= f.fields_for :images do |i| %>
+          <div class="M-img-field">
+            <button class='btn btn-danger M-btn-image'><i class="fa fa-plus-circle fa-3x"></i></br>Add Image
+            </button>
+            <%= i.file_field :url, multiple: false, name: "images[url][]", class: "M-image-input", onchange:"previewImages(event)" %>
+            <div class="M-image-output">
+              <div class='btn btn-light M-image-remove' onclick='removeImages(event)'><i class="fa fa-trash"></i></div>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+      <div class="P-alert row">
+        <span id="P-alert-img" style="width: 100%; text-align: center;">demo</span>
+      </div>
+    </div>    
   
 
     <div class="actions" style="margin-top: 20px;">

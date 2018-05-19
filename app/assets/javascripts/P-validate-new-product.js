@@ -7,7 +7,7 @@ document.addEventListener("turbolinks:load", function (event) {
   var description = document.getElementById("product_description");
   var advantage = document.getElementsByClassName("P-advantage-new-product");
   var collection = document.getElementById("product_collection");
-  // var img = document.getElementsByClassName("P-upload-img-field");
+  var img = $('#product_img_field_container').children('.M-img-field');
   var quanlity = document.getElementById("product_amount");
   var category = document.getElementsByClassName("P-category-new-product");
   var metal = document.getElementById("product_metal");
@@ -26,15 +26,13 @@ document.addEventListener("turbolinks:load", function (event) {
     result[8] = validNumP(quanlity, "#P-alert-quanlity", 8, 1000, 5);
     result[9] = validChooseP(metal, "#P-alert-metal", 9);
     result[10] = validChooseP(gemstone, "#P-alert-gemstone", 10);
-    // result[7] = notEmptyUploadP(img[0]);
-    // result[8] = notEmptyUploadP(img[1]);
-    // result[9] = notEmptyUploadP(img[2]);
-    // result[10] = notEmptyUploadP(img[3]);
+    result[11] = isEmptyUploadP(img, "#P-alert-img", 11);
 
     var i;
-    for (i = 0 ; i <= 8 ; i++) {
+    for (i = 0 ; i <= 11 ; i++) {
       if (result[i] == false) flag = false;
     } 
+
     return flag;
   });
 });
@@ -55,14 +53,18 @@ function notEmptyFieldP(field, idAlert, indexAlert) {
   return flag;
 };
 
-function notEmptyUploadP(field) {
+function isEmptyUploadP(field, idAlert, indexAlert) {
   var flag;
-  var index = $(".P-upload-img-field").index(field);
-  var element = $(".P-choose-img-label");
-  if (field.value.length == 0) {
+  var elementAlert = $(".P-alert");
+  
+  if ($('#product_img_field_container').children('.M-img-field').length == 1) {
     flag = false
-    $(element[index]).css("background", "red");
-  } else flag = true;
+    $(elementAlert[indexAlert]).css("opacity", "1");
+    $(idAlert).text("This field is required!");
+  } else {
+    flag = true;
+    $(elementAlert[indexAlert]).css("opacity", "0");
+  }
   return flag;
 }
 
@@ -99,16 +101,22 @@ function validLengthP(field, max, idAlert, indexAlert) {
 function validNumP(field, idAlert, indexAlert, max, min) {
   var flag;
   var elementAlert = $(".P-alert");
+  var regex = /^[0-9]*$/;
 
   if (notEmptyFieldP(field, idAlert, indexAlert)) {
-    if (field.value < min || field.value > max) {
-      flag = false;
+    if (!(field.value.match(regex))) {
       $(elementAlert[indexAlert]).css("opacity", "1");
-      $(idAlert).text("Must between " +min+ " and " +max);
+      $(idAlert).text("Must contain only number");
     } else {
-      flag = true;
-      $(elementAlert[indexAlert]).css("opacity", "0");
-    }
+      if (field.value < min || field.value > max) {
+        flag = false;
+        $(elementAlert[indexAlert]).css("opacity", "1");
+        $(idAlert).text("Must between " +min+ " and " +max);
+      } else {
+        flag = true;
+        $(elementAlert[indexAlert]).css("opacity", "0");
+      };
+    };
   } else {
     flag = false;
   };
