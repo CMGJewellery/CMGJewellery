@@ -1,0 +1,239 @@
+.H-admin-profile-page-title{
+	margin: 20px 0 20px 5vw;
+	text-align: left;
+	color: black;
+	font-size: 30px;
+}
+
+.H-admin-profile-left-column{
+	width: 240px;
+	margin-left: 5%;
+	float: left;
+	border-top: 3px solid red;
+	color: white;
+	background-color: black;
+}
+
+.H-admin-profile-pic-container{
+	height: 300px;
+	overflow: hidden;
+}
+
+.H-admin-profile-pic{
+	width: 100%;
+}
+
+.H-admin-profile-name{
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.H-admin-profile-status{
+	margin: 6px 0;
+}
+
+.H-admin-profile-right-column{
+	overflow: hidden;
+	margin: 0 5%;
+	width: calc(85% - 240px);
+	float: left;
+	color: white;
+	background-color: black;
+}
+
+.H-admin-profile-right-column-menu-elements{
+	width: 150px;
+	float: left;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	border-top: 3px solid rgba(0, 0, 0, 0);
+	border-bottom: 1px solid rgb(100, 100, 100);
+	border-right: 1px solid rgb(100, 100, 100);
+	transition: background-color 0.2s;
+}
+
+.H-admin-profile-right-column-menu-elements:nth-of-type(1):hover, .H-admin-profile-right-column-menu-elements:nth-of-type(2):hover{
+	background-color: rgb(50, 50, 50);
+}
+
+.H-admin-profile-right-column-menu-elements:nth-of-type(1){
+	border-top-color: red;
+	border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.H-admin-profile-right-column-menu-elements:nth-of-type(3){
+	border-right: none;
+	width: calc(100% - 302px);
+	color: rgba(0, 0, 0, 0);
+}
+
+.H-admin-profile-information{
+	margin-top: 100px;
+}
+
+.H-admin-profile-infomation-title{
+	float: left;
+	width: 150px;
+	text-align: right;
+	margin-right: 40px;
+	line-height: 50px;
+}
+
+.H-admin-profile-infomation-content{
+	float: left;
+	width: calc(100% - 190px);
+	text-align: left;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.H-admin-profile-infomation-content:nth-of-type(12){
+	margin: 10px 0 50px 0;
+	padding-left: 10px;
+	width: 130px;
+	color: black;
+	line-height: 40px;
+	background-color: white;
+}
+
+.H-admin-profile-settings{
+	display: none;
+}
+
+.H-admin-profile-settings-title1{
+	margin: 50px 0 0 190px;
+	text-align: left;
+	font-weight: normal;
+	font-size: 25px;
+}
+
+#H-admin-profile-information-form .H-admin-profile-settings-title1{
+	margin-top: 100px;
+	padding: 0;
+}
+
+.H-admin-profile-settings-title{
+	float: left;
+	width: 150px;
+	text-align: right;
+	margin: 15px 40px 15px 0;
+	padding: 10px 0;
+}
+
+.H-admin-profile-settings-content{
+	float: left;
+	width: calc(90% - 220px);
+	margin: 15px 10% 0 0;
+	padding: 10px;
+	border: 1px solid gray;
+	color: white;
+	background-color: black;
+	outline: none;
+    transition: border-color 0.5s;
+}
+
+.H-admin-profile-settings-content:hover{
+	border-color: white;
+}
+
+.H-admin-profile-settings-content:focus{
+	border-color: white;
+}
+
+#H-admin-profile-information-form .H-admin-profile-settings-content:nth-of-type(3){
+	padding-left: 0;
+	border-color: rgba(0, 0, 0, 0);
+}
+
+.H-admin-profile-settings-submit-button{
+	display: block;
+	margin: 30px 0 0 0;
+	padding: 10px;
+	border: none;
+	color: black;
+	background-color: white;
+	font-weight: bold;
+	transition: box-shadow 0.2s;
+}
+
+.H-admin-profile-settings-submit-button:hover{
+	box-shadow: 0px 0px 20px rgb(200, 200, 200);
+}
+
+#H-admin-profile-password-form .H-admin-profile-settings-submit-button{
+	margin-bottom: 30px;
+}
+
+.H-admin-profile-line-breaker{
+	color: rgba(0, 0, 0, 0);
+	line-height: 30px;
+}
+
+.H-admin-profile-compulsory{
+	color: palevioletred;
+}
+
+.H-admin-profile-error{
+	text-align: left;
+	color: palevioletred;
+	margin-left: 190px;
+	visibility: hidden;
+}
+
+@media (max-width: 992px){
+	.H-admin-profile-left-column{
+		margin: 0 calc(50% - 120px);
+	}
+	.H-admin-profile-right-column{
+		width: 90%;
+		margin: 5%;
+	}
+}
+
+@media (max-width: 680px){
+	.H-admin-profile-settings-title1{
+		margin: 50px 0 0 10%;
+	}
+	.H-admin-profile-settings-title{
+		text-align: left;
+		margin: 10px 0 0 10%;
+		float: none;
+		line-height: normal;
+	}
+	.H-admin-profile-settings-content{
+		float: none;
+		margin: 0;
+		width: 80%;
+		line-height: normal;
+	}
+	.H-admin-profile-settings-submit-button{
+		margin: 5px 0 30px 10%;
+		
+	}
+	.H-admin-profile-error{
+		text-align: left;
+		color: palevioletred;
+		margin-left: 10%;
+		display: none
+	}
+}
+@media (max-width: 500px){
+	.H-admin-profile-infomation-title{
+		text-align: left;
+		margin: 15px 0 5px 10%;
+		float: none;
+		line-height: normal;
+	}
+	.H-admin-profile-infomation-content{
+		margin: 0 0 0 10%;
+		float: none;
+		line-height: normal;
+	}
+	.H-admin-profile-infomation-content:nth-of-type(12){
+		padding-left: 10px;
+		margin: 10px 0 30px 10%;
+		line-height: 30px;
+	}
+}

@@ -3,7 +3,7 @@
     background-color: black;
     overflow: hidden;
     position: relative;
-    text-align: left;
+    text-align: center;
 }
 
 .footer .background{
@@ -21,10 +21,9 @@
 	width: 60%;
 }
 
-.footer .tittle{
+.footer .H-title{
     color: white;
     font-size: 35px;
-    margin-left: 8vw;
     margin-top: 30px;
 }
 
@@ -32,27 +31,26 @@
 	list-style-type: none;
 	margin: 20px 0 0 0;
 	padding: 0;
-    margin-left: 10vw;
 }
 
 .footer .copyright{
     float: left;
-    text-align: center;
     width: 100%;
     margin: 30px 0 10px 0;
 }
 
 @media (max-width: 680px){
-    .footer .title {
-        font-size: 25px;
+    .footer .H-title{
+        font-size: 28px;
     }
-    .developers, .address {
-        font-size: 12px;
+    .developers, .address, .copyright{
+        // font-size: 12px;
     }
+
 	.footer .column, .footer .column:nth-of-type(3){
         width: 100%;
     }
-    .footer .tittle{
+    .footer .title{
         margin: 10px 0 0 0;
     }
     .footer .developers{
@@ -60,8 +58,5 @@
     }
     .footer .address{
         margin: 0 20px;
-    }
-    .footer{
-        text-align: center;
     }
 }

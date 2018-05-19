@@ -1,1 +1,114 @@
-<h1>Edit profile</h1>
+<h1 class="H-admin-profile-page-title">Admin Profile</h1>
+
+<div class="H-admin-profile-left-column">
+	<div class="H-admin-profile-pic-container">
+		<img class="H-admin-profile-pic" src="./profile-pic.jpg" alt="(image not found)">
+	</div>
+	<div class="H-admin-profile-name">Hung Hung Hang</div>
+	<div class="H-admin-profile-status">Administrator</div>
+</div>
+
+<div class="H-admin-profile-right-column">
+	
+	<div class="H-admin-profile-right-column-menu">
+		<div class="H-admin-profile-right-column-menu-elements">Information</div>
+		<div class="H-admin-profile-right-column-menu-elements">Settings</div>
+		<div class="H-admin-profile-right-column-menu-elements">a</div>
+	</div>
+
+	<div class="H-admin-profile-information">
+
+		<div class="H-admin-profile-infomation-title">Full Name</div>
+		<div class="H-admin-profile-infomation-content">Nguyễn Phú Hưng</div>
+
+		<div class="H-admin-profile-infomation-title">Display Name</div>
+		<div class="H-admin-profile-infomation-content">Hung Hung Hang</div>
+
+		<div class="H-admin-profile-infomation-title">Position</div>
+		<div class="H-admin-profile-infomation-content">Front-end Developer</div>
+
+		<div class="H-admin-profile-infomation-title">Email</div>
+		<div class="H-admin-profile-infomation-content">hungng300899@gmail.com</div>
+
+		<div class="H-admin-profile-infomation-title">Phone</div>
+		<div class="H-admin-profile-infomation-content">01247.641.366</div>
+
+		<div class="H-admin-profile-infomation-title">Status</div>
+		<div class="H-admin-profile-infomation-content">Administrator</div>
+
+	</div>
+
+	<div class="H-admin-profile-settings">
+
+		<form id="H-admin-profile-information-form" name="H-admin-profile-information-form" method="post" onsubmit="return validateAdminProfile(1)">
+
+			<h2 class="H-admin-profile-settings-title1">Update Profile Information</h2>
+
+			<div class="H-admin-profile-settings-title">Full Name<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="text" name="full-name" value="Nguyễn Phú Hưng">
+			<div class="H-admin-profile-error">Name must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">Display Name<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="text" name="display-name" value="Hung Hung Hang">
+			<div class="H-admin-profile-error">Display name must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">Profile Picture</div>
+			<input class="H-admin-profile-settings-content" type="file" name="profile-picture" accept="image/*" />
+			<div class="H-admin-profile-error">You must choose a picture!</div>
+
+			<div class="H-admin-profile-settings-title">Position<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="text" name="position-name" value="Front-end Developer">
+			<div class="H-admin-profile-error">Position must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">Email<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="text" name="email" value="hungng300899@gmail.com">
+			<div class="H-admin-profile-error">Email must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">Phone<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="text" name="phone" value="01247.641.376">
+			<div class="H-admin-profile-error">Phone number must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">Status<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="text" name="status" value="Administrator">
+			<div class="H-admin-profile-error">Status must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title"></div>
+			<input class="H-admin-profile-settings-submit-button" type="submit" value="Submit Changes">
+
+		</form>
+
+		<form id="H-admin-profile-password-form" name="H-admin-profile-password-form" method="post" onsubmit="return validateAdminProfile(2)">
+
+			<h2 class="H-admin-profile-settings-title1">Update Password</h2>
+
+			<div class="H-admin-profile-settings-title">Current Password<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="password" name="current-password" value="******">
+			<div class="H-admin-profile-error">Current password must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">New Password<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="password" name="new-password">
+			<div class="H-admin-profile-error">New password must be filled out!</div>
+
+			<div class="H-admin-profile-settings-title">Confirm Password<span class="H-admin-profile-compulsory"
+			>*</span></div>
+			<input class="H-admin-profile-settings-content" type="password" name="confirming-password">
+			<div class="H-admin-profile-error">New password must be confirmed!</div>
+
+			<div class="H-admin-profile-settings-title"></div>
+			<input class="H-admin-profile-settings-submit-button" type="submit" value="Submit Changes">
+
+		</form>
+
+	</div>
+
+</div>
+
+<div class="H-admin-profile-line-breaker">a</div>
