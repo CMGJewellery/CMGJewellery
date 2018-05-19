@@ -14,6 +14,7 @@ gem "font-awesome-rails"
 gem 'jquery-validation-rails'
 gem 'jquery-ui-rails'
 gem 'carrierwave' # upload image  
+gem 'bcrypt', platforms: :ruby
 # support window
 # gem 'wdm'
 group :production do
