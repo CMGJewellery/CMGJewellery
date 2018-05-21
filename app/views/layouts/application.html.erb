@@ -102,7 +102,7 @@
               <%= link_to 'Log Out', destroy_user_session_path, method: 'delete', class:"nav-link P-login-mobile py-0" %>
             </div>
           <% else %>
-            <!-- <div data-turbolinks="false"> -->
+            <div data-turbolinks="false" style="display: inherit;">
               <li class="nav-item mx-2 P-login-mobile">
                 <div class="row mx-0">
                   <%= link_to 'Sign In', new_user_session_path, class:"nav-link py-0"%> 
@@ -110,11 +110,11 @@
                   <%= link_to 'Register', new_user_registration_path, class:"nav-link py-0"%>
                 </div>
               </li>
-            <!-- </div> -->
+            </div>
           <% end %>
 
           <!-- Search box for mobile -->
-          <li class="nav-item mx-2 P-search-box-mobile my-1" style="text-align: left;">
+          <li class="nav-item mx-2 P-search-box-mobile mb-1" style="text-align: left;">
             <form class="P-home-search-mobile">
               <input type="text" class="P-input-home-search-mobile" name="search" placeholder="I'm looking for ...">
               <button class="P-submit-search" type="submit">
@@ -128,7 +128,7 @@
           </li>
           <% Product::CATEGORY.each do |i| %>
             <li class="nav-item mx-2" data-turbolinks="false">
-              <%= link_to i, products_path, class:"nav-link py-0"%>
+              <%= link_to i.titleize, products_path, class:"nav-link py-0"%>
               <!-- cho nay se de ham search -->
             </li>
           <% end %>
