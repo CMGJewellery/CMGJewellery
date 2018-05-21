@@ -9,9 +9,10 @@
   </head>
 
   <body>
-    <!-- brand -->
+    <!-- 1st row header -->
     <div class="container-fluid pb-0 pt-1">
       <div class="row">
+        <!-- log in option -->
         <div class="col-md-3 mt-2">
           <div class="row pull-right mt-1 ml-5 float-left">
             <% if user_signed_in? && !current_user.nil? %>
@@ -37,22 +38,27 @@
             <% end %>
           </div>
         </div>
-
+        
+        <!-- brand -->
         <div class="col-md-6 mb-0">
           <%= link_to root_path do %>
             <p class="h1 text-center P-brand">CMG Jewellery</p>
           <% end %>
         </div>
 
+        <!-- virtual to balance -->
         <div class="col-md-3 mb-2 mt-0 text-center"></div>
       </div>
     </div>
 
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-0">
-      <button class="navbar-toggler w-100" style="border: 0;" data-toggle="collapse" data-target="#collape-navbar-p">
+      <!-- toggle -->
+      <button class="navbar-toggler w-100" style="outline: none;" data-toggle="collapse" data-target="#collape-navbar-p">
+        <!-- toggle icon -->
         <span class="navbar-toggler-icon float-left"></span>
 
+        <!-- shopping cart mobile version -->
         <%= link_to root_path, class:"P-cart-wrap-mobile float-right" do %>
             <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
             <span class="P-number-cart" >0</span>
@@ -62,23 +68,53 @@
       <!-- virtual to balance -->
       <div style="display: inherit; opacity:0;">
         <form class="P-home-search" style="padding: 0;">
-        <input type="text" class="P-input-home-search2" style="font-size: 0.8vw; padding: 5px;" name="search" placeholder="I'm looking for ...">
-        <button class="P-submit-search px-2" type="submit">
-          <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
-        </button>
-      </form>
-      <%= link_to root_path, class:"P-cart-wrap mx-2" do %>
-        <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
-        <span class="P-number-cart mt-3" >0</span>
-      <% end %>
+          <input type="text" class="P-input-home-search2" style="font-size: 0.8vw; padding: 5px;" name="search" placeholder="I'm looking for ...">
+          <button class="P-submit-search px-2" type="submit">
+            <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
+          </button>
+        </form>
+        <%= link_to root_path, class:"P-cart-wrap mx-2" do %>
+          <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
+          <span class="P-number-cart mt-3" >0</span>
+        <% end %>
       </div>
 
       <!-- Navigation option -->
       <div class="collapse navbar-collapse justify-content-center" id="collape-navbar-p">
-        <ul class="navbar-nav text-center">
+        <ul class="navbar-nav">
+          
+          <!-- log in option for mobile (after collapse) -->
+          
+          <% if user_signed_in? && !current_user.nil? %>
+            <div class="row mx-0">
+              <% if current_user.role == 'admin' %>
+                <li class="nav-item mx-2 P-login-mobile">
+                  <!-- admin page -->
+                  <%= link_to current_user.name, new_user_product_path(current_user), class:"nav-link py-0" %>
+                </li>
+              <% else %>
+                <li class="nav-item mx-2 P-login-mobile">
+                  <!-- profile user -->
+                  <%= link_to current_user.name, edit_user_path(current_user), class:"nav-link py-0" %>
+                </li>     
+              <% end %>
+              <span class="nav-link mr-2 P-login-mobile" style="padding: 0;"> / </span>
+              <%= link_to 'Log Out', destroy_user_session_path, method: 'delete', class:"nav-link P-login-mobile py-0" %>
+            </div>
+          <% else %>
+            <!-- <div data-turbolinks="false"> -->
+              <li class="nav-item mx-2 P-login-mobile">
+                <div class="row mx-0">
+                  <%= link_to 'Sign In', new_user_session_path, class:"nav-link py-0"%> 
+                  <span class="nav-link mx-1" style="padding: 0;"> / </span>
+                  <%= link_to 'Register', new_user_registration_path, class:"nav-link py-0"%>
+                </div>
+              </li>
+            <!-- </div> -->
+          <% end %>
 
-          <!-- Search box - mobile only -->
-          <li class="nav-item mx-2 P-search-box-mobile mt-2 ml-5">
+          <!-- Search box for mobile -->
+          <li class="nav-item mx-2 P-search-box-mobile my-1" style="text-align: left;">
             <form class="P-home-search-mobile">
               <input type="text" class="P-input-home-search-mobile" name="search" placeholder="I'm looking for ...">
               <button class="P-submit-search" type="submit">
@@ -88,62 +124,26 @@
           </li>
 
           <li class="nav-item mx-2">
-            <%= link_to 'NEW IN', root_path, class:"nav-link py-0" %>              
+            <%= link_to 'New In', root_path, class:"nav-link py-0" %>              
           </li>
           <% Product::CATEGORY.each do |i| %>
             <li class="nav-item mx-2" data-turbolinks="false">
-              <%= link_to i.upcase, products_path, class:"nav-link py-0"%>
+              <%= link_to i, products_path, class:"nav-link py-0"%>
               <!-- cho nay se de ham search -->
             </li>
           <% end %>
-
-          <!-- mobile only -->
-          <% if user_signed_in? && !current_user.nil? %>
-            <% if current_user.role == 'admin' %>
-              <li class="nav-item mx-2 P-login-mobile">
-                <!-- admin page -->
-                <%= link_to current_user.name, new_user_product_path(current_user), class:"nav-link py-0" %>
-              </li>
-            <% else %>
-              <li class="nav-item P-login-mobile">
-                <!-- profile user -->
-                <%= link_to current_user.name, edit_user_path(current_user), class:"nav-link py-0" %>
-              </li>     
-            <% end %>
-            <li class="nav-item P-login-mobile">
-              <%= link_to 'LOG OUT', destroy_user_session_path, method: 'delete', class:"nav-link py-0" %>
-            </li>
-          <% else %>
-            <div data-turbolinks="false">
-              <li class="nav-item P-login-mobile">
-                <%= link_to 'SIGN IN', new_user_session_path, class:"nav-link py-0"%>
-              </li>
-              <li class="nav-item P-login-mobile">
-                <%= link_to 'REGISTER', new_user_registration_path, class:"nav-link py-0"%>
-              </li>
-            </div>
-          <% end %>
-
-          <!-- Sign in - mobile only -->
-          <!-- <li class="nav-item mx-2 P-login-mobile">
-            <%#= link_to 'Sign In', new_user_session_path, class:"nav-link py-0"%>
-          </li> -->
-          
-          <!-- Register - mobile only -->
-          <!-- <li class="nav-item mx-2 P-login-mobile">
-            <%#= link_to 'Register', new_user_registration_path, class:"nav-link py-0" %>
-          </li> -->
         </ul>
       </div>
 
       <!-- Search box -->
-      
       <form class="P-home-search">
         <input type="text" class="P-input-home-search" name="search" placeholder="I'm looking for ...">
         <button class="P-submit-search px-2" type="submit">
           <i class="fa fa-search" style="color: white; font-size: 20px;"></i>
         </button>
       </form>
+
+      <!-- Shopping cart -->
       <%= link_to root_path, class:"P-cart-wrap mx-2" do %>
         <i class="fa fa-shopping-cart" style="font-size: 25px; color: white;"></i>
         <span class="P-number-cart mb-3" >0</span>
