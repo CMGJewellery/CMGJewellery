@@ -5,7 +5,7 @@
 .nav-link {
     color: white !important;
     font-family: 'Playball', cursive;
-    font-size: 20px;
+    font-size: 23px;
     text-align: left;
 }
 
@@ -62,7 +62,7 @@
     opacity: 0;
     padding: 5px;
     transition: 0.5s;
-    font-family: 'Playball', sans-serif;
+    font-style: italic;
 }
 
 .P-search-box-mobile, .P-login-mobile {
@@ -191,6 +191,7 @@
 
 .P-input-home-search-mobile {
     font-size: 15px;
+    font-style: italic;
 }
 
 // .P-login-wrap {
@@ -221,12 +222,12 @@
     }
 }
 
-@media (max-width: 1007px) {
+@media (max-width: 1036px) {
     .nav-link {
-        font-size: 17px;
+        font-size: 19px;
     }
     .P-login, .P-span-login, .P-login-wrap {
-        font-size: 15px;
+        font-size: 19px;
     }
 }
 
@@ -236,6 +237,9 @@
     }
     .P-login-wrap, .P-cart-wrap, .P-home-search {
         display: none;
+    }
+    .nav-link {
+        font-size: 22px;
     }
 }
 
