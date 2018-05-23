@@ -103,7 +103,7 @@
 }
 
 .H-admin-profile-settings-title1{
-	margin: 50px 0 0 190px;
+	margin: 70px 0 20px 190px;
 	text-align: left;
 	font-weight: normal;
 	font-size: 25px;
@@ -142,14 +142,14 @@
 	border-color: white;
 }
 
-#H-admin-profile-information-form .H-admin-profile-settings-content:nth-of-type(3){
+.H-admin-profile-information-form .H-admin-profile-settings-content:nth-of-type(5){
 	padding-left: 0;
 	border-color: rgba(0, 0, 0, 0);
 }
 
 .H-admin-profile-settings-submit-button{
 	display: block;
-	margin: 30px 0 0 0;
+	margin: 20px 0 0 0;
 	padding: 10px;
 	border: none;
 	color: black;
@@ -159,10 +159,10 @@
 }
 
 .H-admin-profile-settings-submit-button:hover{
-	box-shadow: 0px 0px 20px rgb(200, 200, 200);
+	box-shadow: 0px 0px 5px rgb(200, 200, 200);
 }
 
-#H-admin-profile-password-form .H-admin-profile-settings-submit-button{
+.H-admin-profile-password-form .H-admin-profile-settings-submit-button{
 	margin-bottom: 30px;
 }
 

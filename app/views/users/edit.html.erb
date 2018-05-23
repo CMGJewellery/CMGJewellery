@@ -2,7 +2,8 @@
 
 <div class="H-admin-profile-left-column">
 	<div class="H-admin-profile-pic-container">
-		<img class="H-admin-profile-pic" src="./profile-pic.jpg" alt="(image not found)">
+		<!-- <img class="H-admin-profile-pic" src="./profile-pic.jpg" alt="(image not found)"> -->
+		<%= image_tag "profile-pic.jpg", class:"H-admin-profile-pic" %>
 	</div>
 	<div class="H-admin-profile-name">Hung Hung Hang</div>
 	<div class="H-admin-profile-status">Administrator</div>
@@ -40,72 +41,72 @@
 
 	<div class="H-admin-profile-settings">
 
-		<form id="H-admin-profile-information-form" name="H-admin-profile-information-form" method="post" onsubmit="return validateAdminProfile(1)">
+		<%= form_with(model: @user, local: true, url:{action: "edit"}, class: "H-admin-profile-information-form") do |f| %>
 
 			<h2 class="H-admin-profile-settings-title1">Update Profile Information</h2>
 
 			<div class="H-admin-profile-settings-title">Full Name<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="text" name="full-name" value="Nguyễn Phú Hưng">
+			<%= f.text_field :full_name, value: "Nguyen Phu Hung", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Name must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">Display Name<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="text" name="display-name" value="Hung Hung Hang">
+			<%= f.text_field :display_name, value: "Hung Hung Hang", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Display name must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">Profile Picture</div>
-			<input class="H-admin-profile-settings-content" type="file" name="profile-picture" accept="image/*" />
+			<%= f.file_field :proflie_picture, accept: "image/*", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">You must choose a picture!</div>
 
 			<div class="H-admin-profile-settings-title">Position<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="text" name="position-name" value="Front-end Developer">
+			<%= f.text_field :position, value: "Front-end Developer", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Position must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">Email<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="text" name="email" value="hungng300899@gmail.com">
+			<%= f.email_field :email, value: "hungng300899@gmail.com", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Email must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">Phone<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="text" name="phone" value="01247.641.376">
+			<%= f.text_field :position, value: "01247.641.376", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Phone number must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">Status<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="text" name="status" value="Administrator">
+			<%= f.text_field :status, value: "Administrator", class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Status must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title"></div>
-			<input class="H-admin-profile-settings-submit-button" type="submit" value="Submit Changes">
+			<%= f.submit "Submit Changes", class: "H-admin-profile-settings-submit-button" %>
+			
+		<% end %>
 
-		</form>
-
-		<form id="H-admin-profile-password-form" name="H-admin-profile-password-form" method="post" onsubmit="return validateAdminProfile(2)">
+		<%= form_with(model: @user, local: true, url:{action: "edit"}, class: "H-admin-profile-password-form") do |f| %>
 
 			<h2 class="H-admin-profile-settings-title1">Update Password</h2>
 
 			<div class="H-admin-profile-settings-title">Current Password<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="password" name="current-password" value="******">
+			<%= f.password_field :current_password, class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">Current password must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">New Password<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="password" name="new-password">
+			<%= f.password_field :new_password, class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">New password must be filled out!</div>
 
 			<div class="H-admin-profile-settings-title">Confirm Password<span class="H-admin-profile-compulsory"
 			>*</span></div>
-			<input class="H-admin-profile-settings-content" type="password" name="confirming-password">
+			<%= f.password_field :confirming_password, class: "H-admin-profile-settings-content" %>
 			<div class="H-admin-profile-error">New password must be confirmed!</div>
 
 			<div class="H-admin-profile-settings-title"></div>
-			<input class="H-admin-profile-settings-submit-button" type="submit" value="Submit Changes">
+			<%= f.submit "Submit Changes", class: "H-admin-profile-settings-submit-button" %>
 
-		</form>
+		<% end %>
 
 	</div>
 
