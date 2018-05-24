@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :destory, :create, :new]
-  before_action :check_admin_role, only: [:edit, :update, :create, :new, :destory]
+  before_action :authenticate_user!, only: [:edit, :update, :destory, :create, :new, :view_products_admin]
+  before_action :check_admin_role, only: [:edit, :update, :create, :new, :destory,:view_products_admin]
 
 
-  layout "admin_menu", only: [:edit, :update, :create, :new, :destory]
+  layout "admin_menu", only: [:edit, :update, :create, :new, :destory, :view_products_admin]
   # GET /products
   # GET /products.json
 
@@ -87,8 +87,13 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def view_products_admin
+    @products = Product.all
+  end
 
-  protected
+  #------------
+    protected
   def check_admin_role
     # puts current_user.role
     if current_user.present?

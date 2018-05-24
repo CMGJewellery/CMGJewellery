@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     end
   end
   # everyone can view products
+  
+  #list product in admin page
+  get '/users/:id/list_products', to: 'products#view_products_admin', as: 'view_products_admin'
   #----------------------------
   
   # resources :images
