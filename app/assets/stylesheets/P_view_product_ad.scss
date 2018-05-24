@@ -1,0 +1,29 @@
+.P-wrap-view-product-ad {
+  padding: 5% 5%;
+  background: white;
+  box-shadow: 0 0px 10px 2px rgba(0, 0, 0, 0.15), 0 0px 22px 2px rgba(0, 0, 0, 0.14);
+  position: relative;
+  // overflow-x: scroll;
+  // overflow-y: visible;
+}
+
+.P-label-view-product-ad {
+  position: absolute;
+  background-color: #DD2467;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 5px 20px;
+  top: -35px;
+  left: 5%;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+}
+
+.P-td-view-product-ad, .P-th-view-product-ad {
+  border: 1px solid #dddddd;
+  padding: 5px 20px;
+}
+
+.P-td-view-product-ad {
+  // padding: 5px 10px;
+}
