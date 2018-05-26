@@ -4,6 +4,11 @@ function P_format(n, currency) {
   return n.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,') + " " + currency;
 }
 
+//this function is to format price form in VIEW PRODUCT IN ADMIN PAGE
+$(document).ready(function() {
+  $(".P-price-view-product-ad").html(P_format(parseInt($(".P-price-view-product-ad").html()), "đ"));
+});
+
 $(function() {
   $( "#P-slider-range" ).slider({
     range: true,
