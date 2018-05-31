@@ -19,12 +19,30 @@
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
 }
 
-.P-td-view-product-ad, .P-th-view-product-ad {
+.P-td-view-product-ad {
   border-bottom: 1px solid #dddddd;
-  padding: 5px 20px;
+  padding: 10% 25px 0 25px;
   text-align: left;
 }
 
-.P-td-view-product-ad {
-  
+.P-th-view-product-ad {
+  border-bottom: 1px solid #dddddd;
+  padding: 5px 25px 5px 25px;
+  text-align: left;
+}
+
+.P-view-product-ad-img {
+  height: 15%;
+}
+
+.P-amount-view-product-ad {
+  padding-left: 50px;
+}
+
+.P-name-view-product-ad {
+  width: 30%;
+}
+
+.P-img-view-product-ad {
+  padding: 20px 0 10px 0;
 }

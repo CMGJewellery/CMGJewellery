@@ -13,15 +13,12 @@
 
     <% @products.each do |product| %>
     <tr>
-      <td class="P-td-view-product-ad"><%= product.id %></td>
-      <td class="P-td-view-product-ad">
-        <!-- chỗ này để hình -->
-        <%= product.name %>
-      </td>
+      <td class="P-td-view-product-ad P-img-view-product-ad"><%= image_tag 'top-promo-necklaces-d.jpg', class:'P-view-product-ad-img'%></td>
+      <td class="P-td-view-product-ad P-name-view-product-ad"><%= product.name %></td>
       <td class="P-td-view-product-ad"><%= product.category_name %></td>
       <td class="P-td-view-product-ad P-price-view-product-ad"><%= product.price %></td>
-      <td class="P-td-view-product-ad"><%= product.amount %></td>
-      <td class="P-td-view-product-ad"><%= product.amount %></td>
+      <td class="P-td-view-product-ad P-amount-view-product-ad"><%= product.amount %></td>
+      <td class="P-td-view-product-ad P-amount-view-product-ad"><%= product.amount %></td>
       <td class="P-td-view-product-ad">0</td>
     </tr>
     <% end %>
